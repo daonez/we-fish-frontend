@@ -1,0 +1,177 @@
+*{
+    font-family: "Spoqa Han Sans Regular";
+}
+.navSideBar{
+    width:340px;
+    height:691px;
+
+
+    .profileLoggedOut{
+        position:relative;
+        left:10px;
+        border-bottom: 1px solid #eeeeee;
+        width:315px;
+        height:54.6px;
+        .profileLoggedOut02{
+            position:relative;
+            left:10px;
+            display:flex;
+            .loginButton{
+                a{
+                    text-decoration:none;
+                    font-size:20px;
+                    color:black;
+                }
+            }
+            .lineBar{
+                position:relative;
+                padding: 5px;
+                font-size: 10px;
+                color: rgba(153,153,153,0.5);
+                top:10px;
+    
+            }
+            .registerButton{
+                a{
+                    text-decoration:none;
+                    font-size:16px;
+                    color: #666666;
+                    position: relative;
+                    top:3px;
+                }
+            }
+        }
+
+
+    }
+    .search{
+        width:340px;
+        height:56px;
+        form{
+            margin-top:10px;
+            position:relative;
+            left:20px;
+            border-bottom: 1px solid #DCDCDC;
+            width:292px;
+            height:40px;
+            button{
+               border:none;
+                width:20px;
+                height:20px;
+                i{
+                    display: block;
+                    left:5px;
+                    width: 25px;
+                    height: 20px;
+                    font-size: 0;
+                    background: url('../../../img/search.png') no-repeat left;
+                    background-size: 25px;
+                    position: relative;
+                    right:10px;
+                    top:8px;
+                }
+            }
+            input{
+                font-size:18px;
+                position: relative;
+                top:7px;
+                left:23px;
+                border:none;
+                width:242px;
+                height:20px;
+            }
+            input::placeholder{
+                color:#FF6602
+            }
+        }
+    }
+    .category-header{
+        width:340px;
+        height:36px;
+        p{
+            font-family: 'Spoqa Han Sans Bold';
+            display:block;
+            position: relative;
+            font-size:20px;
+            left:20px;
+            margin:0px;
+            top:15px;
+        }
+    }
+    .categories{
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        right:20px;
+        .category{
+            a{
+                display:flex;
+                justify-content: space-between;
+                color:#999999;
+                text-decoration: none;
+                margin-top:5px;
+                font-size:15px;
+            }
+        }
+
+    }
+    .otherContents{
+        a{
+            font-family: 'Spoqa Han Sans Bold';
+            font-size:20px;
+            text-decoration: none;
+            color:black;
+            display:flex;
+            margin-top:10px;
+            margin-left:18px;
+
+        }
+    }
+    .sideBarFooter{
+        display:flex;
+        justify-content: space-between;
+        width:340px;
+        height:66px;
+        position:absolute;
+        bottom:20px;
+        border-top: 1px solid #eee;
+        .fl{
+            position: relative;
+            left:15px;
+            .phone{
+                position: relative;
+                bottom:20px;
+                font-size: 28px;
+                font-family: Montserrat;
+                color: #000000;
+                font-weight: bold;
+            }
+
+        }
+
+        .fr{
+            a{
+                position: relative;
+                top:15px;
+                background-image: url('../../../img/kakaoplus.png');
+                width: 48px;
+                height: 48px;
+                margin-top: 3px;
+                background-size: 48px;
+                display: block;
+            }
+        }
+    }
+}
+
+li{
+    width:145px;
+    height:25px;
+}
+ol, ul {
+    list-style: none;
+}
+.rightUl{
+    position: relative;
+    right:30px;
+}
