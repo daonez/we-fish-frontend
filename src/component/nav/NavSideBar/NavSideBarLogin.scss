@@ -19,11 +19,9 @@
             .loginButton{
                 a{
                     text-decoration:none;
-                    font-family: 'Spoqa Han Sans Bold';
                     font-size:20px;
                     color:black;
                 }
-
             }
             .lineBar{
                 position:relative;
@@ -43,36 +41,9 @@
                 }
             }
         }
-    }
-    .pointBar{
-        display:flex;
-        justify-content: space-around;
-        border-bottom: 1px solid #DCDCDC;
-        border-top: 1px solid #DCDCDC;
-    }
-    .coupon1{
-        color: #666666;
-        margin-bottom:-17px;
-    }
-    .point1{
-        color: #666666;
-        margin-bottom:-17px;
-    }
-    .coupon2{
-        font-family: 'Spoqa Han Sans Bold';
-        font-size:25px;
-    }
-    .point2{
-        font-family: 'Spoqa Han Sans Bold';
-        font-size:25px;
-    }
-    .coupon3{
-        font-family: 'Spoqa Han Sans Bold';
-    }
-    .point3{
-        font-family: 'Spoqa Han Sans Bold';
-    }
 
+
+    }
     .search{
         width:340px;
         height:56px;

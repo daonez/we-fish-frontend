@@ -8,7 +8,7 @@ export class NavRight extends Component {
         return (
             <div>
                 <div className="datePicker">
-                    <button className="datePickerButton" type="button">
+                    <button onClick={this.props.handleList}className="datePickerButton" type="button">
                         <div className="datePickerButtonDiv">
                             <span>25일(화)도착</span><img className="imgim" src={dropdown} alt="dropdown"></img>
                             

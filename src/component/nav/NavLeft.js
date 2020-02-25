@@ -20,4 +20,4 @@ class NavLeft extends Component {
     }
 }
 
-export default NavLeft;
+ export default NavLeft;
