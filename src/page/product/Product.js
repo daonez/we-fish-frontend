@@ -1,6 +1,7 @@
 import React from "react";
 import productData from "./ProductData";
 import product from "../../styles/product.scss";
+import assets from "../../assets/star-solid.svg";
 
 class Products extends React.Component {
   render() {
@@ -28,6 +29,10 @@ class Products extends React.Component {
                     <h1>{item.name}</h1>
                     <p>
                       <span>{item.price}</span>원
+                    </p>
+                    <p>
+                      {item.rating}
+                      <span className="review">· 후기</span>
                     </p>
                   </div>
                 </li>

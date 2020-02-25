@@ -32,10 +32,22 @@ ul.productList {
 .product-item {
   flex: 0 1 50%;
 }
-.productCard img {
-  width: 226.8px;
-  height: 226.8px;
+.productCard {
+  & img {
+    width: 226.8px;
+    height: 226.8px;
+  }
 }
 .productCardContent {
   padding: 14px 0px;
+  & h1 {
+    font-weight: 400;
+  }
+  & span {
+    font-weight: bold;
+  }
+  & .review {
+    font-weight: 400;
+    color: #bababa;
+  }
 }
