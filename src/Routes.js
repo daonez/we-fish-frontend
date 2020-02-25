@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./page/Home";
-import Product from "./page/product/Products";
+import Product from "./page/product/Product";
 
 class Routes extends React.Component {
   render() {
