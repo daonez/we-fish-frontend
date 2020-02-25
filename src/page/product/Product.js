@@ -1,7 +1,6 @@
 import React from "react";
 import productData from "./ProductData";
 import product from "../../styles/product.scss";
-import assets from "../../assets/star-solid.svg";
 
 class Products extends React.Component {
   render() {
@@ -23,7 +22,9 @@ class Products extends React.Component {
               {productData.map(item => (
                 <li className="product-item">
                   <div className="productCard">
-                    <img src={item.image} alt="" />
+                    <div className="parent">
+                      <img src={item.image} alt="" />
+                    </div>
                   </div>
                   <div className="productCardContent">
                     <h1>{item.name}</h1>
