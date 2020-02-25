@@ -1,0 +1,124 @@
+$mobile: "Only screen and (max-width: 420px)";
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap {
+  display: flex;
+  justify-content: flex-end;
+
+  @media #{$mobile} {
+    display: block;
+    justify-content: normal;
+  }
+}
+
+.section-left {
+  width: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__wrap {
+    position: absolute;
+    right: 120px;
+  }
+
+  &__img {
+    width: 130px;
+    height: auto;
+    margin-top: 90px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    dt {
+      margin-top: 90px;
+      color: #8a8a8a;
+      font-size: 40px;
+      letter-spacing: -0.6px;
+      font-family: "Spoqa Han Sans Thin";
+
+      span {
+        display: block;
+      }
+    }
+
+    dd {
+      margin-top: 6px;
+      color: #d4d4d4;
+      letter-spacing: -1.6px;
+      font-size: 18px;
+
+      span {
+        display: block;
+        letter-spacing: -1.6px;
+      }
+    }
+  }
+
+  &__cont1 {
+    margin-top: 35px;
+    color: #888;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+
+    span {
+      display: block;
+      letter-spacing: -1px;
+      font-size: 18px;
+    }
+  }
+
+  &__cont2 {
+    display: inline-block;
+    position: relative;
+    margin-top: 8px;
+    padding: 4px 15px 6px;
+    color: #ababab;
+    letter-spacing: -1px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #adadad;
+    border-radius: 20px;
+    z-index: 1;
+
+    span {
+      display: inline-block;
+      margin-left: 4px;
+      color: #ff9f6a;
+    }
+  }
+
+  @media #{$mobile} {
+    display: none;
+  }
+}
+
+.section-right {
+  width: 50%;
+
+  &__main {
+    max-width: 420px;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
