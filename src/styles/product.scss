@@ -1,2 +1,41 @@
-.product-main {
+.content-wrapper {
+  padding: 0 14px;
+}
+section.product-main-container {
+  display: flex;
+  max-width: 500px;
+}
+.producList__nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  & h1 {
+    font-weight: 700;
+  }
+}
+select {
+  width: 14%;
+  margin: 0px 10px;
+  ​vertical-align: middle;
+  font-size: 100%;
+  overflow: overlay;
+  border: none;
+  background: none;
+  font-size: 100%;
+}
+
+ul.productList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  flex: 0 1 50%;
+}
+.productCard img {
+  width: 226.8px;
+  height: 226.8px;
+}
+.productCardContent {
+  padding: 14px 0px;
 }
