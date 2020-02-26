@@ -1,0 +1,41 @@
+.OrderList{
+    width:500px;
+    height:800px;
+    .userOrder{
+        border-bottom: 1px solid rgb(179, 174, 174);
+        display:flex;
+    }
+    .slist{
+        margin-left:100px;
+        margin:10px 0px 20px 120px;
+    }
+    .slist, .users{
+        font-size:22px;
+        font-family: "Spoqa Han Sans Bold";
+    }
+    .FaAngleLeftParent{
+        margin-top:18px;
+        margin-left:20px;
+    }
+    .information{
+        width:470px;
+        border-bottom: 1px solid rgb(179, 174, 174);
+        display:flex;
+        margin:30px 0px 0px 20px;;
+        justify-content: space-around;
+        div{
+            font-size:16px;
+            color:#999999;
+            margin-bottom:10px;
+        }
+        .date{
+            position: relative;
+            right:40px;
+        }
+        .product, .review{
+            position: relative;
+            right:70px;
+        }
+    }
+
+}
