@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/signup.scss";
-import orange from "/home/dev_dat/wecode/we-fish-frontend/src/images/animal.svg";
+import orange from "../images/animal.svg";
 
 class SignUp extends Component {
   constructor(props) {

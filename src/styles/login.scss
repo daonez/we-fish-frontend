@@ -81,12 +81,13 @@
   border-radius: 100px;
   margin-right: 8px;
   border: 1px solid #d2d2d2;
+  display: flex;
 }
 
 .checkboxbtnact {
   background-color: white;
   color: white;
-  width: 20px;
+  width: 17px;
   height: 18px;
   border-radius: 100px;
   margin-right: 8px;
@@ -167,7 +168,6 @@
 }
 
 .kakaobtnimg {
-  // background-image: url("/home/dev_dat/wecode/we-fish-frontend/src/images/kakaologosvg.png");
   background-image: url("https://pluspng.com/img-png/logo-kakao-png-kakaotalk-vector-720.png");
   width: 50px;
   height: 50px;

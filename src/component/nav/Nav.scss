@@ -1,0 +1,134 @@
+.nav{
+    box-sizing:border-box;
+    width:500px;
+    .main{
+        width:2000px;
+        height:500px;
+        background-color: white;
+
+            div{
+                margin:1px 0px 1px 0px;
+                list-style: none;
+            }
+            div:hover{
+                background-color:rgb(207, 202, 202);
+            }
+        }
+        
+    }
+
+.datePickerList{
+    position:absolute;
+    z-index:10;
+    top:60px;
+    right:500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(238,238,238,0.9);
+    opacity: 0.8;
+    border-radius: 8px;
+    width:130px;
+    height:130px;
+    text-align:center;
+}
+
+.NSBB{
+    position:relative;
+    background-color:white;
+    z-index:2;
+    width:350px;
+    height:850px;
+
+}
+.NavSideBarBlock{
+    position:absolute;
+    width:350px;
+    background-color:white;
+    top:0;
+    z-index:1
+
+}
+.newHeader{
+    border-bottom: 1px solid #DCDCDC;
+    position: absolute;
+    top:10px;
+    width:500px;
+    height:50px;
+    display:flex;
+    justify-content:space-between;
+    margin-left:350px;         //마진값 빼야지
+    .headerLogo{   // NavLeft
+        position: relative;
+        display:flex;
+        .btn{
+            .btn_menu_aside{
+                border:none;
+            }
+            .btn_menu_aside:focus{
+                outline:none;
+            }
+            img{ //아디다스 바
+                width:60px;
+                position:relative;
+                bottom:1px;
+                outline: none;
+                
+            }
+        }
+    }
+    h1{
+        .logo{ // 오늘회 로고
+            width:60px;
+            height:19px;
+            position:absolute;
+            top:19px;
+            right:-65px;
+        }
+    }   
+}
+
+.datePicker{  // NavRight
+    display:flex;
+    .datePickerButton{
+        margin-top:10px;
+        height:30px;
+        border:none;
+        .datePickerButtonDiv{
+            cursor: pointer;
+            margin-left:10px;
+            span{
+                font-size:17px;
+                font-weight:400;
+                font-family: "Spoqa Han Sans Regular";
+            }
+            img{
+                position:relative;
+                top:3px;
+                width:25px;
+            }
+        }
+
+    }
+    .goToCartButton{
+        position: relative;
+        bottom:5px;
+        img{
+            width:55px;
+        }
+        div{
+            font-size: 15px;
+            letter-spacing: -0.01em;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 19px;
+            height: 20px;
+            color: #ffffff;
+            border-radius: 20px;
+            line-height: 23px;
+            text-align: center;
+            background-color: #ff731d;
+        }
+    }
+}
