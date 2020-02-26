@@ -7,7 +7,9 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      mode: "unclicked"
+      mode: "unclicked",
+      id:"",
+      pw:""
     };
   }
 
@@ -22,6 +24,12 @@ class Login extends Component {
       });
     }
   };
+
+  
+
+
+
+
 
   render() {
     return (

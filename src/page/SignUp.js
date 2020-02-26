@@ -14,7 +14,7 @@ class SignUp extends Component {
   render() {
     return (
       <>
-        <section>
+        <section className="signupsection">
           <header class="texttop">
             <h1>
               SNS계정으로도
@@ -22,6 +22,7 @@ class SignUp extends Component {
               간편하게 가입할 수 있습니다
             </h1>
           </header>
+
           <a className="kakaologinbtn">
             <img alt="temp" className="imgorange" src={orange} />
             {/* <span className="kakaobtnimg"></span> */}
@@ -42,52 +43,99 @@ class SignUp extends Component {
               </div>
               <div>
                 <div>
-                  <input placeholder="이름" type="text"></input>
+                  <input
+                    className="inputname"
+                    placeholder="이름"
+                    type="text"
+                  ></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input placeholder="비밀번호(6자리 이상)" type="text"></input>
+                  <input
+                    className="inputpw"
+                    placeholder="비밀번호(6자리 이상)"
+                    type="text"
+                  ></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input placeholder="비밀번호 확인" type="text"></input>
+                  <input
+                    className="inputpwcheck"
+                    placeholder="비밀번호 확인"
+                    type="text"
+                  ></input>
+                </div>
+              </div>
+              <div className="postaddwrap">
+                <div className="inputpostwrap">
+                  <input
+                    className="inputpost"
+                    placeholder="우편번호"
+                    type="text"
+                  ></input>
+                </div>
+                <div className="inputaddwrap">
+                  <input
+                    className="inputaddress"
+                    placeholder="주소 찾기"
+                    type="text"
+                  ></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input placeholder="우편번호" type="text"></input>
-                </div>
-                <div>
-                  <input placeholder="주소 찾기" type="text"></input>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <input placeholder="상세주소" type="text"></input>
+                  <input
+                    className="inputdetailadd"
+                    placeholder="상세주소"
+                    type="text"
+                  ></input>
                 </div>
               </div>
-              <div>
+              <div className="phoneauthenwrap">
                 <div>
-                  <input placeholder="휴대전화번호" type="text"></input>
+                  <input
+                    className="phonenum"
+                    placeholder="휴대전화번호"
+                    type="text"
+                  ></input>
                 </div>
                 <div>
-                  <button type="button">인증번호 받기</button>
+                  <button className="authenbtn" type="button">
+                    인증번호 받기
+                  </button>
                 </div>
               </div>
-              <p>
+              <p className="under14txt">
                 만 14세 이상 가입 가능합니다.
                 <span>내용보기</span>
               </p>
             </section>
-            <section>
-              <h2>약관 전체동의</h2>
-              <ul>
+            <section className="sectionbottom">
+              <h2 className="articleagree">약관 전체동의</h2>
+              <ul className="articlelist">
                 <li>
-                  <article>
+                  <article className="articlewrap">
                     <header>
-                      <h1>전체 동의하기</h1>
+                      <h1 className="h1font1">전체 동의하기</h1>
+                    </header>
+                    <label className="agreelabel">
+                      <div>
+                        <input
+                          className="agreecheckbox"
+                          type="checkbox"
+                        ></input>
+                        <span></span>
+                      </div>
+                    </label>
+                  </article>
+                </li>
+                <li>
+                  <article className="agreemust">
+                    <header className="contentsee">
+                      <h1 className="h1font1">이용약관에 동의합니다 (필수)</h1>
+                      <button className="articleagreebtn">내용보기</button>
                     </header>
                     <label>
                       <div>
@@ -98,24 +146,12 @@ class SignUp extends Component {
                   </article>
                 </li>
                 <li>
-                  <article>
-                    <header>
-                      <h1>이용약관에 동의합니다 (필수)</h1>
-                      <button>내용보기</button>
-                    </header>
-                    <label>
-                      <div>
-                        <input type="checkbox"></input>
-                        <span></span>
-                      </div>
-                    </label>
-                  </article>
-                </li>
-                <li>
-                  <article>
-                    <header>
-                      <h1>개인정보 수집 및 이용에 동의합니다 (필수)</h1>
-                      <button>내용보기</button>
+                  <article className="agreemust">
+                    <header className="contentsee">
+                      <h1 className="h1font1">
+                        개인정보 수집 및 이용에 동의합니다 (필수)
+                      </h1>
+                      <button className="personalagreebtn">내용보기</button>
                     </header>
                     <label>
                       <div>
@@ -126,9 +162,11 @@ class SignUp extends Component {
                   </article>
                 </li>
                 <li>
-                  <article>
-                    <header>
-                      <h1>마케팅 정보 수신에 동의합니다 (선택)</h1>
+                  <article className="agreemust">
+                    <header className="contentsee">
+                      <h1 className="h1font1">
+                        마케팅 정보 수신에 동의합니다 (선택)
+                      </h1>
                     </header>
                     <label>
                       <div>
@@ -140,7 +178,7 @@ class SignUp extends Component {
                 </li>
               </ul>
             </section>
-            <input type="submit" value="회원가입"></input>
+            <input className="signup" type="submit" value="회원가입"></input>
           </form>
         </section>
       </>
