@@ -1,0 +1,205 @@
+.loginContainer {
+  background-color: grey;
+  height: 716.8px;
+  max-height: 717px;
+  width: 420px;
+  display: flex;
+  margin-bottom: 44px;
+}
+
+.loginInput {
+  background-color: white;
+  max-height: 716px;
+  height: 100%;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 20px 28px 20px;
+}
+
+.loginID {
+  width: 362px;
+  height: 40px;
+  margin-bottom: 8px;
+  border: 1px solid #ebebeb;
+  padding: 0px 8px;
+}
+
+.loginID::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #c5c4c4;
+}
+
+.loginPW {
+  width: 362px;
+  height: 40px;
+  margin-bottom: 8px;
+  border: 1px solid #ebebeb;
+  padding: 0px 8px;
+}
+
+.loginPW::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #c5c4c4;
+}
+
+.sectionAuthen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #929292;
+}
+
+.checkboxwrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+  color: white;
+  width: 28px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.checkboxbtn {
+  background-color: white;
+  color: white;
+  width: 20px;
+  height: 18px;
+  border-radius: 100px;
+  margin-right: 8px;
+  border: 1px solid #d2d2d2;
+  display: flex;
+}
+
+.checkboxbtnact {
+  background-color: white;
+  color: white;
+  width: 17px;
+  height: 18px;
+  border-radius: 100px;
+  margin-right: 8px;
+  border: 1px solid #d2d2d2;
+}
+
+.checkboxinput {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  width: 12px;
+  height: 12px;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
+  visibility: hidden;
+}
+
+.labeltext {
+  width: 97px;
+  font-size: 12px;
+  letter-spacing: -0.06em;
+  text-align: center;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.findid {
+  cursor: pointer;
+  letter-spacing: -0.06em;
+}
+
+.findpw {
+  cursor: pointer;
+  letter-spacing: -0.06em;
+}
+
+.IDPWLine {
+  margin: 0px 4px;
+}
+
+.btnLogin {
+  //   background-color: rgb(233, 89, 0);
+  background-color: #ff731d;
+  color: white;
+  margin-bottom: 8px;
+  padding: 1px 6px;
+  font-size: 14px;
+  height: 40px;
+  width: 380px;
+  border: 1px solid white;
+  font-size: 14px;
+}
+
+.kakaologinbtn {
+  width: 378px;
+  height: 38px;
+  margin-bottom: 16px;
+  border: none;
+  box-shadow: none;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #929292;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+  letter-spacing: -0.06em;
+  font-size: 14px;
+}
+
+.kakaobtnimg {
+  background-image: url("https://pluspng.com/img-png/logo-kakao-png-kakaotalk-vector-720.png");
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 100;
+}
+
+.imgorange {
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.signuplink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #929292;
+  letter-spacing: -0.06em;
+}
+
+.signupclick {
+  color: #ff731d;
+  text-decoration: none;
+  margin-left: 4px;
+  font-size: 12px;
+}
