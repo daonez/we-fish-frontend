@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/login.scss";
-import orange from "/home/dev_dat/wecode/we-fish-frontend/src/images/animal.svg";
+import orange from "../images/animal.svg";
 
 class Login extends Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class Login extends Component {
 
     this.state = {
       mode: "unclicked",
-      id:"",
-      pw:""
+      id: "",
+      pw: ""
     };
   }
 
@@ -25,12 +25,6 @@ class Login extends Component {
     }
   };
 
-  
-
-
-
-
-
   render() {
     return (
       <>
@@ -39,11 +33,7 @@ class Login extends Component {
             <section className="userauthen">
               <form className="formLogin">
                 <input className="loginID" placeholder="이메일" /> {/*box1*/}
-                <input
-                  className="loginPW"
-                  placeholder="비밀번호(8-16자리 영문,숫자 조합)"
-                />{" "}
-                {/*box2*/}
+                <input className="loginPW" placeholder="비밀번호(8-16자리 영문,숫자 조합)" /> {/*box2*/}
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
                     {" "}
@@ -52,26 +42,13 @@ class Login extends Component {
                       <div>
                         {this.state.mode === "unclicked" ? (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="checkboxbtn"
-                              onClick={this.onBtnClick}
-                            ></span>
+                            <input className="checkboxinput" type="checkbox"></input>
+                            <span className="checkboxbtn" onClick={this.onBtnClick}></span>
                           </div>
                         ) : (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
-                            <img
-                              src={orange}
-                              className="checkboxbtnact"
-                              onClick={this.onBtnClick}
-                            ></img>
+                            <input className="checkboxinput" type="checkbox"></input>
+                            <img src={orange} className="checkboxbtnact" onClick={this.onBtnClick}></img>
                           </div>
                         )}
                       </div>
@@ -85,12 +62,8 @@ class Login extends Component {
                     <a className="findpw">비밀번호 찾기</a>
                   </div>
                 </section>
-                <input
-                  className="btnLogin"
-                  type="submit"
-                  value="로그인하기"
-                ></input>
-                <a className="kakaologinbtn">
+                <input className="btnLogin" type="submit" value="로그인하기"></input>
+                <a className="kakaologinbtn" href="">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
                   카카오톡으로 로그인하기
