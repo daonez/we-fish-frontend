@@ -44,3 +44,10 @@ button.slick-arrow.slick-next {
 .recommend-product-item {
   flex: 1 29%;
 }
+
+.today {
+  display: flex;
+  & img {
+    width: 100px;
+  }
+}

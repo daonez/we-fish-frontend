@@ -3,6 +3,8 @@ import "../../styles/main.scss";
 import Slider from "react-slick";
 import firstTimeBanner from "./mainImage/first-time-wefish.jpeg";
 import todayOrderBanner from "./mainImage/today-can-order-fish.jpg";
+import plusFriend from "./mainImage/plusfriendKakao.jpeg";
+import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg";
 
 export default class Main extends React.Component {
   constructor() {
@@ -53,7 +55,7 @@ export default class Main extends React.Component {
             </div>
           </div>
         </section>
-        <div className="productlider">
+        <div className="productslider">
           <Slider {...settings}>
             {data.map(item => (
               <li className="product-item">
@@ -230,7 +232,79 @@ export default class Main extends React.Component {
             </div>
           </div>
         </div>
-        
+        <div>
+          <h2>오늘회 기획전 ></h2>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <article className="today">
+                <div>
+                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                </div>
+                <div>
+                  <h2>[이게 바로 게맛]</h2>
+                  <p>진한 게맛 우러나는 맛간장!</p>
+                  <div>2020-02-24~소진시까지</div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article className="today">
+                <div>
+                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                </div>
+                <div>
+                  <h2>[이게 바로 게맛]</h2>
+                  <p>진한 게맛 우러나는 맛간장!</p>
+                  <div>2020-02-24~소진시까지</div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article className="today">
+                <div>
+                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                </div>
+                <div>
+                  <h2>[이게 바로 게맛]</h2>
+                  <p>진한 게맛 우러나는 맛간장!</p>
+                  <div>2020-02-24~소진시까지</div>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src={plusFriend} alt="" />
+          <img src={deliver} alt="" />
+        </div>
+        <div>
+          <h2>오늘회 신상품 ></h2>
+        </div>
+        <div>
+          <Slider {...settings}>
+            {data.map(item => (
+              <li className="product-item">
+                <div className="product-items_Card">
+                  <div className="parent">
+                    <img src={item.image} alt="" />
+                  </div>
+                </div>
+                <div className="productCardContent">
+                  <h1>{item.name}</h1>
+                  <p>
+                    <span>{item.price}</span>원
+                  </p>
+                  <p>
+                    <span>{item.rating}</span>
+                    <span className="review">· 후기</span>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </Slider>
+        </div>
       </div>
     );
   }
