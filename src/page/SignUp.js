@@ -11,20 +11,6 @@ class SignUp extends Component {
     };
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   render() {
     return (
       <>
@@ -48,73 +34,41 @@ class SignUp extends Component {
               {/* <input></input> */}
               <div>
                 <div>
-                  <input
-                    className="inputemail"
-                    placeholder="이메일 주소 입력"
-                    type="text"
-                  ></input>
+                  <input className="inputemail" placeholder="이메일 주소 입력" type="text"></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input
-                    className="inputname"
-                    placeholder="이름"
-                    type="text"
-                  ></input>
+                  <input className="inputname" placeholder="이름" type="text"></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input
-                    className="inputpw"
-                    placeholder="비밀번호(6자리 이상)"
-                    type="text"
-                  ></input>
+                  <input className="inputpw" placeholder="비밀번호(6자리 이상)" type="text"></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input
-                    className="inputpwcheck"
-                    placeholder="비밀번호 확인"
-                    type="text"
-                  ></input>
+                  <input className="inputpwcheck" placeholder="비밀번호 확인" type="text"></input>
                 </div>
               </div>
               <div className="postaddwrap">
                 <div className="inputpostwrap">
-                  <input
-                    className="inputpost"
-                    placeholder="우편번호"
-                    type="text"
-                  ></input>
+                  <input className="inputpost" placeholder="우편번호" type="text"></input>
                 </div>
                 <div className="inputaddwrap">
-                  <input
-                    className="inputaddress"
-                    placeholder="주소 찾기"
-                    type="text"
-                  ></input>
+                  <input className="inputaddress" placeholder="주소 찾기" type="text"></input>
                 </div>
               </div>
               <div>
                 <div>
-                  <input
-                    className="inputdetailadd"
-                    placeholder="상세주소"
-                    type="text"
-                  ></input>
+                  <input className="inputdetailadd" placeholder="상세주소" type="text"></input>
                 </div>
               </div>
               <div className="phoneauthenwrap">
                 <div>
-                   {/* 휴대폰 번호만 넘기자  */}
-                  <input
-                    className="phonenum"
-                    placeholder="휴대전화번호 ( ' - ' 제외)"
-                    type="text"
-                  ></input>
+                  {/* 휴대폰 번호만 넘기자  */}
+                  <input className="phonenum" placeholder="휴대전화번호 ( ' - ' 제외)" type="text"></input>
                 </div>
                 <div>
                   <button className="authenbtn" type="button">
@@ -123,7 +77,7 @@ class SignUp extends Component {
                 </div>
               </div>
               <p className="under14txt">
-                 만 14세 이상 가입 가능합니다. &nbsp;&nbsp; 
+                만 14세 이상 가입 가능합니다. &nbsp;&nbsp;
                 <span>내용보기</span>
               </p>
             </section>
@@ -136,16 +90,10 @@ class SignUp extends Component {
                       <h1 className="h1font1">전체 동의하기</h1>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span className="agreespan" onClick={this.onBtnClick}></span>
+                      </div>
                     </label>
                   </article>
                 </li>
@@ -156,59 +104,40 @@ class SignUp extends Component {
                       <button className="articleagreebtn">내용보기</button>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span className="agreespan" onClick={this.onBtnClick}></span>
+                      </div>
                     </label>
                   </article>
                 </li>
                 <li>
                   <article className="agreemust">
                     <header className="contentsee">
-                      <h1 className="h1font1">
-                        개인정보 수집 및 이용에 동의합니다 (필수)
-                      </h1>
+                      <h1 className="h1font1">개인정보 수집 및 이용에 동의합니다 (필수)</h1>
+
                       <button className="articleagreebtn">내용보기</button>
+
+                      <button className="personalagreebtn">내용보기</button>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span className="agreespan" onClick={this.onBtnClick}></span>
+                      </div>
                     </label>
                   </article>
                 </li>
                 <li>
                   <article className="agreemust">
                     <header className="contentsee">
-                      <h1 className="h1font1">
-                        마케팅 정보 수신에 동의합니다 (선택)
-                      </h1>
+                      <h1 className="h1font1">마케팅 정보 수신에 동의합니다 (선택)</h1>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span className="agreespan" onClick={this.onBtnClick}></span>
+                      </div>
                     </label>
                   </article>
                 </li>
