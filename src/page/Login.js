@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/login.scss";
-import orange from "/home/dev_dat/wecode/we-fish-frontend/src/images/animal.svg";
+import orange from "../images/animal.svg";
 
 class Login extends Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class Login extends Component {
 
     this.state = {
       mode: "unclicked",
-      id:"",
-      pw:""
+      id: "",
+      pw: ""
     };
   }
 
@@ -24,12 +24,6 @@ class Login extends Component {
       });
     }
   };
-
-  
-
-
-
-
 
   render() {
     return (
