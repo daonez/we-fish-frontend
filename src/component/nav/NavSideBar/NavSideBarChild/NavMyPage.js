@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import logo from '../../../../img/logotext.png'
-import './MyPage.scss'
+import './NavMyPage.scss'
 
-class MyPage extends Component {
+class NavMyPage extends Component {
     render() {
         return (
             <div className="MyPage">
@@ -20,17 +20,17 @@ class MyPage extends Component {
                         <div className="select3">휴대전화</div><div><input className="input3"></input></div>
                     </div>
                     <div className="list4">
-                        <div><input className="zipcode"></input></div><div><input className="adressfind"></input></div>
+                        <div><input className="zipcode"></input></div><div><input className="addressfind"></input></div>
                     </div>
                     <div className="list5">
-                        <input className="adress"></input>
+                        <input className="address"></input>
                     </div>
                     <div className="list6">
-                        <div className="select4">비밀번호</div><div><input className="password"></input></div>
+                        <div className="select4">비밀번호</div><div><input className="password" placeholder="    (6자리 이상 쓰래)"></input></div>
                     </div>
                 </div>
                 <div className="Logout">
-                    <div>로그아웃</div><div>저장</div>
+                    <div>로그아웃</div><div className="bar">|</div><div>저장</div>
                 </div>
 
             </div>
@@ -38,4 +38,4 @@ class MyPage extends Component {
     }
 }
 
-export default MyPage
+export default NavMyPage

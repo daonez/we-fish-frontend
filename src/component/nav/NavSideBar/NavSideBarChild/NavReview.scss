@@ -1,0 +1,54 @@
+.NavReview{
+    width:500px;
+    .reviewTop{
+        margin-top:20px;
+        display:flex;
+        justify-content:space-between ;
+        div{
+            color:#747474;
+            font-size:17px;
+            font-weight:600;
+
+        }
+    }
+    .NavReviewSearch{
+        display: flex;
+        margin-top:100px;
+    }
+    button{
+        border: 3px solid black;
+        margin-left:10px;
+        width:55px;
+        height:55px;
+        border-radius:2px;
+    }
+    button:hover{
+        animation-name: fadeInnz;
+        animation-duration: 0.5s;
+        background-color: #1a1919;
+        cursor: pointer;
+        @keyframes fadeInnz {
+            from { background-color:blue; }
+            to   { background-color:yellow; }
+        }
+    }
+    // .monthly-icecream-on {
+    //     animation-name: fadeInn;
+    //     animation-duration: 10s;
+    //     animation-delay: 2s;
+    //     animation-fill-mode: forwards;
+        // @keyframes fadeInn {
+        //     from { opacity: 0; }
+        //     to   { opacity: 1; }
+        // }
+    // }
+
+    input{
+        font-size:20px;
+        width:300px;
+        height:50px;
+        &:focus{
+            outline:none;
+        }
+    }
+}
