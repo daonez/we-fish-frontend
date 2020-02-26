@@ -5,7 +5,7 @@ import search from '../../../img/search.png'
 export class NavSideBar extends Component {
     render() {
         return (
-            <div className="navSideBar">
+            <div className="NavSideBar">
                 <div className="profileLoggedOut">
                     <div className="profileLoggedOut02">
                         <p className="loginButton"><a href="/">김현준</a></p>
@@ -69,9 +69,7 @@ export class NavSideBar extends Component {
                     <div className="fr">
                          <a href="/"></a>
                     </div>
-                </div>
- 
-                
+                </div> 
             </div>
         )
     }

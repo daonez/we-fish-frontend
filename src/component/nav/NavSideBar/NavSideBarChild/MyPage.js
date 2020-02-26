@@ -9,15 +9,15 @@ class MyPage extends Component {
                 <div className="logo">
                         <img src={logo}></img>
                 </div>
-                <div className="list">
+                <div className="listParent">
                     <div className="list1">
-                        <div className="select">아이디</div><div><input className="input1"></input></div>
+                        <div className="select1">아이디</div><div><input className="input1"></input></div>
                     </div>
                     <div className="list2">
-                        <div className="select">이름</div><div><input className="input2"></input></div>
+                        <div className="select2">이름</div><div><input className="input2"></input></div>
                     </div>
                     <div className="list3">
-                        <div className="select">휴대전화</div><div><input className="input3"></input></div>
+                        <div className="select3">휴대전화</div><div><input className="input3"></input></div>
                     </div>
                     <div className="list4">
                         <div><input className="zipcode"></input></div><div><input className="adressfind"></input></div>
@@ -26,7 +26,7 @@ class MyPage extends Component {
                         <input className="adress"></input>
                     </div>
                     <div className="list6">
-                        <div className="select">비밀번호</div><div><input className="password"></input></div>
+                        <div className="select4">비밀번호</div><div><input className="password"></input></div>
                     </div>
                 </div>
                 <div className="Logout">

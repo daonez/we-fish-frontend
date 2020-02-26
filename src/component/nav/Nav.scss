@@ -1,12 +1,22 @@
 .nav{
     box-sizing:border-box;
     width:500px;
-}
-.main{
-    width:2000px;
-    height:500px;
-    background-color: white;
-}
+    .main{
+        width:2000px;
+        height:500px;
+        background-color: white;
+
+            div{
+                margin:1px 0px 1px 0px;
+                list-style: none;
+            }
+            div:hover{
+                background-color:rgb(207, 202, 202);
+            }
+        }
+        
+    }
+
 .datePickerList{
     position:absolute;
     z-index:10;
@@ -21,13 +31,6 @@
     width:130px;
     height:130px;
     text-align:center;
-    div{
-        margin:1px 0px 1px 0px;
-        list-style: none;
-    }
-    div:hover{
-        background-color:rgb(207, 202, 202);
-    }
 }
 
 .NSBB{
@@ -35,7 +38,7 @@
     background-color:white;
     z-index:2;
     width:350px;
-    height:800px;
+    height:850px;
 
 }
 .NavSideBarBlock{
@@ -46,11 +49,10 @@
     z-index:1
 
 }
-
 .newHeader{
     border-bottom: 1px solid #DCDCDC;
     position: absolute;
-    top:0px;
+    top:10px;
     width:560px;
     height:50px;
     display:flex;

@@ -5,7 +5,7 @@ import search from '../../../img/search.png'
 export class NavSideBar extends Component {
     render() {
         return (
-            <div className="navSideBar">
+      <div className="navSideBar">
                 <div className="profileLoggedOut">
                     <div className="profileLoggedOut02">
                         <p className="loginButton"><a href="/">로그인 해주세요</a></p>
