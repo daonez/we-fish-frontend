@@ -53,7 +53,7 @@ export default class Main extends React.Component {
             </div>
           </div>
         </section>
-        <div className="ProductSlider">
+        <div className="productlider">
           <Slider {...settings}>
             {data.map(item => (
               <li className="product-item">
@@ -110,38 +110,42 @@ export default class Main extends React.Component {
           <h1>오늘회 고객님은 이렇게 드셨어요.</h1>
         </div>
         <div className="review-buttons">
-          <Slider {...settings}>
-            <div className="review-best">
-              <div>
+          <div className="review-best">
+            <Slider {...settings}>
+              <ul>
+                <li>
+                  <button>
+                    <p>두명이서 먹기 적당</p>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <p>여기가 제주도</p>
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <p>오늘회 첫주문</p>
+                  </button>
+                </li>
                 <button>
-                  <p>두명이서 먹기 적당</p>
+                  <p>게딱지만 냠냠</p>
                 </button>
-              </div>
-              <div>
                 <button>
-                  <p>여기가 제주도</p>
+                  <p>현포차 오픈</p>
                 </button>
-              </div>
-              <button>
-                <p>오늘회 첫주문</p>
-              </button>
-              <button>
-                <p>게딱지만 냠냠</p>
-              </button>
-              <button>
-                <p>현포차 오픈</p>
-              </button>
-              <button>
-                <p>도넛초밥</p>
-              </button>
-              <button>
-                <p>이번겨울 마지막방어</p>
-              </button>
-              <button>
-                <p>새우파티입니다</p>
-              </button>
-            </div>
-          </Slider>
+                <button>
+                  <p>도넛초밥</p>
+                </button>
+                <button>
+                  <p>이번겨울 마지막방어</p>
+                </button>
+                <button>
+                  <p>새우파티입니다</p>
+                </button>
+              </ul>
+            </Slider>
+          </div>
           <div className="products-wrapper">
             <Slider>
               {data.map(item => (
@@ -163,7 +167,70 @@ export default class Main extends React.Component {
             <img src={firstTimeBanner} alt="" />
             <img src={todayOrderBanner} alt="" />
           </div>
+          <div className="recomend">
+            <h1>알아서 추천드립니다 ></h1>
+            <Slider {...settings}>
+              <li>
+                <h4>성게알</h4>
+              </li>
+              <li>
+                <h4>초밥•국물•매운탕</h4>
+              </li>
+              <li>
+                <h4>오징어•조개•해산물</h4>
+              </li>
+              <li>
+                <h4>자연산 회</h4>
+              </li>
+              <li>
+                <h4>김•미역•해조류</h4>
+              </li>
+              <li>
+                <h4>건어물</h4>
+              </li>
+              <li>
+                <h4>제철회</h4>
+              </li>
+              <li>
+                <h4>수산시장 회</h4>
+              </li>
+              <li>
+                <h4>수산가공품</h4>
+              </li>
+              <li>
+                <h4>소스•곁들임</h4>
+              </li>
+              <li>
+                <h4>새우•게•랍스터</h4>
+              </li>
+            </Slider>
+            <ul className="productList">
+              {data.map(item => (
+                <li className="recommend-product-item">
+                  <div className="productCard">
+                    <div className="parent">
+                      <img src={item.image} alt="" />
+                    </div>
+                  </div>
+                  <div className="productCardContent">
+                    <h1>{item.name}</h1>
+                    <p>
+                      <span>{item.price}</span>원
+                    </p>
+                    <p>
+                      <span>{item.rating}</span>
+                      <span className="review">· 후기</span>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div>
+              <button>성게알 상품 전체보기 ></button>
+            </div>
+          </div>
         </div>
+        
       </div>
     );
   }
