@@ -7,7 +7,7 @@ import NavOrderList from "../component/nav/NavSideBar/NavSideBarChild/NavOrderLi
 import NavReview from "../component/nav/NavSideBar/NavSideBarChild/NavReview";
 import NavMyPage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage";
 
-class Nav extends Component {
+class Home extends Component {
   render() {
     return (
       <div>
@@ -17,4 +17,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default Home;

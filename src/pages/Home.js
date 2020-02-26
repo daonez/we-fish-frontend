@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../styles/home.scss";
 import SectionLeft from "./SectionLeft";
 
-
 class Home extends Component {
   render() {
     return (
