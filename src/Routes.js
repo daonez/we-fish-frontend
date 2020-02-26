@@ -1,4 +1,3 @@
-// 이거는 Routes.js
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./page/Home";
@@ -9,6 +8,7 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route path="/home" component={Home} />
+
         </Switch>
       </Router>
     );
