@@ -5,7 +5,7 @@ section.product-main-container {
   display: flex;
   max-width: 500px;
 }
-.producList__nav {
+.productList__nav {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -13,16 +13,24 @@ section.product-main-container {
     font-weight: 700;
   }
 }
-select {
-  width: 14%;
-  margin: 0px 10px;
-  ​vertical-align: middle;
-  font-size: 100%;
-  overflow: overlay;
-  border: none;
-  background: none;
-  font-size: 100%;
+
+.dropDown {
+  & img {
+    background: none;
+    width: 12px;
+    padding: 0 0px 2px 8px;
+  }
 }
+// select {
+//   width: 21%;
+//   margin: 0px 10px;
+//   ​vertical-align: middle;
+//   font-size: 100%;
+//   overflow: overlay;
+//   border: none;
+//   background: none;
+//   font-size: 100%;
+// }
 
 ul.productList {
   display: flex;

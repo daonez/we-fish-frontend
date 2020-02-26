@@ -46,7 +46,7 @@ const productData = [
     name: "[남해] 자연산 병어회",
     image: `https://cdn.onul-hoi.com/uploads/store_package/image/578/ea6f7e_200217060322.jpg?w=525&q=80`,
     price: "34,900",
-    rating: "🌟 4.7"
+    rating: "4.7"
   },
   {
     id: 4,
