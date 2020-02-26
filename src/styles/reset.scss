@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -77,19 +78,24 @@ video {
   font-weight: normal;
   letter-spacing: 1px;
 }
+
 ​ * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   color: inherit;
 }
+
 ​ *:focus {
   outline: none;
   border: none;
 }
+
 ​ body {
   line-height: 1;
 }
+
 ​ article,
 aside,
 details,
@@ -103,13 +109,16 @@ nav,
 section {
   display: block;
 }
+
 ​ nav ul {
   list-style: none;
 }
+
 ​ blockquote,
 q {
   quotes: none;
 }
+
 ​ blockquote:before,
 blockquote:after,
 q:before,
@@ -117,6 +126,7 @@ q:after {
   content: "";
   content: none;
 }
+
 ​ a {
   margin: 0;
   padding: 0;
@@ -124,36 +134,36 @@ q:after {
   vertical-align: baseline;
   background: transparent;
 }
-​
-/* change colours to suit your needs */
-ins {
+
+​ ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
-​
-/* change colours to suit your needs */
-mark {
+
+​ mark {
   background-color: #ff9;
   color: #000;
   font-style: italic;
   font-weight: bold;
 }
+
 ​ del {
   text-decoration: line-through;
 }
+
 ​ abbr[title],
 dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
+
 ​ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-​
-/* change border colour to suit your needs */
-hr {
+
+​ hr {
   display: block;
   height: 1px;
   border: 0;
@@ -161,13 +171,16 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
 ​ input,
 select {
   vertical-align: middle;
 }
+
 ​ textarea {
   resize: none;
 }
+
 li {
   list-style: none;
 }
