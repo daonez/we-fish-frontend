@@ -11,20 +11,6 @@ class SignUp extends Component {
     };
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   render() {
     return (
       <>
@@ -109,7 +95,7 @@ class SignUp extends Component {
               </div>
               <div className="phoneauthenwrap">
                 <div>
-                   {/* 휴대폰 번호만 넘기자  */}
+                  {/* 휴대폰 번호만 넘기자  */}
                   <input
                     className="phonenum"
                     placeholder="휴대전화번호 ( ' - ' 제외)"
@@ -123,7 +109,7 @@ class SignUp extends Component {
                 </div>
               </div>
               <p className="under14txt">
-                 만 14세 이상 가입 가능합니다. &nbsp;&nbsp; 
+                만 14세 이상 가입 가능합니다. &nbsp;&nbsp;
                 <span>내용보기</span>
               </p>
             </section>
@@ -136,16 +122,13 @@ class SignUp extends Component {
                       <h1 className="h1font1">전체 동의하기</h1>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span
+                          className="agreespan"
+                          onClick={this.onBtnClick}
+                        ></span>
+                      </div>
                     </label>
                   </article>
                 </li>
@@ -156,16 +139,13 @@ class SignUp extends Component {
                       <button className="articleagreebtn">내용보기</button>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span
+                          className="agreespan"
+                          onClick={this.onBtnClick}
+                        ></span>
+                      </div>
                     </label>
                   </article>
                 </li>
@@ -178,16 +158,13 @@ class SignUp extends Component {
                       <button className="articleagreebtn">내용보기</button>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span
+                          className="agreespan"
+                          onClick={this.onBtnClick}
+                        ></span>
+                      </div>
                     </label>
                   </article>
                 </li>
@@ -199,16 +176,13 @@ class SignUp extends Component {
                       </h1>
                     </header>
                     <label>
-                          <div className="agreediv">
-                            <input
-                              className="agreeinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="agreespan"
-                              onClick={this.onBtnClick}
-                            ></span>
-                          </div>
+                      <div className="agreediv">
+                        <input className="agreeinput" type="checkbox"></input>
+                        <span
+                          className="agreespan"
+                          onClick={this.onBtnClick}
+                        ></span>
+                      </div>
                     </label>
                   </article>
                 </li>
