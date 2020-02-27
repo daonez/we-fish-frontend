@@ -1,37 +1,74 @@
+//* 전체 고정
 .content-wrapper {
   padding: 0 14px;
 }
+
 section.product-main-container {
   display: flex;
   max-width: 500px;
 }
+
+//* Header부분
 .productList__nav {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
   & h1 {
     font-weight: 700;
   }
 }
+//* Selector
+.filterDropdown {
+  position: relative;
+}
+
+.filterDropdown .dropDown {
+  font-size: 16px;
+  color: #929292;
+  padding-right: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
 
 .dropDown {
+  justify-content: center;
   & img {
     background: none;
     width: 12px;
     padding: 0 0px 2px 8px;
   }
 }
-// select {
-//   width: 21%;
-//   margin: 0px 10px;
-//   ​vertical-align: middle;
-//   font-size: 100%;
-//   overflow: overlay;
-//   border: none;
-//   background: none;
-//   font-size: 100%;
-// }
 
+.filterDropdown .dropDown_lists {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  width: 100px;
+}
+
+.dropDown_lists {
+  &.dropDown_lists_item {
+    background: white;
+  }
+}
+
+li.dropDown_lists_item {
+  background: white;
+  &:hover {
+    background: none;
+  }
+}
+
+button.dropDown__button {
+  border: none;
+  font-size: 16px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+//* 제품들 (Product)
 ul.productList {
   display: flex;
   flex-wrap: wrap;
@@ -55,6 +92,7 @@ ul.productList {
   }
 }
 
+//*Product .map 한것들
 .productCardContent {
   padding: 14px 0px;
   & h1 {
