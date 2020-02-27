@@ -39,17 +39,19 @@ export default class Main extends React.Component {
     };
 
     return (
-      <div className="total">
+      <div className="main-content">
         <section>
           <div>
             <div>
               <header>
                 <a href="https://www.onul-hoi.com/m/new_store_packages?tag=%EC%A0%9C%EC%B2%A0%ED%9A%8C" />
-                <h3>제철지도</h3>
-                <div>
-                  <strong>지금 어떤 수산물이</strong>
-                  <p>가장 맛있을까요?</p>
-                  <p>2월 오늘회에서만 만나볼 수 있는 메뉴</p>
+                <p className="main-content-p">제철지도</p>
+                <div className="main-content_contents">
+                  <strong>
+                    지금 어떤 수산물이
+                    <p>가장 맛있을까요?</p>
+                  </strong>
+                  <p className="main-content-p text">2월 오늘회에서만 만나볼 수 있는 메뉴</p>
                 </div>
               </header>
             </div>
