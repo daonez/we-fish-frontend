@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/main.scss";
-import Slider from "react-slick";
+//import Slider from "react-slick";
+import ThreeImageSlider from "./ThreeImageSlider";
 import firstTimeBanner from "./mainImage/first-time-wefish.jpeg";
 import todayOrderBanner from "./mainImage/today-can-order-fish.jpg";
 import plusFriend from "./mainImage/plusfriendKakao.jpeg";
@@ -30,13 +31,6 @@ export default class Main extends React.Component {
   render() {
     const { data } = this.state;
     console.log(this.state);
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 2,
-      arrows: true
-    };
 
     return (
       <div className="main-content">
@@ -44,8 +38,8 @@ export default class Main extends React.Component {
           <div>
             <div>
               <header>
-                <a href="https://www.onul-hoi.com/m/new_store_packages?tag=%EC%A0%9C%EC%B2%A0%ED%9A%8C" />
                 <p className="main-content-p">제철지도</p>
+                <a href="https://www.onul-hoi.com/m/new_store_packages?tag=%EC%A0%9C%EC%B2%A0%ED%9A%8C" />
                 <div className="main-content_contents">
                   <strong>
                     지금 어떤 수산물이
@@ -58,27 +52,7 @@ export default class Main extends React.Component {
           </div>
         </section>
         <div className="productslider">
-          <Slider {...settings}>
-            {data.map(item => (
-              <li className="product-item">
-                <div className="product-items_Card">
-                  <div className="parent">
-                    <img src={item.image} alt="" />
-                  </div>
-                </div>
-                <div className="productCardContent">
-                  <h1>{item.name}</h1>
-                  <p>
-                    <span>{item.price}</span>원
-                  </p>
-                  <p>
-                    <span>{item.rating}</span>
-                    <span className="review">· 후기</span>
-                  </p>
-                </div>
-              </li>
-            ))}
-          </Slider>
+          <ThreeImageSlider />
         </div>
         <div className="main-content_second-productslider">
           <div className="main-content_second-productslider_content">
@@ -86,72 +60,44 @@ export default class Main extends React.Component {
             <span className="main-content-span">지난주 오늘회에서 가장 잘 팔린메뉴 ></span>
           </div>
           <div>
-            <Slider {...settings}>
-              {data.map(item => (
-                <li className="product-item">
-                  <div className="product-items_Card">
-                    <div className="parent">
-                      <img src={item.image} alt="" />
-                    </div>
-                  </div>
-                  <div className="productCardContent">
-                    <h1>{item.name}</h1>
-                    <p>
-                      <span>{item.price}</span>원
-                    </p>
-                    <p>
-                      <span>{item.rating}</span>
-                      <span className="review">· 후기</span>
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </Slider>
+            <ThreeImageSlider />
           </div>
         </div>
-        <div className="main-content-review-title">
+        <div className="main-content-recommend-title">
           <h4>후기로 검증된 추천 상차림</h4>
           <h1>오늘회 고객님은 이렇게 드셨어요.</h1>
         </div>
-        <div className="main-content-review-buttons">
+        <div className="main-content-recommend-buttons">
           <div className="main-content-review-best">
-            <Slider {...settings}>
-              <ul>
-                <li>
-                  <button>
-                    <p>두명이서 먹기 적당</p>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <p>여기가 제주도</p>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <p>오늘회 첫주문</p>
-                  </button>
-                </li>
-                <button>
-                  <p>게딱지만 냠냠</p>
-                </button>
-                <button>
-                  <p>현포차 오픈</p>
-                </button>
-                <button>
-                  <p>도넛초밥</p>
-                </button>
-                <button>
-                  <p>이번겨울 마지막방어</p>
-                </button>
-                <button>
-                  <p>새우파티입니다</p>
-                </button>
-              </ul>
-            </Slider>
+            {/* <Slider {...settings}>
+              <div className="main-content-recommend-buttons">
+                <button>두명이서 먹기 적당</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>여기가 제주도</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>오늘회 첫주문</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>게딱지만 냠냠</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>현포차 오픈</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>도넛초밥</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>이번겨울 마지막방어</button>
+              </div>
+              <div className="main-content-recommend-buttons">
+                <button>새우파티입니다</button>
+              </div>
+            </Slider> */}
           </div>
           <div className="products-wrapper">
-            <Slider>
+            {/* <Slider>
               {data.map(item => (
                 <div>
                   <img src={item.image} alt="" />
@@ -164,7 +110,7 @@ export default class Main extends React.Component {
                   <button>나도 이렇게 장바구니 담아보기</button>
                 </div>
               ))}
-            </Slider>
+            </Slider> */}
             <p>오늘회 후기 보러가기 ></p>
           </div>
           <div>
@@ -173,7 +119,7 @@ export default class Main extends React.Component {
           </div>
           <div className="recomend">
             <h1>알아서 추천드립니다 ></h1>
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
               <li>
                 <h4>성게알</h4>
               </li>
@@ -207,7 +153,7 @@ export default class Main extends React.Component {
               <li>
                 <h4>새우•게•랍스터</h4>
               </li>
-            </Slider>
+            </Slider> */}
             <ul className="productList">
               {data.map(item => (
                 <li className="recommend-product-item">
@@ -242,7 +188,10 @@ export default class Main extends React.Component {
             <li>
               <article className="today">
                 <div>
-                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                  <img
+                    src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80"
+                    alt=""
+                  />
                 </div>
                 <div>
                   <h2>[이게 바로 게맛]</h2>
@@ -254,7 +203,10 @@ export default class Main extends React.Component {
             <li>
               <article className="today">
                 <div>
-                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                  <img
+                    src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80"
+                    alt=""
+                  />
                 </div>
                 <div>
                   <h2>[이게 바로 게맛]</h2>
@@ -266,7 +218,10 @@ export default class Main extends React.Component {
             <li>
               <article className="today">
                 <div>
-                  <img src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80" />
+                  <img
+                    src="https://cdn.onul-hoi.com/uploads/store_banner/image/38/ef05f5_200224013248.jpg?w=525&q=80"
+                    alt=""
+                  />
                 </div>
                 <div>
                   <h2>[이게 바로 게맛]</h2>
@@ -285,7 +240,7 @@ export default class Main extends React.Component {
           <h2>오늘회 신상품 ></h2>
         </div>
         <div>
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {data.map(item => (
               <li className="product-item">
                 <div className="product-items_Card">
@@ -305,7 +260,7 @@ export default class Main extends React.Component {
                 </div>
               </li>
             ))}
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     );
