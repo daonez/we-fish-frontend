@@ -68,6 +68,7 @@ class Login extends Component {
           <div className="loginInput">
             <section className="userauthen">
               <form className="formLogin">
+<<<<<<< HEAD:src/page/Login.js
                 <input
                   className="loginID"
                   placeholder="이메일"
@@ -80,6 +81,10 @@ class Login extends Component {
                   onChange={this.handleSignPW}
                 />{" "}
                 {/*box2*/}
+=======
+                <input className="loginID" placeholder="이메일" /> {/*box1*/}
+                <input className="loginPW" placeholder="비밀번호(8-16자리 영문,숫자 조합)" /> {/*box2*/}
+>>>>>>> e459f76b49f9d57c5f2dc313c0177e9c181b6e8a:src/pages/Login.js
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
                     {/*box3-1*/}
@@ -87,26 +92,13 @@ class Login extends Component {
                       <div>
                         {this.state.mode === "unclicked" ? (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
-                            <span
-                              className="checkboxbtn"
-                              onClick={this.onBtnClick}
-                            ></span>
+                            <input className="checkboxinput" type="checkbox"></input>
+                            <span className="checkboxbtn" onClick={this.onBtnClick}></span>
                           </div>
                         ) : (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
-                            <img
-                              src={orange}
-                              className="checkboxbtnact"
-                              onClick={this.onBtnClick}
-                            ></img>
+                            <input className="checkboxinput" type="checkbox"></input>
+                            <img src={orange} className="checkboxbtnact" onClick={this.onBtnClick}></img>
                           </div>
                         )}
                       </div>
@@ -120,6 +112,7 @@ class Login extends Component {
                     <a className="findpw">비밀번호 찾기</a>
                   </div>
                 </section>
+<<<<<<< HEAD:src/page/Login.js
                 <button
                   className="btnLogin"
                   type="button"
@@ -127,6 +120,10 @@ class Login extends Component {
                   onClick={this.fetcher}
                 ></button>
                 <a className="kakaologinbtn">
+=======
+                <input className="btnLogin" type="submit" value="로그인하기"></input>
+                <a className="kakaologinbtn" href="">
+>>>>>>> e459f76b49f9d57c5f2dc313c0177e9c181b6e8a:src/pages/Login.js
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
                   카카오톡으로 로그인하기
