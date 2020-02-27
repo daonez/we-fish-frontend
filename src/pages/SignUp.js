@@ -20,12 +20,17 @@ class SignUp extends Component {
     };
   }
 
-
   emailModeCheck = e => {
-    if ('@' not in )
-    })
-  }
-
+    if ("@" in this.state.id) {
+      this.setState({
+        emailmode: "True"
+      });
+    } else {
+      this.setState({
+        emailmode: "False"
+      });
+    }
+  };
 
   handleSignUpID = e => {
     this.setState({

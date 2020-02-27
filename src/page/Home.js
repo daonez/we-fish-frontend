@@ -7,7 +7,7 @@ import NavOrderList from "../component/nav/NavSideBar/NavSideBarChild/NavOrderLi
 import NavReview from "../component/nav/NavSideBar/NavSideBarChild/NavReview";
 import NavMyPage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage";
 import "../styles/home.scss";
-import SectionLeft from "./SectionLeft";
+import SectionLeft from "../pages/SectionLeft";
 
 class Home extends Component {
   render() {
