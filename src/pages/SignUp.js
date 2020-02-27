@@ -20,14 +20,14 @@ class SignUp extends Component {
     };
   }
 
-  emailModeCheck = e => {
-    if ("@" in this.state.id) {
+  emailFormChecker = e => {
+    if (e.target.value.search("@")) {
       this.setState({
-        emailmode: "True"
+        emailformcheck: "True"
       });
     } else {
       this.setState({
-        emailmode: "False"
+        emailformcheck: "False"
       });
     }
   };
