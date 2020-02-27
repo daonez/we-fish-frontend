@@ -80,10 +80,10 @@ export default class Main extends React.Component {
             ))}
           </Slider>
         </div>
-        <div>
-          <div>
+        <div className="main-content_second-productslider">
+          <div className="main-content_second-productslider_content">
             <h2>오늘회 베스트</h2>
-            <span>지난주 오늘회에서 가장 잘 팔린메뉴 ></span>
+            <span className="main-content-span">지난주 오늘회에서 가장 잘 팔린메뉴 ></span>
           </div>
           <div>
             <Slider {...settings}>
@@ -109,12 +109,12 @@ export default class Main extends React.Component {
             </Slider>
           </div>
         </div>
-        <div className="review-title">
+        <div className="main-content-review-title">
           <h4>후기로 검증된 추천 상차림</h4>
           <h1>오늘회 고객님은 이렇게 드셨어요.</h1>
         </div>
-        <div className="review-buttons">
-          <div className="review-best">
+        <div className="main-content-review-buttons">
+          <div className="main-content-review-best">
             <Slider {...settings}>
               <ul>
                 <li>
