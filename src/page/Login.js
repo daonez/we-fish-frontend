@@ -40,9 +40,11 @@ class Login extends Component {
   };
 
   fetcher = () => {
-    fetch("http://10.58.2.98:8000/user/sign-in", {
+    fetch("http://10.58.6.8:8000/user/sign-in", {
       method: "POST",
-      headers: { "Content-type": "application/json" },
+      headers: {
+        "Content-type": "application/json"
+      },
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw
@@ -53,9 +55,7 @@ class Login extends Component {
         return response.json();
       })
       .then(response => {
-        console.log(response);
         if (response.token) {
-          console.log(response);
           localStorage.setItem("fish", response.token);
         }
       });
@@ -120,12 +120,12 @@ class Login extends Component {
                     <a className="findpw">비밀번호 찾기</a>
                   </div>
                 </section>
-                <input
+                <button
                   className="btnLogin"
-                  type="submit"
+                  type="button"
                   value="로그인하기"
-                  onChange={this.fetcher}
-                ></input>
+                  onClick={this.fetcher}
+                ></button>
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
