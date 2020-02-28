@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import Nav from "../component/nav/Nav";
-import NavSideBar from "../component/nav/NavSideBar/NavSideBar";
-import NavSideBarLogin from "../component/nav/NavSideBar/NavSideBarLogin";
-import NavMypage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage";
-import NavOrderList from "../component/nav/NavSideBar/NavSideBarChild/NavOrderList";
-import NavReview from "../component/nav/NavSideBar/NavSideBarChild/NavReview";
-import NavMyPage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage";
-import "../styles/home.scss";
-import SectionLeft from "./SectionLeft";
+import React, { Component } from "react"
+import Nav from "../component/nav/Nav"
+import NavSideBar from "../component/nav/NavSideBar/NavSideBar"
+import NavSideBarLogin from "../component/nav/NavSideBar/NavSideBarLogin"
+import NavMypage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage"
+import NavOrderList from "../component/nav/NavSideBar/NavSideBarChild/NavOrderList"
+import NavReview from "../component/nav/NavSideBar/NavSideBarChild/NavReview"
+import "../styles/home.scss"
+import SectionLeft from "./SectionLeft"
 
 class Home extends Component {
   render() {
@@ -23,8 +22,8 @@ class Home extends Component {
           </section>
         </div>
       </>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

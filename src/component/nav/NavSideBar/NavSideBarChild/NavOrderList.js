@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { FaAngleLeft } from "react-icons/fa";
-import "./NavOrderList.scss";
+import React, { Component } from "react"
+import { FaAngleLeft } from "react-icons/fa"
+import "./NavOrderList.scss"
 
 class NavOrderList extends Component {
   render() {
@@ -20,8 +20,8 @@ class NavOrderList extends Component {
           <div className="review">리뷰</div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default NavOrderList;
+export default NavOrderList
