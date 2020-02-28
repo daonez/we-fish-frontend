@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/login.scss";
-import orange from "/home/dev_dat/wecode/we-fish-frontend/src/images/animal.svg";
+import orange from "../images/animal.svg";
 
 class Login extends Component {
   constructor(props) {
@@ -8,12 +8,12 @@ class Login extends Component {
 
     this.state = {
       mode: "unclicked",
-      id:"",
-      pw:""
+      id: "",
+      pw: ""
     };
   }
 
-  onBtnClick = e => {
+  onBtnClick = () => {
     if (this.state.mode === "unclicked") {
       this.setState({
         mode: "clicked"
@@ -25,11 +25,41 @@ class Login extends Component {
     }
   };
 
-  
+  handleSignID = e => {
+    this.setState({
+      id: e.target.value
+    });
+    console.log(this.state.id);
+  };
 
+  handleSignPW = e => {
+    this.setState({
+      pw: e.target.value
+    });
+    console.log(this.state.pw);
+  };
 
-
-
+  fetcher = () => {
+    fetch("http://10.58.6.8:8000/user/sign-in", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw
+      })
+    })
+      .then(response => {
+        console.log(response);
+        return response.json();
+      })
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem("fish", response.token);
+        }
+      });
+  };
 
   render() {
     return (
@@ -38,15 +68,20 @@ class Login extends Component {
           <div className="loginInput">
             <section className="userauthen">
               <form className="formLogin">
-                <input className="loginID" placeholder="이메일" /> {/*box1*/}
+                <input
+                  className="loginID"
+                  placeholder="이메일"
+                  onChange={this.handleSignID}
+                />{" "}
+                {/*box1*/}
                 <input
                   className="loginPW"
                   placeholder="비밀번호(8-16자리 영문,숫자 조합)"
+                  onChange={this.handleSignPW}
                 />{" "}
                 {/*box2*/}
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
-                    {" "}
                     {/*box3-1*/}
                     <div className="checkbox">
                       <div>
@@ -85,11 +120,12 @@ class Login extends Component {
                     <a className="findpw">비밀번호 찾기</a>
                   </div>
                 </section>
-                <input
+                <button
                   className="btnLogin"
-                  type="submit"
+                  type="button"
                   value="로그인하기"
-                ></input>
+                  onClick={this.fetcher}
+                ></button>
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
