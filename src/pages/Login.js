@@ -13,7 +13,7 @@ class Login extends Component {
     };
   }
 
-  onBtnClick = e => {
+  onBtnClick = () => {
     if (this.state.mode === "unclicked") {
       this.setState({
         mode: "clicked"
