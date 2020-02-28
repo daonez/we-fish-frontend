@@ -2,6 +2,13 @@ import React from "react";
 import DaumPostcode from "react-daum-postcode";
 
 class Postcode extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addressfindcheck: ""
+    };
+  }
+
   handleAddress = data => {
     let fullAddress = data.address;
     let extraAddress = "";
@@ -20,7 +27,13 @@ class Postcode extends React.Component {
   };
 
   render() {
-    return <DaumPostcode onClick={this.handleAddress} />;
+    return (
+      <>
+        <DaumPostcode>
+          <input>test</input>
+        </DaumPostcode>
+      </>
+    );
   }
 }
 
