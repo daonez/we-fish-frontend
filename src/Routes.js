@@ -1,7 +1,6 @@
 // 이거는 Routes.js
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./component/Layout";
 import Product from "./pages/product/Product";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
