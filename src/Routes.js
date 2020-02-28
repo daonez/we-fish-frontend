@@ -7,7 +7,6 @@ import Home from "./pages/Home"
 import MainPage from "./pages/main/Main"
 import Product from "./pages/product/Product"
 import Detail from "./pages/Detail"
-import Nav from "./pages/Home"
 
 class Routes extends React.Component {
   render() {
@@ -15,7 +14,6 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/home" component={Home} />
-          <Route path="/nav" component={Nav} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/product" component={Product} />
