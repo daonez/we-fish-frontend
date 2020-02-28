@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../images/logo_img.png";
 
-class SectionLeft extends Component {
+class LayoutLeft extends Component {
   render() {
     return (
       <section className="section-left">
@@ -34,4 +34,4 @@ class SectionLeft extends Component {
   }
 }
 
-export default SectionLeft;
+export default LayoutLeft;
