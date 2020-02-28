@@ -1,33 +1,64 @@
 import React, { Component } from "react";
 import "../styles/signup.scss";
 import orange from "../images/animal.svg";
+import Postcode from "./DaumSearch";
 
 class SignUp extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      emailmode: "False",
+      emailformcheck: true,
       id: "",
+      pwformcheck: true,
       pw: "",
       pwc: "",
       name: "",
       postcode: "",
+      addressfindcheck: "unclicked",
       address: "",
-      detailed_address: "True",
+      detailed_address: true,
       mobile: "",
-      agreement: "True"
+      agreement: true
     };
   }
 
   emailFormChecker = e => {
-    if (e.target.value.search("@")) {
+    if (e.target.value.includes("@")) {
       this.setState({
-        emailformcheck: "True"
+        emailformcheck: true
       });
-    } else {
+    }
+    if (!e.target.value.includes("@")) {
       this.setState({
-        emailformcheck: "False"
+        emailformcheck: false
+      });
+    }
+  };
+
+  passwordFormChecker = e => {
+    if (e.target.value.length >= 6) {
+      this.setState({
+        pwformcheck: true
+      });
+    }
+    if (e.target.value.length < 6) {
+      this.setState({
+        pwformcheck: false
+      });
+    }
+  };
+
+  addressFindChecker = e => {
+    console.log("a");
+    if (this.state.addressfindcheck === "unclicked") {
+      this.setState({
+        addressfindcheck: "clicked"
+      });
+    }
+    if (this.state.addressfindcheck === "clicked") {
+      this.setState({
+        addressfindcheck: "unclicked"
       });
     }
   };
@@ -36,57 +67,47 @@ class SignUp extends Component {
     this.setState({
       id: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpPW = e => {
     this.setState({
       pw: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpPWC = e => {
     this.setState({
       pwc: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpName = e => {
     this.setState({
       name: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpPostCode = e => {
     this.setState({
       postcode: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpAddress = e => {
     this.setState({
       address: e.target.value
     });
-    console.log(e.target.value);
   };
 
   handleSignUpMobile = e => {
     this.setState({
       mobile: e.target.value
     });
-    console.log(e.target.value);
   };
 
   signUpFetch = () => {
     fetch("http://10.58.6.8:8000/user/sign-up", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json"
-      },
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw,
@@ -97,13 +118,6 @@ class SignUp extends Component {
         // agreement: this.state.agreement
       })
     });
-    console.log(this.state.id);
-    console.log(this.state.pw);
-    console.log(this.state.name);
-    console.log(this.state.postcode);
-    console.log(this.state.address);
-    console.log(this.state.mobile);
-    console.log(this.state.agreement);
   };
 
   render() {
@@ -111,7 +125,7 @@ class SignUp extends Component {
       <>
         <section className="signupsection">
           <header class="texttop">
-            <h1 className="h1txt">
+            <h1 className="signuptoptxt">
               SNS계정으로도
               <br />
               간편하게 가입할 수 있습니다
@@ -125,15 +139,21 @@ class SignUp extends Component {
           <form>
             <section>
               <h2 className="signupemailtxt">이메일 회원가입</h2>
-              {this.state.emailmode === "True" ? (
+              {this.state.emailformcheck === false ? (
                 <div>
                   <div>
                     <input
                       className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
-                      onChange={this.handleSignUpID}
+                      // onChange={this.handleSignUpID}
+                      onChange={this.emailFormChecker}
                     ></input>
+                  </div>
+                  <div className="emailformfalse">
+                    <p>
+                      &nbsp; 이메일 형식 맞춰라잉 ~ 거짓말 하면 혼납니다 ~ ^^
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -143,14 +163,13 @@ class SignUp extends Component {
                       className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
-                      onChange={this.handleSignUpID}
+                      // onChange={this.handleSignUpID}
+                      onChange={this.emailFormChecker}
                     ></input>
-                  </div>
-                  <div>
-                    <p>이메일 형식 맞추세욥 ~ ^^</p>
                   </div>
                 </div>
               )}
+
               <div>
                 <div>
                   <input
@@ -161,17 +180,34 @@ class SignUp extends Component {
                   ></input>
                 </div>
               </div>
-
-              <div>
+              {this.state.pwformcheck === false ? (
                 <div>
-                  <input
-                    className="inputpw"
-                    placeholder="비밀번호(6자리 이상)"
-                    type="text"
-                    onChange={this.handleSignUpPW}
-                  ></input>
+                  <div>
+                    <input
+                      className="inputpw"
+                      placeholder="비밀번호(6자리 이상)"
+                      type="text"
+                      // onChange={this.handleSignUpPW}
+                      onChange={this.passwordFormChecker}
+                    ></input>
+                  </div>
+                  <div className="passwordformfalse">
+                    <p>&nbsp; 패스워드도 6자 이상 요건 지켜주고 ~ ^^</p>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  <div>
+                    <input
+                      className="inputpw"
+                      placeholder="비밀번호(6자리 이상)"
+                      type="text"
+                      // onChange={this.handleSignUpPW}
+                      onChange={this.passwordFormChecker}
+                    ></input>
+                  </div>
+                </div>
+              )}
               <div>
                 <div>
                   <input
@@ -191,14 +227,32 @@ class SignUp extends Component {
                     onChange={this.handleSignUpPostCode}
                   ></input>
                 </div>
-                <div className="inputaddwrap">
-                  <input
-                    className="inputaddress"
-                    placeholder="주소 찾기"
-                    type="text"
-                    onChange={this.handleSignUpAddress}
-                  ></input>
-                </div>
+                {this.state.addressfindcheck === "unclicked" ? (
+                  <div>
+                    <div className="inputaddwrap">
+                      <button
+                        className="inputaddress"
+                        placeholder="주소 찾기"
+                        type="text"
+                        onClick={this.addressFindChecker}
+                      ></button>
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="inputaddwrap">
+                      <input
+                        className="inputaddress"
+                        placeholder="주소 찾기"
+                        type="text"
+                        onClick={this.addressFindChecker}
+                      ></input>
+                      <div>
+                        <Postcode onClick={this.addressFindChecker} />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div>
                 <div>
