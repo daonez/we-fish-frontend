@@ -31,7 +31,15 @@
     width:130px;
     height:130px;
     text-align:center;
+    div{
+        &:hover{
+            cursor: pointer;
+            background-color: grey;
+        }
+    }
+
 }
+
 
 .NSBB{
     position:relative;
@@ -50,16 +58,33 @@
 
 }
 .newHeader{
+    padding-bottom:5px;
     border-bottom: 1px solid #DCDCDC;
     position: absolute;
-    top:10px;
-    width:500px;
+    margin-top:10px;
+    width:560px;
     height:50px;
     display:flex;
     justify-content:space-between;
     margin-left:350px;         //마진값 빼야지
+    .newHeaderList{
+        display:flex;
+        position: absolute;
+        top:70px;
+        width:480px;
+        left:60px;
+        div{
+            color:#747474;
+            width:100px;
+            margin:0px 10px 0px 10px;
+            font-size:16px;
+        }
+    }
+
     .headerLogo{   // NavLeft
         position: relative;
+        top:-5px;
+        left:50px;
         display:flex;
         .btn{
             .btn_menu_aside{
@@ -69,7 +94,7 @@
                 outline:none;
             }
             img{ //아디다스 바
-                width:60px;
+                width:55px;
                 position:relative;
                 bottom:1px;
                 outline: none;
@@ -79,10 +104,10 @@
     }
     h1{
         .logo{ // 오늘회 로고
-            width:60px;
-            height:19px;
+            width:64px;
+            height:23px;
             position:absolute;
-            top:19px;
+            top:16px;
             right:-65px;
         }
     }   
@@ -96,9 +121,9 @@
         border:none;
         .datePickerButtonDiv{
             cursor: pointer;
-            margin-left:10px;
+            width:125px;
             span{
-                font-size:17px;
+                font-size:16px;
                 font-weight:400;
                 font-family: "Spoqa Han Sans Regular";
             }

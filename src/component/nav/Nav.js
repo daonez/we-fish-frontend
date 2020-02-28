@@ -59,17 +59,22 @@ class Nav extends Component {
             <div>
                 <div className="Nav">
                     <div onClick={this.handleChange2} className="main">
-                        <div className="NSBB">
-                        </div>
                         <div className='NavSideBarBlock' style={{transition: this.state.transition, transform: this.state.transform}}>
                             <NavSideBar/> 
                         </div>   
                         <div className="newHeader">
                             <NavLeft
                             handleChange={this.handleChange}/>
+                            <div className="newHeaderList">
+                                <div>후기많은상품</div>
+                                <div>오늘회 꿀조합</div>
+                                <div>오늘저녁배송</div>
+                                <div>배송확인</div>
+                            </div>
                             <NavRight
                             handleList={this.handleList}/>
                         </div>
+                        
                         <div style={{display:this.state.display}}className="datePickerList">   
                             <div>26일(수)</div>
                             <div>27일(목)</div>

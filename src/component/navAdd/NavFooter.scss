@@ -1,0 +1,80 @@
+.NavFooter{
+    margin:50px 0px 0px 50px;
+    background-color: #eeeeee;
+    width:450px;
+    height:320px;
+    .footerRule{
+        span{
+            margin:0px 5px 0px 10px;
+            font-size:12px;
+            color:#929292;
+        }
+    }
+    .footerHelp{
+        margin-top:10px;
+        margin-left:10px;
+        .footerHelp1{
+            font-size:20px;
+            color:#747474;
+        }
+        .footerHelp2{
+            position:relative;
+            bottom:5px;
+            font-size:20px;
+            color:#373737;
+            font-weight:bold;
+        }
+    }
+    .footerKakao{
+        display:flex;
+
+        button{
+            width:230px;
+            height:35px;
+            border-radius:50px;
+            font-size:15px;
+            background-color: #ffe000;
+            border:none;
+            margin-left:10px;
+            margin-top:10px;
+            .footerKakao1{
+                position: relative;
+                left:5px;
+                top:5px;
+                background-image: url('../../img/kakaoplus.png');
+                background-size: 25px;
+                width:25px;
+                height:25px;
+            }
+            .footerKakao2{
+                position:relative;
+                bottom:17px;
+                left:15px;
+                font-size:17px;
+            }
+        }
+    }
+    .footerCustomerService{
+        margin-top:10px;
+        span{
+            color:#a9a9a9;
+            font-size:15px;
+            margin-left:10px;
+
+        }
+    }
+    .footerCompanyInformation{
+        margin-top:15px;
+        margin-left:10px;
+        div{
+            color:#929292;
+            font-size:12px;
+            font-weight: bold;
+        }
+        a{
+            text-decoration: none;
+            color:blue;
+            font-weight:300;
+        }
+    }
+}
