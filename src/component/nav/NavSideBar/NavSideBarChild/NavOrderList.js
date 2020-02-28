@@ -11,7 +11,7 @@ class NavOrderList extends Component {
             <FaAngleLeft size="24" className="FaAngle" />
           </div>
           <div className="slist">
-            <span class="users">김현준</span>님의 주문내역
+            <span className="users">김현준</span>님의 주문내역
           </div>
         </div>
         <div className="information">
