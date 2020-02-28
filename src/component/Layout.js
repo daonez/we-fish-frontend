@@ -3,7 +3,7 @@ import SectionLeft from "./LayoutLeft";
 import Header from "./nav/Nav";
 import "../styles/layout.scss";
 
-class Home extends Component {
+class Layout extends Component {
   render() {
     return (
       <div className="wrap">
@@ -19,4 +19,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Layout;
