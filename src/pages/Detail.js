@@ -1,18 +1,33 @@
-import React, { Component } from "react";
-import Layout from "../component/Layout";
-import "../styles/detail.scss";
-import { FaStar } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
-import { TiArrowSortedDown } from "react-icons/ti";
-import Temp from "../images/img1.jpg";
+import React, { Component } from "react"
+import { TiArrowSortedDown } from "react-icons/ti"
+import { FaStar, FaRegStar } from "react-icons/fa"
+import Layout from "../component/Layout"
+import Slider from "react-slick"
+import Temp from "../images/img1.jpg"
+import "../styles/detail.scss"
+import slideTemp1 from "../images/slide_img1.jpg"
+import slideTemp2 from "../images/slide_img2.jpg"
+
+const sliderSetting= {
+  
+}
 
 class Detail extends Component {
   render() {
     return (
       <Layout>
         <section className="detail-product">
-          <div className="detail-product__main-slider"></div>
-          {/*etail-product__title*/}
+          <div className="detail-product__main-slider">
+            <ul>
+              <li>
+                <img src={slideTemp1} alt="img1" />
+              </li>
+              <li>
+                <img src={slideTemp2} alt="img2" />
+              </li>
+            </ul>
+          </div>
+          {/* etail-product__title */}
           <div className="detail-product__info">
             <p className="detail-product__info__strapline">
               맑은물에서 자란 자연산 보리숭어의 참맛!
@@ -30,12 +45,15 @@ class Detail extends Component {
                 </i>
                 4.7
               </span>
-              <button className="detail-product__info__review-num">
+              <button
+                type="button"
+                className="detail-product__info__review-num"
+              >
                 &middot; 후기 2458
               </button>
             </div>
           </div>
-          {/*etail-product__title*/}
+          {/* etail-product__title */}
           <div className="detail-product__notice">
             <ul>
               <li>
@@ -77,32 +95,32 @@ class Detail extends Component {
                 </i>
               </div>
             </div>
-            <button className="detail-product__cart__button">
+            <button type="button" className="detail-product__cart__button">
               장바구니에 담기
             </button>
           </div>
-          {/*detail-product__sub*/}
+          {/* detail-product__sub */}
           <div className="detail-product__sub-slider">
             <h3>이렇게 묶어서 주문해보세요.</h3>
           </div>
           <div className="detail-product__tab">
             <ul>
               <li>
-                <button>상세정보</button>
+                <button type="button">상세정보</button>
               </li>
               <li>
-                <button>후기(2)</button>
+                <button type="button">후기(2)</button>
               </li>
               <li>
-                <button>문의</button>
+                <button type="button">문의</button>
               </li>
               <li>
-                <button>배송/교환</button>
+                <button type="button">배송/교환</button>
               </li>
             </ul>
           </div>
           <div className="detail-product__cont">
-            <div className="detail-product__cont__detail"></div>
+            <div className="detail-product__cont__detail" />
             <div className="detail-product__cont__review">
               <ol>
                 <li>
@@ -434,8 +452,8 @@ class Detail extends Component {
           </div>
         </section>
       </Layout>
-    );
+    )
   }
 }
 
-export default Detail;
+export default Detail
