@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
-    "husky": "^4.2.3",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -23,17 +22,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "lint-staged",
     "eject": "react-scripts eject",
     "lint:fix": "eslint src/*.js --fix",
     "lint": "eslint src/*.js",
-    "test": "lint-staged",
     "prettify": "prettier src/*.js --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [
