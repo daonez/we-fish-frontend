@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "../styles/home.scss";
-import SectionLeft from "./SectionLeft";
+import SectionLeft from "./LayoutLeft";
+import Header from "./nav/Nav";
+import "../styles/layout.scss";
 
 class Home extends Component {
   render() {
@@ -8,7 +9,10 @@ class Home extends Component {
       <div className="wrap">
         <SectionLeft />
         <section className="section-right">
-          <section className="section-right__main"></section>
+          <section className="section-right__main">
+            <Header />
+            <main>{this.props.children}</main>
+          </section>
         </section>
       </div>
     );
