@@ -5,7 +5,7 @@ import ThreeImageSlider from "./ThreeImageSlider";
 import firstTimeBanner from "./mainImage/first-time-wefish.jpeg";
 import todayOrderBanner from "./mainImage/today-can-order-fish.jpg";
 import plusFriend from "./mainImage/plusfriendKakao.jpeg";
-import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg";
+import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg"
 
 export default class Main extends React.Component {
   constructor() {
