@@ -1,16 +1,6 @@
 .NavReview{
     width:500px;
-    .reviewTop{
-        margin-top:20px;
-        display:flex;
-        justify-content:space-between ;
-        div{
-            color:#747474;
-            font-size:17px;
-            font-weight:600;
 
-        }
-    }
     .NavReviewSearch{
         display: flex;
         margin-top:100px;
@@ -28,8 +18,8 @@
         background-color: #1a1919;
         cursor: pointer;
         @keyframes fadeInnz {
-            from { background-color:blue; }
-            to   { background-color:yellow; }
+            from { background-color:white }
+            to   { background-color:black; }
         }
     }
     // .monthly-icecream-on {

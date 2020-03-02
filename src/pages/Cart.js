@@ -11,15 +11,13 @@ import SectionLeft from "../component/LayoutLeft"
 import Slideshow from "../component/navAdd/Slideshow"
 import NavFooter from "../component/navAdd/NavFooter"
 import NavCart from "../component/navAdd//NavCart"
-class Home extends Component {
+
+class Cart extends Component {
   render() {
     return (
       <>
         <div>
-          <Nav>
-          <Slideshow/>
-           <NavFooter/>
-          </Nav>
+            <NavCart/>
           
         </div>
         <div className="wrap">
@@ -33,4 +31,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Cart

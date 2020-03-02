@@ -1,0 +1,94 @@
+.NavAskWrite{
+    .AskWrite{
+        margin-left:100px;
+        .subject, .writer, .email{
+            div{
+                color: #3c3c3c;
+                font-size:16px;
+                margin:10px 0px 5px 5px
+            }
+            input{
+                font-size:20px;
+                height:47px;
+                width:450px;
+                &:focus{
+                    outline:none;
+                }
+            }
+        }
+        .content{
+            div{
+                color: #3c3c3c;
+                font-size:16px;
+                margin:10px 0px 0px 5px
+            }
+            textarea{
+                width:450px;
+                height:100px;
+                border:none;
+                border-top: 1px solid #eeeeee;
+                border-bottom: 1px solid #eeeeee;
+            }
+        }
+        .upload{
+            height:80px;
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+            margin-top:30px;
+            width:450px;
+            display:flex;
+            justify-content: space-between;
+            div{
+                position: relative;
+                top:25px;
+                color: #3c3c3c;
+                font-size:16px;
+            }
+            button{
+                border: 3px solid #0a0909;
+                border-radius:3px;
+                position:relative;
+                top:15px;
+                width:70px;
+                height:50px;
+                &:hover{
+                    animation-name:fadeInn;
+                    animation-duration: 0.5s;
+                    background-color:#292727;
+                    cursor: pointer;
+                }
+                @keyframes fadeInn {
+                    from {background-color: white;}
+                    to {background-color: #292727;}
+                }
+            }
+            
+        }
+        .buttonClick{
+            height:80px;
+            input{
+                position:relative;
+                margin-top:30px;
+            }
+            span{
+                color: #3c3c3c;
+                font-size:16px;
+            }
+
+        }
+        .bottomBack{
+            button{
+                border: 3px solid #0a0909;
+                color: #3c3c3c;
+                font-size:16px;
+                width:200px;
+                height:50px;
+                margin:0px 10px 0px 20px;
+                background-color: transparent !important;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
