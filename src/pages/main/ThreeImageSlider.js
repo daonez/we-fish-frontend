@@ -1,36 +1,36 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react'
+import Slider from 'react-slick'
 
 export default class ThreeImageSlider extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      data: []
-    };
+      data: [],
+    }
   }
 
   componentDidMount() {
-    this.fetchProduct();
+    this.fetchProduct()
   }
 
   fetchProduct() {
-    fetch("http://localhost:3000/data/data.json")
+    fetch('http://localhost:3000/data/data.json')
       .then(request => request.json())
       .then(request => {
-        console.log(request);
-        this.setState({ data: request.data });
-      });
+        console.log(request)
+        this.setState({ data: request.data })
+      })
   }
 
   render() {
-    const { data } = this.state;
+    const { data } = this.state
     const settings = {
       infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 2,
-      arrows: true
-    };
+      arrows: true,
+    }
     return (
       <div>
         <Slider {...settings}>
@@ -55,6 +55,6 @@ export default class ThreeImageSlider extends Component {
           ))}
         </Slider>
       </div>
-    );
+    )
   }
 }
