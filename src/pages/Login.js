@@ -29,14 +29,12 @@ class Login extends Component {
     this.setState({
       id: e.target.value
     });
-    console.log(this.state.id);
   };
 
   handleSignPW = e => {
     this.setState({
       pw: e.target.value
     });
-    console.log(this.state.pw);
   };
 
   fetcher = () => {
@@ -123,9 +121,10 @@ class Login extends Component {
                 <button
                   className="btnLogin"
                   type="button"
-                  value="로그인하기"
                   onClick={this.fetcher}
-                ></button>
+                >
+                  로그인하기
+                </button>
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
