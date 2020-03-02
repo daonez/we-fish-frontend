@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import "./NavSideBar.scss";
 import search from "../../../img/search.png";
 
-export class NavSideBar extends Component {
+class NavSideBar extends Component {
   render() {
     return (
       <div className="navSideBar">
         <div className="profileLoggedOut">
           <div className="profileLoggedOut02">
             <p className="loginButton">
-              <a href="/">로그인 해주세요</a>
+              <span href="/">로그인 해주세요</span>
             </p>
             <p className="lineBar">|</p>
             <p className="registerButton">
-              <a href="/">회원가입</a>
+              <span href="/">회원가입</span>
             </p>
           </div>
         </div>
@@ -35,90 +35,90 @@ export class NavSideBar extends Component {
         <div className="categories">
           <ul>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>후기많은상품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>오늘 저녁배송</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>성게알</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>새우 · 게 · 랍스터</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>초밥 · 국물 · 매운탕</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>수산가공품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>김 · 미역 · 해조류</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
           </ul>
           <ul className="rightUl">
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>이번주 신상품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>자연산 회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>수산시장 회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>오징어· 조개·해산물</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>소스·곁들임</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>건어물</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>제철회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
           </ul>
         </div>

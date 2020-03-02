@@ -7,7 +7,10 @@ import Home from "./pages/Home"
 import MainPage from "./pages/main/Main"
 import Product from "./pages/product/Product"
 import Detail from "./pages/Detail"
-
+import NavCart from "./component//navAdd/NavCart"
+import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
+import Cart from "../src/pages/Cart"
+import dd from "./component/nav/dd"
 class Routes extends React.Component {
   render() {
     return (
@@ -19,6 +22,8 @@ class Routes extends React.Component {
           <Route exact path="/product" component={Product} />
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/main" component={MainPage} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/delete" component={NavSideBarLogin} />
         </Switch>
       </Router>
     )
