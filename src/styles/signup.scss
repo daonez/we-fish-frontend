@@ -18,6 +18,15 @@
   margin-bottom: 16px;
 }
 
+.sectionupper {
+  width: 380px;
+  margin-top: 44px;
+  margin-bottom: 20px;
+  // input {
+  //   width: 90%;
+  // }
+}
+
 .signupemailtxt {
   font-size: 16px;
   font-weight: 700;
@@ -162,6 +171,10 @@
 
 .inputaddwrap {
   width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .inputdetailadd {
@@ -261,12 +274,6 @@
 .h1font1 {
   font-size: 14px;
   padding: 8px 0px;
-}
-
-.sectionupper {
-  width: 380px;
-  margin-top: 44px;
-  margin-bottom: 20px;
 }
 
 .sectionbottom {
@@ -369,4 +376,15 @@
   color: #929292;
   font-size: 12px;
   text-decoration: underline;
+}
+
+.DaumApiButton {
+  background-color: #ff731d;
+  border-radius: 50px;
+  width: 10px;
+  height: 13px;
+  text-align: center;
+  border: none;
+  margin-bottom: 8px;
+  margin-right: 2px;
 }

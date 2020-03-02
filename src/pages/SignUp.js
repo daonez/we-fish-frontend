@@ -26,7 +26,8 @@ class SignUp extends Component {
       mustagreemode1: false,
       mustagreemode2: false,
       mktingagreemode: false,
-      signupactmode: false
+      signupactmode: false,
+      totaluserinfo: false
     }
   }
 
@@ -45,12 +46,12 @@ class SignUp extends Component {
   // }
 
   emailFormChecker = e => {
-    if (e.target.value.includes("@")) {
+    if (e.target.value.includes("@", ".com")) {
       this.setState({
         emailformcheck: true
       })
     }
-    if (!e.target.value.includes("@")) {
+    if (!e.target.value.includes("@", ".com")) {
       this.setState({
         emailformcheck: false
       })
@@ -118,8 +119,8 @@ class SignUp extends Component {
         name: this.state.name,
         postcode: this.state.postcode,
         address: this.state.address,
-        mobile: this.state.mobile
-        // agreement: this.state.agreement
+        mobile: this.state.mobile,
+        agreement: this.state.agreement
       })
     })
   }
@@ -242,6 +243,19 @@ class SignUp extends Component {
         mktingagreemode: false,
         totalagreemode: false,
         agreement: false
+      })
+    }
+  }
+
+  totalUserInfoChecker = () => {
+    if (
+      (this.state.emailformcheck &&
+        this.state.pwformcheck &&
+        this.state.pwccheck &&
+        this.state.mobileformcheck) === true
+    ) {
+      this.setState({
+        totaluserinfo: true
       })
     }
   }
@@ -383,6 +397,7 @@ class SignUp extends Component {
                         className="inputaddress"
                         placeholder="주소 찾기"
                         type="text"
+                        name="testing"
                         onClick={this.addressFindChecker}
                       />
                     </div>
@@ -392,41 +407,43 @@ class SignUp extends Component {
                       className="inputdetailadd"
                       placeholder="상세주소"
                       type="text"
+                      onChange={this.SetStater("address_detail")}
                     />
                   </div>
                 </div>
               ) : (
-                <div>
-                  <div className="postaddwrap">
-                    <div className="inputpostwrap">
-                      <input
-                        className="inputpost"
-                        placeholder="우편번호"
-                        type="text"
-                        onChange={this.SetStater("postcode")}
-                      />
-                    </div>
-                    <div className="inputaddwrap">
-                      <input
-                        className="inputaddress"
-                        placeholder="주소 찾기"
-                        type="text"
-                        value={this.props.value}
-                        onClick={this.addressFindChecker}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Postcode />
-                  </div>
-                  <div>
-                    <input
-                      className="inputdetailadd"
-                      placeholder="상세주소"
-                      type="text"
-                    />
-                  </div>
-                </div>
+                <Postcode />
+                // <div>
+                //   <div className="postaddwrap">
+                //     <div className="inputpostwrap">
+                //       <input
+                //         className="inputpost"
+                //         placeholder="우편번호"
+                //         type="text"
+                //         onChange={this.SetStater("postcode")}
+                //       />
+                //     </div>
+                //     <div className="inputaddwrap">
+                //       <input
+                //         className="inputaddress"
+                //         placeholder="주소 찾기"
+                //         type="text"
+                //         value={this.props.value}
+                //         onClick={this.addressFindChecker}
+                //       />
+                //     </div>
+                //   </div>
+                //   <div>
+                //     <Postcode />
+                //   </div>
+                //   <div>
+                //     <input
+                //       className="inputdetailadd"
+                //       placeholder="상세주소"
+                //       type="text"
+                //     />
+                //   </div>
+                // </div>
               )}
               {this.state.mobileformcheck === false ? (
                 <div>
@@ -460,7 +477,8 @@ class SignUp extends Component {
                         placeholder="휴대전화번호 ( ' - ' 제외)"
                         type="text"
                         onKeyDown={this.SetStater("mobile")}
-                        onChange={this.mobileFormChecker}
+                        onKeyPress={this.mobileFormChecker}
+                        onChange={this.totalUserInfoChecker}
                       />
                     </div>
                     <div>
@@ -633,47 +651,24 @@ class SignUp extends Component {
             {(this.state.signupactmode &&
               this.state.mustagreemode1 &&
               this.state.mustagreemode2 &&
+              this.state.totaluserinfo &&
               this.state.mktingagreemode === true) |
-            ((this.state.mustagreemode1 && this.state.mustagreemode2) ===
+            ((this.state.mustagreemode1 &&
+              this.state.mustagreemode2 &&
+              this.state.totaluserinfo) ===
               true) ? (
               <button
                 className="signupact"
                 type="button"
-                value="회원가입"
-                // onClick={this.signUpFetch}
-              >
-                회원가입
-              </button>
-            ) : (
-              <button
-                className="signup"
-                type="button"
-                value="회원가입"
                 onClick={this.signUpFetch}
               >
                 회원가입
               </button>
-            )}
-            {/* {(this.state.mustagreemode1 && this.state.mustagreemode2) ===
-            true ? (
-              <button
-                className="signupact"
-                type="button"
-                value="회원가입"
-                // onClick={this.signUpFetch}
-              >
-                회원가입
-              </button>
             ) : (
-              <button
-                className="signup"
-                type="button"
-                value="회원가입"
-                // onClick={this.signUpFetch}
-              >
+              <button className="signup" type="button">
                 회원가입
               </button>
-            )} */}
+            )}
           </form>
         </section>
       </>
