@@ -1,43 +1,43 @@
-import React, { Component } from "react";
-import "../styles/login.scss";
-import orange from "../images/animal.svg";
+import React, { Component } from "react"
+import "../styles/login.scss"
+import orange from "../images/animal.svg"
 
 class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       mode: "unclicked",
       id: "",
       pw: ""
-    };
+    }
   }
 
   onBtnClick = () => {
     if (this.state.mode === "unclicked") {
       this.setState({
         mode: "clicked"
-      });
+      })
     } else {
       this.setState({
         mode: "unclicked"
-      });
+      })
     }
-  };
+  }
 
   handleSignID = e => {
     this.setState({
       id: e.target.value
-    });
-    console.log(this.state.id);
-  };
+    })
+    console.log(this.state.id)
+  }
 
   handleSignPW = e => {
     this.setState({
       pw: e.target.value
-    });
-    console.log(this.state.pw);
-  };
+    })
+    console.log(this.state.pw)
+  }
 
   fetcher = () => {
     fetch("http://10.58.6.8:8000/user/sign-in", {
@@ -51,15 +51,15 @@ class Login extends Component {
       })
     })
       .then(response => {
-        console.log(response);
-        return response.json();
+        console.log(response)
+        return response.json()
       })
       .then(response => {
         if (response.token) {
-          localStorage.setItem("fish", response.token);
+          localStorage.setItem("fish", response.token)
         }
-      });
-  };
+      })
+  }
 
   render() {
     return (
@@ -73,40 +73,34 @@ class Login extends Component {
                   placeholder="이메일"
                   onChange={this.handleSignID}
                 />{" "}
-                {/*box1*/}
+                {/* box1 */}
                 <input
                   className="loginPW"
                   placeholder="비밀번호(8-16자리 영문,숫자 조합)"
                   onChange={this.handleSignPW}
                 />{" "}
-                {/*box2*/}
+                {/* box2 */}
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
-                    {/*box3-1*/}
+                    {/* box3-1 */}
                     <div className="checkbox">
                       <div>
                         {this.state.mode === "unclicked" ? (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
+                            <input className="checkboxinput" type="checkbox" />
                             <span
                               className="checkboxbtn"
                               onClick={this.onBtnClick}
-                            ></span>
+                            />
                           </div>
                         ) : (
                           <div className="checkbox">
-                            <input
-                              className="checkboxinput"
-                              type="checkbox"
-                            ></input>
+                            <input className="checkboxinput" type="checkbox" />
                             <img
                               src={orange}
                               className="checkboxbtnact"
                               onClick={this.onBtnClick}
-                            ></img>
+                            />
                           </div>
                         )}
                       </div>
@@ -125,7 +119,7 @@ class Login extends Component {
                   type="button"
                   value="로그인하기"
                   onClick={this.fetcher}
-                ></button>
+                />
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
@@ -142,8 +136,8 @@ class Login extends Component {
           </div>
         </div>
       </>
-    );
+    )
   }
 }
 
-export default Login;
+export default Login

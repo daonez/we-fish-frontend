@@ -1,36 +1,38 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { Component } from "react"
+import Slider from "react-slick"
 
 export default class ThreeImageSlider extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       data: []
-    };
+    }
   }
 
   componentDidMount() {
-    this.fetchProduct();
+    this.fetchProduct()
   }
 
   fetchProduct() {
-    fetch("http://localhost:3000/data/data.json")
+    fetch("http://localhost:3000/data/category_list.json")
       .then(request => request.json())
       .then(request => {
-        console.log(request);
-        this.setState({ data: request.data });
-      });
+        console.log(request)
+        this.setState({ data: request.descending_price[3]["자연산 회"] })
+      })
   }
 
   render() {
-    const { data } = this.state;
+    const { data } = this.state
+    console.log(this.state)
     const settings = {
       infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 2,
       arrows: true
-    };
+    }
     return (
       <div>
         <Slider {...settings}>
@@ -38,7 +40,7 @@ export default class ThreeImageSlider extends Component {
             <li className="product-item">
               <div className="product-items_Card">
                 <div className="parent">
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt="" key={data.index} />
                 </div>
               </div>
               <div className="productCardContent">
@@ -55,6 +57,6 @@ export default class ThreeImageSlider extends Component {
           ))}
         </Slider>
       </div>
-    );
+    )
   }
 }

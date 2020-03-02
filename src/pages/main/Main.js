@@ -1,36 +1,35 @@
-import React from "react";
-import "../../styles/main.scss";
-//import Slider from "react-slick";
-import ThreeImageSlider from "./ThreeImageSlider";
-import firstTimeBanner from "./mainImage/first-time-wefish.jpeg";
-import todayOrderBanner from "./mainImage/today-can-order-fish.jpg";
-import plusFriend from "./mainImage/plusfriendKakao.jpeg";
-import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg";
+import React from "react"
+import "../../styles/main.scss"
+import Layout from "../../component/Layout"
+import ThreeImageSlider from "./ThreeImageSlider"
+import ButtonSlider from "./ButtonSlider"
+import firstTimeBanner from "./mainImage/first-time-wefish.jpeg"
+import todayOrderBanner from "./mainImage/today-can-order-fish.jpg"
+import plusFriend from "./mainImage/plusfriendKakao.jpeg"
+import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg"
 
 export default class Main extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       data: []
-    };
+    }
   }
 
   componentDidMount() {
-    this.fetchProduct();
+    this.fetchProduct()
   }
 
   fetchProduct() {
-    fetch("http://localhost:3000/data/data.json")
+    fetch("http://localhost:3000/data/category_list.json")
       .then(request => request.json())
       .then(request => {
-        console.log(request);
-        this.setState({ data: request.data });
-      });
+        this.setState({ data: request.descending_price })
+      })
   }
 
   render() {
-    const { data } = this.state;
-    console.log(this.state);
+    const { data } = this.state
 
     return (
       <div className="main-content">
@@ -45,7 +44,9 @@ export default class Main extends React.Component {
                     지금 어떤 수산물이
                     <p>가장 맛있을까요?</p>
                   </strong>
-                  <p className="main-content-p text">2월 오늘회에서만 만나볼 수 있는 메뉴</p>
+                  <p className="main-content-p text">
+                    3월 오늘회에서만 만나볼 수 있는 메뉴
+                  </p>
                 </div>
               </header>
             </div>
@@ -57,7 +58,9 @@ export default class Main extends React.Component {
         <div className="main-content_second-productslider">
           <div className="main-content_second-productslider_content">
             <h2>오늘회 베스트</h2>
-            <span className="main-content-span">지난주 오늘회에서 가장 잘 팔린메뉴 ></span>
+            <span className="main-content-span">
+              지난주 오늘회에서 가장 잘 팔린메뉴 >
+            </span>
           </div>
           <div>
             <ThreeImageSlider />
@@ -66,36 +69,10 @@ export default class Main extends React.Component {
         <div className="main-content-recommend-title">
           <h4>후기로 검증된 추천 상차림</h4>
           <h1>오늘회 고객님은 이렇게 드셨어요.</h1>
+          <ButtonSlider />
         </div>
         <div className="main-content-recommend-buttons">
-          <div className="main-content-review-best">
-            {/* <Slider {...settings}>
-              <div className="main-content-recommend-buttons">
-                <button>두명이서 먹기 적당</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>여기가 제주도</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>오늘회 첫주문</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>게딱지만 냠냠</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>현포차 오픈</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>도넛초밥</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>이번겨울 마지막방어</button>
-              </div>
-              <div className="main-content-recommend-buttons">
-                <button>새우파티입니다</button>
-              </div>
-            </Slider> */}
-          </div>
+          <div className="main-content-review-best" />
           <div className="products-wrapper">
             {/* <Slider>
               {data.map(item => (
@@ -263,6 +240,6 @@ export default class Main extends React.Component {
           </Slider> */}
         </div>
       </div>
-    );
+    )
   }
 }
