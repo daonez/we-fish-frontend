@@ -4,6 +4,8 @@ import { FaAngleLeft } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
+import NavFooter from '../navAdd/NavFooter'
+import { withRouter } from 'react-router-dom';
 
 export class NavCart extends Component {
     state={
@@ -38,6 +40,9 @@ export class NavCart extends Component {
             price: this.state.price * this.state.item
         })
     }
+    goTowhere = () => {
+        this.props.history.push('/home')
+    }
 
    
 
@@ -50,7 +55,8 @@ export class NavCart extends Component {
         return (
             <div className="NavCart">   
                 <div className="NavCartHeader">
-                    <div className="headerImage">< FaAngleLeft size="26"/></div>
+                    <div className="headerImage">< FaAngleLeft size="26"
+                    onClick={this.goTowhere}/></div>
                     <div className="font">장바구니</div>
                 </div>
                 <div className="NavCartProduct">
@@ -87,16 +93,20 @@ export class NavCart extends Component {
                             <div className="navCartDelivery04">(매일 오후 3시까지 주문하면 당일저녁 수령 가능)</div>
                         </div>
                         <div className="navCartbar3"></div>
-        <div className="navCartTotal"><div className="navCartTotalText">상품금액 합계</div><div className="navCartTotalPrice">{number}원</div></div>
+                     <div className="navCartTotal"><div className="navCartTotalText">상품금액 합계</div><div className="navCartTotalPrice">{number} 원</div></div>
                         <button className="navCartConfirmButton">구매하기</button>
                         
                     </div>
                     <div></div>
 
                 </div>
+                <div className="NavCartFooter">
+                    <NavFooter/>
+                </div>
+       
             </div>
         )
     }
 }
 
-export default NavCart
+export default withRouter(NavCart)

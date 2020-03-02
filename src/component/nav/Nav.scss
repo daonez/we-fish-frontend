@@ -1,159 +1,123 @@
-.nav{
-    box-sizing:border-box;
-    width:500px;
-    .main{
-        width:2000px;
-        height:500px;
-        background-color: white;
-
-            div{
-                margin:1px 0px 1px 0px;
-                list-style: none;
-            }
-            div:hover{
-                background-color:rgb(207, 202, 202);
-            }
-        }
-        
-    }
-
-.datePickerList{
-    position:absolute;
-    z-index:10;
-    top:60px;
-    right:500px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(238,238,238,0.9);
-    opacity: 0.8;
-    border-radius: 8px;
-    width:130px;
-    height:130px;
-    text-align:center;
-    div{
-        &:hover{
-            cursor: pointer;
-            background-color: grey;
-        }
-    }
-
-}
-
-
-.NSBB{
-    position:relative;
-    background-color:white;
-    z-index:2;
-    width:350px;
-    height:850px;
-
-}
-.NavSideBarBlock{
-    position:absolute;
-    width:350px;
-    background-color:white;
-    top:0;
-    z-index:1
-
-}
-.newHeader{
-    padding-bottom:5px;
-    border-bottom: 1px solid #DCDCDC;
+.Nav{
     position: absolute;
-    margin-top:10px;
-    width:560px;
-    height:50px;
-    display:flex;
-    justify-content:space-between;
-    margin-left:350px;         //마진값 빼야지
-    .newHeaderList{
+    left:50%;
+    width:500px;
+    .nmain{
+        margin-top:5px;
         display:flex;
-        position: absolute;
+        justify-content: space-between;
+        .nmain_right{
+            .right{
+                width:60px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .left{
+                position:relative;
+                right:5px;
+                bottom:20px;
+                width:75px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .nmain_left{
+            div{
+                position: relative;
+                bottom:6px;
+                span{
+                    letter-spacing:-0.03em;
+                    font-size:17px;
+                    position:relative;
+                    bottom:20px;
+                    width:100px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .right{
+                    margin-right:5px;
+                    position: relative;
+                    bottom:15px;
+                    width:25px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .left{
+                    width:62px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+        
+                }
+                .picker{
+                    font-size: 10px;
+                    letter-spacing: -0.05em;
+                    position: absolute;
+                    top: 9px;
+                    right: 6px;
+                    width: 20px;
+                    height: 20px;
+                    color: #ffffff;
+                    border-radius: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    background-color: #ff731d;
+                }
+            }
+
+        }
+    }
+    .nav_bar{
+        position:relative;
+        bottom:8px;
+        width:510px;
+        border-bottom: 1px solid #c7c6c6;
+    }
+    .nav_bottom{
+        display:flex;
+        justify-content:space-between;
+        margin:0px 20px 0px 20px;
+        div{
+            font-size:19px;
+            color:#757272;
+            font-weight:500;
+            letter-spacing: -0.10em;
+            &:hover{
+                cursor: pointer;;
+            }
+        }
+    }
+    .datePickerList{
+        display:block;
+        position:absolute;
+        z-index:10;
+        left:63%;
         top:70px;
-        width:480px;
-        left:60px;
-        div{
-            color:#747474;
-            width:100px;
-            margin:0px 10px 0px 10px;
-            font-size:16px;
-        }
-    }
-
-    .headerLogo{   // NavLeft
-        position: relative;
-        top:-5px;
-        left:50px;
-        display:flex;
-        .btn{
-            .btn_menu_aside{
-                border:none;
-            }
-            .btn_menu_aside:focus{
-                outline:none;
-            }
-            img{ //아디다스 바
-                width:55px;
-                position:relative;
-                bottom:1px;
-                outline: none;
-                
-            }
-        }
-    }
-    h1{
-        .logo{ // 오늘회 로고
-            width:64px;
-            height:23px;
-            position:absolute;
-            top:16px;
-            right:-65px;
-        }
-    }   
-}
-
-.datePicker{  // NavRight
-    display:flex;
-    .datePickerButton{
-        margin-top:10px;
-        height:30px;
+        width:120px;
+        height:160px;
         border:none;
-        .datePickerButtonDiv{
-            cursor: pointer;
-            width:125px;
-            span{
-                font-size:16px;
-                font-weight:400;
-                font-family: "Spoqa Han Sans Regular";
-            }
-            img{
-                position:relative;
-                top:3px;
-                width:25px;
-            }
-        }
-
-    }
-    .goToCartButton{
-        position: relative;
-        bottom:5px;
-        img{
-            width:55px;
-        }
+        border-radius: 8%;
+        background:#f0e9e9;
+        opacity: 0.7;
+        color:rgb(3, 0, 0);
         div{
-            font-size: 15px;
-            letter-spacing: -0.01em;
-            position: absolute;
-            top: 6px;
-            right: 6px;
-            width: 19px;
-            height: 20px;
-            color: #ffffff;
-            border-radius: 20px;
-            line-height: 23px;
-            text-align: center;
-            background-color: #ff731d;
+            position:relative;
+            top:9px;
+            margin-top:4px;
+            text-align:center;
+            letter-spacing: -0.1em;
+            &:hover{
+                background:rgb(128, 126, 126);
+            }
+            
         }
+    }
+    .navsidebarDiv{
+        position:absolute;
+        z-index:100;
     }
 }

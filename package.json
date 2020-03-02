@@ -16,19 +16,12 @@
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-<<<<<<< HEAD
     "react-slideshow-image": "^1.3.4",
-=======
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1",
-<<<<<<< HEAD
->>>>>>> 25c0fbc0a9f7dea5cd77cc502d2b0c532ea5b8b4
-    "styled-components": "^5.0.1"
-=======
     "styled-components": "^5.0.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-prettier": "^1.1.2"
->>>>>>> 6acbcbc84a1ad2c3fa6301da620c7c55de9e4340
   },
   "scripts": {
     "start": "react-scripts start",

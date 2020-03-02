@@ -1,5 +1,7 @@
 .NavCart{
-    margin-left:50px;
+    position:absolute;
+    left:50%;
+    height:100%;
     .NavCartHeader{
         width:500px;
         height:60px;
@@ -35,6 +37,7 @@
             margin-left:20px;
             margin-top:10px;
             .productTitle{
+                letter-spacing: -0.08em;
                 font-size:19px;
             }
             .productMany{
@@ -110,6 +113,7 @@
             justify-content: space-between;
             bottom:10px;
             div{
+                letter-spacing: -0.08em;
                 font-size:20px;
             }
             .navCartPrice02{
@@ -127,8 +131,10 @@
         .navCartAdd{
             position: relative;
             top:30px;
+            left:30px;
             font-size:20px;
             color:rgb(131, 128, 128);
+            letter-spacing: -0.08em;
             &:hover{
                 cursor: pointer;
                 color:black;
@@ -145,12 +151,15 @@
                 margin-bottom:20px;
             }
             .navCartDelivery03{
+                letter-spacing: -0.08em;
                 font-size:17px;
                 span{
                     color:red;
+                    letter-spacing: -0.08em;
                 }
             }
             .navCartDelivery04{
+                letter-spacing: -0.08em;
                 font-size:17px;
             }
         }
@@ -168,10 +177,12 @@
             top:110px;
             right:140px;
             .navCartTotalText{
+                letter-spacing: -0.08em;
                 font-weight:bold;
                 font-size:17px;
             }
             .navCartTotalPrice{
+                letter-spacing: -0.08em;
                 font-size:25px;
                 color:rgb(255, 72, 0);
             }
@@ -188,4 +199,8 @@
             top:137px;
         }
     }   
+    .NavCartFooter{
+        position:relative;
+        top:15%;
+    }
 }
