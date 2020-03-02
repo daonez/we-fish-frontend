@@ -56,6 +56,10 @@
   letter-spacing: -0.06rem;
 }
 
+.inputemailwrap {
+  width: 380px;
+}
+
 .emailformfalse {
   font-size: 12px;
   color: #ff731d;
@@ -259,6 +263,12 @@
   padding: 8px 0px;
 }
 
+.sectionupper {
+  width: 380px;
+  margin-top: 44px;
+  margin-bottom: 20px;
+}
+
 .sectionbottom {
   margin-top: 44px;
   margin-bottom: 20px;
@@ -267,7 +277,7 @@
 .signup {
   width: 380px;
   height: 40px;
-  padding: 1px 6px;
+  padding: 1px 1px;
   border: none;
   background-color: rgba(255, 115, 29, 0.4);
   color: white;

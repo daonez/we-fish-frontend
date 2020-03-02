@@ -34,7 +34,7 @@ class Postcode extends React.Component {
       <>
         <DaumPostcode
           onComplete={this.handleAddress}
-          add={this.state.searchAddress}
+          value={this.state.searchAddress}
         />
       </>
     )
