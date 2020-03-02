@@ -1,37 +1,41 @@
-.NavSideBar{
-    margin-left:100px;
-    width:340px;
-    height:800px;
+.navSideBars{
+    position: absolute;
+    background-color:white;
+    z-index:20;
+
+    width:410px;
+    height:920px;
     .profileLoggedOut{
         position:relative;
         left:10px;
         border-bottom: 1px solid #eeeeee;
-        width:315px;
-        height:54.6px;
+        width:397px;
+        height:45px;
         .profileLoggedOut02{
-            top:10px;
             position:relative;
             left:10px;
             display:flex;
             .loginButton{
-                a{
+                span{
+                    letter-spacing: -0.05em;
                     text-decoration:none;
                     font-size:20px;
                     color:black;
-                    font-family: "Spoqa Han Sans bold";
                 }
+
             }
             .lineBar{
-                margin:0px 3px 0px 3px;
+                margin:0px 2px 0px 2px;
                 position:relative;
                 padding: 5px;
-                font-size: 15px;
+                font-size: 13px;
                 color: rgba(153,153,153,0.5);
-                top:1px;
+                top:3px;
     
             }
             .registerButton{
-                a{
+                span{
+                    letter-spacing: -0.1em;
                     text-decoration:none;
                     font-size:16px;
                     color: #666666;
@@ -40,52 +44,16 @@
                 }
             }
         }
-
-
-    }
-    .pointBar{
-        display:flex;
-        justify-content: space-around;
-        border-bottom: 1px solid #DCDCDC;
-        border-top: 1px solid #DCDCDC;
-        .coupon {
-            .coupon1{
-                color: #666666;
-                margin-bottom:-5px;
-            }
-            .coupon2{
-                font-family: 'Spoqa Han Sans Bold';
-                font-size:25px;
-                margin-left:10px;
-            }
-            .coupon3{
-                font-family: 'Spoqa Han Sans Bold';
-            }
-        }
-        .point {
-            .point1{
-                color: #666666;
-                margin-bottom:-5px;
-            }
-            .point2{
-                font-family: 'Spoqa Han Sans Bold';
-                font-size:25px;
-                margin-left:0px;
-            }
-            .point3{
-                font-family: 'Spoqa Han Sans Bold';
-            }
-        }
     }
     .search{
         width:340px;
         height:56px;
         form{
-            margin-top:20px;
+            margin-top:10px;
             position:relative;
             left:20px;
             border-bottom: 1px solid #DCDCDC;
-            width:292px;
+            width:350px;
             height:40px;
             button{
                border:none;
@@ -128,44 +96,53 @@
             font-size:20px;
             left:20px;
             margin:0px;
-            top:15px;
+            top:1px;
         }
     }
     .categories{
         display:flex;
         justify-content: space-between;
         position: relative;
+        top:2px;
         right:-20px;
-        margin-top:30px;
         ul {
             list-style: none;
-            .category{
-                width:145px;
-                height:25px;
-                a{
-                    height:30px;
-                    display:flex;
-                    justify-content: space-between;
-                    color:#999999;
-                    text-decoration: none;
-                    margin-top:10px;
-                    font-size:14px;
-                }
-            }
         }
         .rightUl{
             position: relative;
             right:30px;
         }
+        .category{
+            width:150px;
+            height:25px;
+            span{
+                letter-spacing: -0.1em;
+                display:flex;
+                justify-content: space-between;
+                color:#aa8e8e;
+                text-decoration: none;
+                margin-top:10px;
+                div{
+                    font-size:18px;
+                    letter-spacing: -2.5px;
+                    font-weight:400px;
+                    
+                }
+                
+            }
+        }
+
     }
     .otherContents{
+        position:absolute;
+        margin-top:10px;
         a{
             font-family: 'Spoqa Han Sans Bold';
             font-size:20px;
             text-decoration: none;
             color:black;
             display:flex;
-            margin-top:10px;
+            margin-top:12px;
             margin-left:18px;
 
         }
@@ -176,15 +153,15 @@
         width:340px;
         height:66px;
         position:absolute;
-        bottom:20px;
+        bottom:10px;
         border-top: 1px solid #eee;
         .fl{
             position: relative;
             left:15px;
-            top:20px;
+            top:10px;
             .phone{
                 position: relative;
-                bottom:-10px;
+                bottom:0px;
                 font-size: 28px;
                 font-family: Montserrat;
                 color: #000000;
@@ -196,7 +173,7 @@
         .fr{
             a{
                 position: relative;
-                top:30px;
+                top:15px;
                 background-image: url('../../../img/kakaoplus.png');
                 width: 48px;
                 height: 48px;
@@ -207,3 +184,6 @@
         }
     }
 }
+
+
+

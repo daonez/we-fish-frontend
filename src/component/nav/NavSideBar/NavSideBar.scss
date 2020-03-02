@@ -1,22 +1,25 @@
 .navSideBar{
     position: absolute;
-    top:15px;
+    top:-80px;
+    right:100%;
     background-color:white;
+    z-index:20;
 
-    width:340px;
-    height:800px;
+    width:410px;
+    height:920px;
     .profileLoggedOut{
         position:relative;
         left:10px;
         border-bottom: 1px solid #eeeeee;
-        width:315px;
+        width:397px;
         height:45px;
         .profileLoggedOut02{
             position:relative;
             left:10px;
             display:flex;
             .loginButton{
-                a{
+                span{
+                    letter-spacing: -0.05em;
                     text-decoration:none;
                     font-size:20px;
                     color:black;
@@ -24,15 +27,17 @@
 
             }
             .lineBar{
+                margin:0px 2px 0px 2px;
                 position:relative;
                 padding: 5px;
-                font-size: 10px;
+                font-size: 13px;
                 color: rgba(153,153,153,0.5);
-                top:10px;
+                top:3px;
     
             }
             .registerButton{
-                a{
+                span{
+                    letter-spacing: -0.1em;
                     text-decoration:none;
                     font-size:16px;
                     color: #666666;
@@ -50,7 +55,7 @@
             position:relative;
             left:20px;
             border-bottom: 1px solid #DCDCDC;
-            width:292px;
+            width:350px;
             height:40px;
             button{
                border:none;
@@ -112,25 +117,34 @@
         .category{
             width:150px;
             height:25px;
-            a{
+            span{
+                letter-spacing: -0.1em;
                 display:flex;
                 justify-content: space-between;
-                color:#999999;
+                color:#aa8e8e;
                 text-decoration: none;
                 margin-top:10px;
-                font-size:14px;
+                div{
+                    font-size:18px;
+                    letter-spacing: -2.5px;
+                    font-weight:400px;
+                    
+                }
+                
             }
         }
 
     }
     .otherContents{
+        position:absolute;
+        margin-top:10px;
         a{
             font-family: 'Spoqa Han Sans Bold';
             font-size:20px;
             text-decoration: none;
             color:black;
             display:flex;
-            margin-top:25px;
+            margin-top:12px;
             margin-left:18px;
 
         }

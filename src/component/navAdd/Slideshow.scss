@@ -1,0 +1,68 @@
+.react-slideshow-container .nav span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 3px;
+  border-color: #000;
+  border-style: solid;
+  transform: rotate(45deg);
+}
+.slide-container {
+
+    width: 540;
+    margin-top:20px;
+    }
+ 
+  
+  h3 {
+    text-align: center; }
+  
+  .each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    width:500px;
+    height:400px;
+  }
+  
+  .each-slide span {
+    padding: 20px;
+    font-size: 30px;
+    background: #efefef;
+    text-align: center;
+  }
+  
+  .each-fade {
+    display: flex;
+  }
+  
+  .each-fade .image-container {
+    width: 75%;
+    overflow: hidden;
+  }
+  
+  .each-fade .image-container img {
+    width: 100%;
+  }
+  
+  .each-fade h2 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #adceed;
+  }
+
+
+
+
+
+  // 'https://cdn.onul-hoi.com/uploads/store_banner/image/78/66652b_200224013133.jpg',
+  // 'https://cdn.onul-hoi.com/uploads/store_banner/image/88/c092a3_200224012803.jpg',
+  // 'https://cdn.onul-hoi.com/uploads/store_banner/image/83/1e1f9a_200224012844.jpg'
+
+
+
+  

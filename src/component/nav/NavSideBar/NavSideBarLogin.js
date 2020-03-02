@@ -1,35 +1,20 @@
 import React, { Component } from "react";
 import "./NavSideBarLogin.scss";
 import search from "../../../img/search.png";
+import { withRouter } from 'react-router-dom';
 
-export class NavSideBar extends Component {
+export class NavSideBarLogin extends Component {
   render() {
     return (
-      <div className="NavSideBar">
+      <div className="navSideBars">
         <div className="profileLoggedOut">
           <div className="profileLoggedOut02">
             <p className="loginButton">
-              <a href="/">김현준</a>
+              <span href="/">로그인 해주세요</span>
             </p>
-            <p className="lineBar"></p>
+            <p className="lineBar">|</p>
             <p className="registerButton">
-              <a href="/">님</a>
-            </p>
-          </div>
-        </div>
-        <div className="pointBar">
-          <div className="coupon">
-            <p className="coupon1">할인쿠폰</p>
-            <p>
-              <span class="coupon2">0 </span>
-              <span className="coupon3">장</span>
-            </p>
-          </div>
-          <div className="point">
-            <p className="point1">포인트</p>
-            <p>
-              <span class="point2">3,000 </span>
-              <span className="point3">p</span>
+              <span href="/">회원가입</span>
             </p>
           </div>
         </div>
@@ -51,90 +36,90 @@ export class NavSideBar extends Component {
         <div className="categories">
           <ul>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>후기많은상품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>오늘 저녁배송</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>성게알</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>새우 · 게 · 랍스터</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>초밥 · 국물 · 매운탕</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>수산가공품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>김 · 미역 · 해조류</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
           </ul>
           <ul className="rightUl">
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>이번주 신상품</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>자연산 회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>수산시장 회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>오징어· 조개·해산물</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>소스·곁들임</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>건어물</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
             <li className="category">
-              <a href="/">
+              <span href="/">
                 <div>제철회</div>
                 <div>></div>
-              </a>
+              </span>
             </li>
           </ul>
         </div>
@@ -142,7 +127,6 @@ export class NavSideBar extends Component {
           <a href="/">주문내역</a>
           <a href="/">상품후기</a>
           <a href="/">1:1문의</a>
-          <a href="/">내 정보 관리</a>
         </div>
         <div className="sideBarFooter">
           <div className="fl">
@@ -158,4 +142,4 @@ export class NavSideBar extends Component {
   }
 }
 
-export default NavSideBar;
+export default withRouter(NavSideBarLogin) ;

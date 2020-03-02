@@ -9,12 +9,24 @@ import React, { Component } from "react"
 // import NavMyPage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage"
 // import "../styles/layout.scss"
 import SectionLeft from "../component/LayoutLeft"
-
+import Slideshow from "../component/navAdd/Slideshow"
+import NavFooter from "../component/navAdd/NavFooter"
+import NavCart from "../component/navAdd//NavCart"
 class Home extends Component {
   render() {
     return (
       <>
+<<<<<<< HEAD
         <div>{/* <NavReview /> */}</div>
+=======
+        <div>
+          <Nav>
+          <Slideshow/>
+           <NavFooter/>
+          </Nav>
+          
+        </div>
+>>>>>>> 0217f75f12531162e91d6122f837aee109da9674
         <div className="wrap">
           <SectionLeft />
           <section className="section-right">

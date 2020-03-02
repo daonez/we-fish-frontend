@@ -117,9 +117,10 @@ class Login extends Component {
                 <button
                   className="btnLogin"
                   type="button"
-                  value="로그인하기"
                   onClick={this.fetcher}
-                />
+                >
+                  로그인하기
+                </button>
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
                   {/* <span className="kakaobtnimg"></span> */}
