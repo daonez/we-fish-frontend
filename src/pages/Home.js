@@ -12,7 +12,6 @@ import SectionLeft from "../component/LayoutLeft"
 import Slideshow from "../component/navAdd/Slideshow"
 import NavFooter from "../component/navAdd/NavFooter"
 import NavCart from "../component/navAdd/NavCart"
-import Nav from "../component/nav/Nav"
 
 class Home extends Component {
   render() {
