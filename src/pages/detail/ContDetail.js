@@ -3,7 +3,12 @@ import React, { Component } from 'react'
 
 class ContDetail extends Component {
   render() {
-    return <div className="detail-product__cont__detail" />
+    return (
+      <div
+        dangerouslySetInnerHTML={this.props.html}
+        className="detail-product__cont__detail"
+      />
+    )
   }
 }
 

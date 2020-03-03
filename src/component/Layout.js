@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import SectionLeft from './LayoutLeft'
 import Header from './nav/Nav'
+import Footer from './navAdd/NavFooter'
 import '../styles/layout.scss'
 
 class Layout extends Component {
@@ -10,11 +11,15 @@ class Layout extends Component {
 
     return (
       <div className="wrap">
+        <div>
+          <Header />
+        </div>
         <SectionLeft />
         <section className="section-right">
           <section className="section-right__main">
-            {/* <Header /> */}
+            <Header />
             <main>{children}</main>
+            <Footer />
           </section>
         </section>
       </div>

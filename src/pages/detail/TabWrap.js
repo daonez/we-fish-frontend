@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Tab from './Tab'
 import CountDetail from './ContDetail'
 import CountReview from './ContReview'
@@ -12,17 +13,23 @@ class TapWrap extends Component {
 
     this.state = {
       name: '',
+      detail: this.props.detail,
     }
   }
 
   pHandleClick = dataFromChild => {
+    if (dataFromChild === 'detail-product__cont__detail') {
+      this.setState({ name: dataFromChild, detail: this.state.detail })
+    }
     this.setState({ name: dataFromChild })
   }
 
   renderSwitch = param => {
+    const obj = { __html: this.props.detail }
+
     switch (param) {
       case 'detail-product__cont__detail':
-        return <CountDetail />
+        return <CountDetail html={obj} />
       case 'detail-product__cont__review':
         return <CountReview />
       case 'detail-product__cont__qna':
@@ -30,7 +37,7 @@ class TapWrap extends Component {
       case 'detail-product__cont__delivery':
         return <CountDelivery />
       default:
-        return <CountDetail />
+        return <CountDetail html={obj} />
     }
   }
 

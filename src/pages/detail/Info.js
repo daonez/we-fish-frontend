@@ -6,15 +6,12 @@ class Info extends Component {
   render() {
     return (
       <div className="detail-product__info">
-        <p className="detail-product__info__strapline">
-          맑은물에서 자란 자연산 보리숭어의 참맛!
-        </p>
-        <h2 className="detail-product__info__title">
-          [거제] 해금강 보리숭어회
-        </h2>
+        <p className="detail-product__info__strapline">{this.props.tagline}</p>
+        <h2 className="detail-product__info__title">{this.props.name}</h2>
         <div className="detail-product__info__box">
           <strong className="detail-product__info__num">
-            25,900 <span>원</span>
+            {Number(this.props.price).toLocaleString('kr')}
+            <span>원</span>
           </strong>
           <span className="detail-product__info__star">
             <i className="star-on">

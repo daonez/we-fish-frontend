@@ -1,0 +1,206 @@
+.NavCart{
+    position:absolute;
+    left:50%;
+    height:100%;
+    .NavCartHeader{
+        width:500px;
+        height:60px;
+        border-bottom: 1px solid rgb(175, 172, 172);
+        display:flex;
+        justify-content: space-around;
+        font-size:23px;
+        color:black;
+        font-family: "Spoqa Han Sans bold";
+        .headerImage{
+            cursor: pointer;
+            position:relative;
+            right:80px;
+            top:15px;
+        }
+        .font{
+            position:relative;
+            right:113px;
+            top:10px;
+        }
+    }
+    .NavCartProduct{
+        display:flex;
+        margin-top:10px;
+        margin-left:20px;
+        .productImage{
+            height:100px;
+            width:100px;
+            background-image: url('https://cdn.onul-hoi.com/uploads/store_package/image/580/799b56_200225094425.jpg');
+            background-size:contain;
+        }
+        .productTitleMany{
+            margin-left:20px;
+            margin-top:10px;
+            .productTitle{
+                letter-spacing: -0.08em;
+                font-size:19px;
+            }
+            .productMany{
+
+                position:relative;
+                top:5px;
+                .productSpan0{
+                    width:400px;
+                    height:80px;
+                    display:flex;
+                    .productSpan1{
+                        position:relative;
+                        top:10px;
+                        font-size:17px;
+                        color:#838383;
+                        font-weight:bold;
+                    }
+                    .productSpan2{
+                        display:flex;
+                        position:relative;
+                        left:30px;
+                        top:10px;
+                        width:200px;
+                        height:60px;
+                        button{
+                            width:40px;
+                            height:30px;
+                            border-radius:1px;
+                            cursor: pointer;
+                            &:focus{
+                                outline:none;
+                            }
+                        }
+                        .span2button{
+                            border-right:none;
+                            
+                        }
+                        .span2button1{
+                            border-left:none;
+                        }
+                        span{
+                            font-size:18px;
+                            font-weight:bold;
+                            text-align: center;
+                            display:block;
+                            position:relative;
+                            width:50px;
+                            height:28px;
+                            border: 1px solid rgb(201, 195, 195);
+                        }
+                    }
+                }
+            }
+        }
+        .cartClose{
+            cursor:pointer;
+            position:relative;
+            left:330px;
+            bottom:110px;
+        }
+        .navCartBar{
+            position:relative;
+            bottom:25px;
+            right:120px;
+            width:470px;
+            height:1px;
+            border-top:1px solid rgb(201, 195, 195);
+        }
+        .navCartPrice{
+            position:relative;
+            right:120px;
+            display:flex;
+            justify-content: space-between;
+            bottom:10px;
+            div{
+                letter-spacing: -0.08em;
+                font-size:20px;
+            }
+            .navCartPrice02{
+                position: relative;
+                right:25px;
+            }
+        }
+        .navCartBar2{
+            width:500px;
+            position:relative;
+            top:5px;
+            right:140px;
+            border-top:4px outset rgb(248, 237, 237);
+        }
+        .navCartAdd{
+            position: relative;
+            top:30px;
+            left:30px;
+            font-size:20px;
+            color:rgb(131, 128, 128);
+            letter-spacing: -0.08em;
+            &:hover{
+                cursor: pointer;
+                color:black;
+            }
+        }
+        .navCartDelivery{
+            position: relative;
+            top:50px;
+            right:140px;
+            .navCartDelivery02{
+                font-size:23px;
+                color:black;
+                font-family: "Spoqa Han Sans bold";
+                margin-bottom:20px;
+            }
+            .navCartDelivery03{
+                letter-spacing: -0.08em;
+                font-size:17px;
+                span{
+                    color:red;
+                    letter-spacing: -0.08em;
+                }
+            }
+            .navCartDelivery04{
+                letter-spacing: -0.08em;
+                font-size:17px;
+            }
+        }
+        .navCartbar3{
+            position:relative;
+            width:500px;
+            border-top:4px solid rgb(221, 213, 213);
+            top:100px;
+            right:140px;
+        }
+        .navCartTotal{
+            display:flex;
+            justify-content: space-between;
+            position:relative;
+            top:110px;
+            right:140px;
+            .navCartTotalText{
+                letter-spacing: -0.08em;
+                font-weight:bold;
+                font-size:17px;
+            }
+            .navCartTotalPrice{
+                letter-spacing: -0.08em;
+                font-size:25px;
+                color:rgb(255, 72, 0);
+            }
+        }
+        .navCartConfirmButton{
+            cursor: pointer;;
+            background-color: black;
+            color:white;
+            font-size:21px;
+            width:500px;
+            right:140px;
+            height:60px;
+            position:relative;
+            top:137px;
+        }
+    }   
+    .NavCartFooter{
+        position:relative;
+        top:15%;
+    }
+}
