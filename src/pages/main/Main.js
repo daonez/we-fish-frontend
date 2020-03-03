@@ -7,6 +7,7 @@ import firstTimeBanner from "./mainImage/first-time-wefish.jpeg"
 import todayOrderBanner from "./mainImage/today-can-order-fish.jpg"
 import plusFriend from "./mainImage/plusfriendKakao.jpeg"
 import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg"
+import GuestOrderSlider from "./GuestOrderSlider"
 
 export default class Main extends React.Component {
   constructor() {
@@ -67,27 +68,14 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className="main-content-recommend-title">
-          <h4>후기로 검증된 추천 상차림</h4>
-          <h1>오늘회 고객님은 이렇게 드셨어요.</h1>
+          <p>후기로 검증된 추천 상차림</p>
+          <strong>오늘회 고객님은 이렇게 드셨어요.</strong>
           <ButtonSlider />
+          <GuestOrderSlider />
         </div>
         <div className="main-content-recommend-buttons">
           <div className="main-content-review-best" />
           <div className="products-wrapper">
-            {/* <Slider>
-              {data.map(item => (
-                <div>
-                  <img src={item.image} alt="" />
-                  <input type="checkbox" name="fish" value="생연어" />
-                  <label for="fish">[오늘회] 생연어</label>
-                  <input type="checkbox" />
-                  <input type="checkbox" />
-                  <input type="checkbox" />
-                  <input type="checkbox" />
-                  <button>나도 이렇게 장바구니 담아보기</button>
-                </div>
-              ))}
-            </Slider> */}
             <p>오늘회 후기 보러가기 ></p>
           </div>
           <div>
@@ -96,41 +84,6 @@ export default class Main extends React.Component {
           </div>
           <div className="recomend">
             <h1>알아서 추천드립니다 ></h1>
-            {/* <Slider {...settings}>
-              <li>
-                <h4>성게알</h4>
-              </li>
-              <li>
-                <h4>초밥•국물•매운탕</h4>
-              </li>
-              <li>
-                <h4>오징어•조개•해산물</h4>
-              </li>
-              <li>
-                <h4>자연산 회</h4>
-              </li>
-              <li>
-                <h4>김•미역•해조류</h4>
-              </li>
-              <li>
-                <h4>건어물</h4>
-              </li>
-              <li>
-                <h4>제철회</h4>
-              </li>
-              <li>
-                <h4>수산시장 회</h4>
-              </li>
-              <li>
-                <h4>수산가공품</h4>
-              </li>
-              <li>
-                <h4>소스•곁들임</h4>
-              </li>
-              <li>
-                <h4>새우•게•랍스터</h4>
-              </li>
-            </Slider> */}
             <ul className="productList">
               {data.map(item => (
                 <li className="recommend-product-item">
