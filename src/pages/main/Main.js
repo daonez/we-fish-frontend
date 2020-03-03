@@ -1,5 +1,6 @@
 import React from "react"
 import "../../styles/main.scss"
+// import Slider from "react-slick"
 import ThreeImageSlider from "./ThreeImageSlider"
 import ButtonSlider from "./ButtonSlider"
 import firstTimeBanner from "./mainImage/first-time-wefish.jpeg"

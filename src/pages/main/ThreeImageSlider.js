@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from "react"
 import Slider from "react-slick"
+import { Link } from "react-router-dom"
 
 export default class ThreeImageSlider extends Component {
   constructor() {
@@ -34,29 +35,38 @@ export default class ThreeImageSlider extends Component {
       arrows: true
     }
     return (
-      <div>
-        <Slider {...settings}>
-          {data.map(item => (
-            <li className="product-item">
-              <div className="product-items_Card">
-                <div className="parent">
-                  <img src={item.image} alt="" key={data.index} />
+      <Link
+        to={{
+          pathname: "/product",
+          state: {
+            data
+          }
+        }}
+      >
+        <div>
+          <Slider {...settings}>
+            {data.map(item => (
+              <li className="product-item">
+                <div className="product-items_Card">
+                  <div className="parent">
+                    <img src={item.image} alt="" key={data.index} />
+                  </div>
                 </div>
-              </div>
-              <div className="productCardContent">
-                <h1>{item.name}</h1>
-                <p>
-                  <span>{item.price}</span>원
-                </p>
-                <p>
-                  <span>{item.rating}</span>
-                  <span className="review">· 후기</span>
-                </p>
-              </div>
-            </li>
-          ))}
-        </Slider>
-      </div>
+                <div className="productCardContent">
+                  <h1>{item.name}</h1>
+                  <p>
+                    <span>{item.price}</span>원
+                  </p>
+                  <p>
+                    <span>{item.rating}</span>
+                    <span className="review">· 후기</span>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </Slider>
+        </div>
+      </Link>
     )
   }
 }

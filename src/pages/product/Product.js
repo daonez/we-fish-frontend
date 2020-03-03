@@ -58,7 +58,7 @@ class Products extends React.Component {
                     <div className="productCardContent">
                       <h1>{item.name}</h1>
                       <p>
-                        <span>{item.price}</span>원
+                        <span>{Number(item.price).toLocaleString("kr")}</span>원
                       </p>
                       <p>
                         <span>{item.rating}</span>
