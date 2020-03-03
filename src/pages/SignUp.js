@@ -8,10 +8,10 @@ class SignUp extends Component {
     super()
 
     this.state = {
-      emailformcheck: true,
       id: "",
-      pwformcheck: true,
+      emailformcheck: true,
       pw: "",
+      pwformcheck: true,
       pwc: "",
       pwccheck: true,
       name: "",
@@ -21,13 +21,15 @@ class SignUp extends Component {
       address_detail: "",
       mobile: "",
       mobileformcheck: true,
+      veri_code: "",
       agreement: false,
       totalagreemode: false,
       mustagreemode1: false,
       mustagreemode2: false,
       mktingagreemode: false,
       signupactmode: false,
-      totaluserinfo: false
+      totaluserinfo: false,
+      authenclick: false
     }
   }
 
@@ -110,7 +112,7 @@ class SignUp extends Component {
     }
   }
 
-  signUpFetch = () => {
+  signUpFetcher = () => {
     fetch("http://10.58.6.8:8000/user/sign-up", {
       method: "POST",
       body: JSON.stringify({
@@ -122,6 +124,43 @@ class SignUp extends Component {
         mobile: this.state.mobile,
         agreement: this.state.agreement
       })
+    })
+  }
+
+  authenFetcher = () => {
+    fetch("http://10.58.5.89:8000/user/verify", {
+      method: "POST",
+      body: JSON.stringify({
+        mobile: this.state.mobile
+      })
+    }).then(response => {
+      console.log(response)
+      return response
+    })
+  }
+
+  //   })
+
+  //   })
+  //   // .then(response => {
+  //   //   if (response.status === 200) {
+  //   //     this.setState({
+  //   //       authenclick: true
+  //   //     })
+  //   //   }
+  //   // })
+  // }
+
+  authenPoster = () => {
+    fetch("http://10.58.5.89:8000/user/confirm", {
+      method: "POST",
+      body: JSON.stringify({
+        mobile: this.state.mobile,
+        code: this.state.veri_code
+      })
+    }).then(response => {
+      console.log(response)
+      return response
     })
   }
 
@@ -286,9 +325,8 @@ class SignUp extends Component {
               <h2 className="signupemailtxt">이메일 회원가입</h2>
               {this.state.emailformcheck === false ? (
                 <div>
-                  <div className="inputemailwrap">
+                  <div>
                     <input
-                      className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
                       onChange={this.emailFormChecker}
@@ -300,9 +338,8 @@ class SignUp extends Component {
                 </div>
               ) : (
                 <div>
-                  <div className="inputemailwrap">
+                  <div>
                     <input
-                      className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
                       onChange={this.emailFormChecker}
@@ -314,11 +351,9 @@ class SignUp extends Component {
               <div>
                 <div>
                   <input
-                    className="inputname"
                     placeholder="이름"
                     type="text"
                     onChange={this.SetStater("name")}
-                    // name="id"
                   />
                 </div>
               </div>
@@ -326,7 +361,6 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpw"
                       placeholder="비밀번호(6자리 이상)"
                       type="text"
                       onKeyPress={this.SetStater("pw")}
@@ -341,7 +375,6 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpw"
                       placeholder="비밀번호(6자리 이상)"
                       type="text"
                       onKeyPress={this.SetStater("pw")}
@@ -354,11 +387,9 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpwcheck"
                       placeholder="비밀번호 확인"
                       type="text"
                       onKeyPress={this.SetStater("pwc")}
-                      // onKeyPress={this.handleSignUpPWC}
                       onChange={this.pwcChecker}
                     />
                   </div>
@@ -370,7 +401,6 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpwcheck"
                       placeholder="비밀번호 확인"
                       type="text"
                       onKeyPress={this.SetStater("pwc")}
@@ -404,7 +434,6 @@ class SignUp extends Component {
                   </div>
                   <div>
                     <input
-                      className="inputdetailadd"
                       placeholder="상세주소"
                       type="text"
                       onChange={this.SetStater("address_detail")}
@@ -413,37 +442,6 @@ class SignUp extends Component {
                 </div>
               ) : (
                 <Postcode />
-                // <div>
-                //   <div className="postaddwrap">
-                //     <div className="inputpostwrap">
-                //       <input
-                //         className="inputpost"
-                //         placeholder="우편번호"
-                //         type="text"
-                //         onChange={this.SetStater("postcode")}
-                //       />
-                //     </div>
-                //     <div className="inputaddwrap">
-                //       <input
-                //         className="inputaddress"
-                //         placeholder="주소 찾기"
-                //         type="text"
-                //         value={this.props.value}
-                //         onClick={this.addressFindChecker}
-                //       />
-                //     </div>
-                //   </div>
-                //   <div>
-                //     <Postcode />
-                //   </div>
-                //   <div>
-                //     <input
-                //       className="inputdetailadd"
-                //       placeholder="상세주소"
-                //       type="text"
-                //     />
-                //   </div>
-                // </div>
               )}
               {this.state.mobileformcheck === false ? (
                 <div>
@@ -470,23 +468,62 @@ class SignUp extends Component {
                 </div>
               ) : (
                 <div>
-                  <div className="phoneauthenwrap">
-                    <div>
-                      <input
-                        className="phonenum"
-                        placeholder="휴대전화번호 ( ' - ' 제외)"
-                        type="text"
-                        onKeyDown={this.SetStater("mobile")}
-                        onKeyPress={this.mobileFormChecker}
-                        onChange={this.totalUserInfoChecker}
-                      />
+                  {this.state.authenclick === false ? (
+                    <div className="phoneauthenwrap">
+                      <div>
+                        <input
+                          className="phonenum"
+                          placeholder="휴대전화번호 ( ' - ' 제외)"
+                          type="text"
+                          onKeyDown={this.SetStater("mobile")}
+                          onKeyPress={this.mobileFormChecker}
+                          onChange={this.totalUserInfoChecker}
+                        />
+                      </div>
+                      <div>
+                        <button
+                          className="authenbtn"
+                          type="button"
+                          onClick={this.authenfetcher}
+                        >
+                          인증번호 받기
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <button className="authenbtn" type="button">
-                        인증번호 받기
-                      </button>
+                  ) : (
+                    <div className="phoneauthenwrap">
+                      <div>
+                        <input
+                          className="phonenum"
+                          placeholder="휴대전화번호 ( ' - ' 제외)"
+                          type="text"
+                          onKeyDown={this.SetStater("mobile")}
+                          onKeyPress={this.mobileFormChecker}
+                          onChange={this.totalUserInfoChecker}
+                        />
+                      </div>
+                      <div className="authennumwrap">
+                        <div>
+                          <button
+                            className="authenbtn"
+                            type="button"
+                            onClick={this.authenFetcher}
+                          >
+                            인증번호 받기
+                          </button>
+                        </div>
+                        <div>
+                          <input
+                            className="authennuminput"
+                            placeholder="인증번호 입력"
+                            type="text"
+                            onChange={this.SetStater("veri_code")}
+                            onClick={this.authenPoster}
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
               <p className="under14txt">
@@ -509,7 +546,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickTotal}
-                            oncChange={this.onAgreeClick}
                           />
                         </div>
                       ) : (
@@ -519,7 +555,6 @@ class SignUp extends Component {
                             src={orange}
                             className="agreespanact"
                             onClick={this.onBtnClickTotal}
-                            oncChange={this.onAgreeClick}
                           />
                         </div>
                       )}
@@ -541,7 +576,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickMust1}
-                            onChange={this.onAgreeClick}
                           />
                         </div>
                       </label>
@@ -582,7 +616,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickMust2}
-                            onChange={this.onAgreeClick}
                           />
                         </div>
                       </label>
@@ -660,7 +693,7 @@ class SignUp extends Component {
               <button
                 className="signupact"
                 type="button"
-                onClick={this.signUpFetch}
+                onClick={this.signUpFetcher}
               >
                 회원가입
               </button>

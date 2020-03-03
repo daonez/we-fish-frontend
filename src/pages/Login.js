@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "../styles/login.scss"
+import { withRouter } from "react-router"
 import orange from "../images/animal.svg"
 
 class Login extends Component {
@@ -11,6 +12,14 @@ class Login extends Component {
       id: "",
       pw: ""
     }
+  }
+
+  SetStater = key => {
+    return function(e) {
+      const fishstate = {}
+      this.state[key] = e.target.value
+      this.setState(fishstate)
+    }.bind(this)
   }
 
   onBtnClick = () => {
@@ -39,6 +48,10 @@ class Login extends Component {
     console.log(this.state.pw)
   }
 
+  toSignUp = () => {
+    this.props.history.push("/signup")
+  }
+
   fetcher = () => {
     fetch("http://10.58.6.8:8000/user/sign-in", {
       method: "POST",
@@ -59,6 +72,11 @@ class Login extends Component {
           localStorage.setItem("fish", response.token)
         }
       })
+      .then(response => {
+        if (response.status === 200) {
+        }
+        this.props.history.push("/home")
+      })
   }
 
   render() {
@@ -71,18 +89,15 @@ class Login extends Component {
                 <input
                   className="loginID"
                   placeholder="이메일"
-                  onChange={this.handleSignID}
-                />{" "}
-                {/* box1 */}
+                  onChange={this.SetStater("id")}
+                />
                 <input
                   className="loginPW"
                   placeholder="비밀번호(8-16자리 영문,숫자 조합)"
-                  onChange={this.handleSignPW}
-                />{" "}
-                {/* box2 */}
+                  onChange={this.SetStater("pw")}
+                />
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
-                    {/* box3-1 */}
                     <div className="checkbox">
                       <div>
                         {this.state.mode === "unclicked" ? (
@@ -123,13 +138,12 @@ class Login extends Component {
                 </button>
                 <a className="kakaologinbtn">
                   <img alt="temp" className="imgorange" src={orange} />
-                  {/* <span className="kakaobtnimg"></span> */}
                   카카오톡으로 로그인하기
                 </a>
               </form>
               <p className="signuplink">
                 오늘회가 처음이신가요?
-                <a className="signupclick" href="./SignUp">
+                <a className="signupclick" onClick={this.toSignUp}>
                   회원가입하기
                 </a>
               </p>
@@ -141,4 +155,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)
