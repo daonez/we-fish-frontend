@@ -22,9 +22,41 @@
   width: 380px;
   margin-top: 44px;
   margin-bottom: 20px;
-  // input {
-  //   width: 90%;
-  // }
+  div {
+    div {
+      input {
+        position: relative;
+        width: 364px;
+        height: 38px;
+        margin-bottom: 8px;
+        padding: 0px 8px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #ebebeb;
+        letter-spacing: -0.06rem;
+      }
+      input.phonenum {
+        width: 250px;
+      }
+      input.inputpost {
+        width: 130px;
+      }
+      input.authennuminput {
+        color: grey;
+        width: 90px;
+        margin-left: 12px;
+        padding: 1px 6px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.authennumwrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
 }
 
 .signupemailtxt {
@@ -53,21 +85,21 @@
   font-size: 14px;
 }
 
-.inputemail {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputemail {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
-.inputemailwrap {
-  width: 380px;
-}
+// .inputemailwrap {
+//   width: 380px;
+// }
 
 .emailformfalse {
   font-size: 12px;
@@ -76,29 +108,29 @@
   padding-bottom: 10px;
 }
 
-.inputname {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputname {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
-.inputpw {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputpw {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
 .passwordformfalse {
   font-size: 12px;
@@ -107,17 +139,17 @@
   padding-bottom: 10px;
 }
 
-.inputpwcheck {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputpwcheck {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
 .inputpwcheckfalse {
   font-size: 12px;
@@ -126,37 +158,39 @@
   padding-bottom: 10px;
 }
 
-.inputpost {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputpost {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
-.inputaddress {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-  background-color: white;
-}
+// .inputaddress {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+//   background-color: white;
+// }
 
 .authenbtn {
   color: white;
   font-weight: 500;
   border: none;
   background-color: #c5c3c3;
+  margin-bottom: 8px;
 }
+
 .postaddwrap {
   width: 100%;
   display: flex;
@@ -177,35 +211,35 @@
   text-align: center;
 }
 
-.inputdetailadd {
-  width: 100%;
-  height: 36px;
-  margin-bottom: 8px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .inputdetailadd {
+//   width: 100%;
+//   height: 36px;
+//   margin-bottom: 8px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
 .phoneauthenwrap {
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: start;
 }
 
-.phonenum {
-  width: 250px;
-  height: 36px;
-  padding: 0px 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #ebebeb;
-  letter-spacing: -0.06rem;
-}
+// .phonenum {
+//   width: 250px;
+//   height: 36px;
+//   padding: 0px 8px;
+//   border-top: none;
+//   border-right: none;
+//   border-left: none;
+//   border-bottom: 1px solid #ebebeb;
+//   letter-spacing: -0.06rem;
+// }
 
 .phonenumfalse {
   font-size: 12px;
@@ -226,6 +260,7 @@
   font-size: 12px;
   color: #929292;
   letter-spacing: -0.06rem;
+  padding-left: 8px;
 }
 .articlelist {
   list-style-type: none;
@@ -273,7 +308,7 @@
 
 .h1font1 {
   font-size: 14px;
-  padding: 8px 0px;
+  padding: 8px 0px 8px 8px;
 }
 
 .sectionbottom {
