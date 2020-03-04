@@ -34,8 +34,19 @@ class SignUp extends Component {
       mktingagreemode: false,
       signupactmode: false,
       totaluserinfo: false,
-      authenclick: true
+      authenclick: false
     }
+  }
+
+  kakaobutton = () => {
+    Kakao.Auth.login({
+      success: authObj => {
+        console.log(authObj)
+      },
+      fail(err) {
+        console.log(JSON.stringify(err))
+      }
+    })
   }
 
   SetStater = key => {
@@ -46,82 +57,34 @@ class SignUp extends Component {
     }.bind(this)
   }
 
-  // handleInput = e => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
-
   emailFormChecker = e => {
-    if (e.target.value.includes("@", ".com")) {
-      this.setState({
-        emailformcheck: true,
-        id: e.target.value
-      })
-    } else {
-      this.setState({
-        emailformcheck: false,
-        id: e.target.value
-      })
-    }
+    e.target.value.includes("@" && "com")
+      ? this.setState({ emailformcheck: true, id: e.target.value })
+      : this.setState({ emailformcheck: false, id: e.target.value })
   }
 
   passwordFormChecker = e => {
-    if (e.target.value.length >= 6) {
-      this.setState({
-        pwformcheck: true,
-        pw: e.target.value
-      })
-    }
-    if (e.target.value.length < 6) {
-      this.setState({
-        pwformcheck: false,
-        pw: e.target.value
-      })
-    }
+    e.target.value.length >= 6
+      ? this.setState({ pwformcheck: true, pw: e.target.value })
+      : this.setState({ pwformcheck: false, pw: e.target.value })
   }
 
   pwcChecker = e => {
-    if (this.state.pw !== e.target.value) {
-      this.setState({
-        pwccheck: false,
-        pwc: e.target.value
-      })
-    }
-    if (this.state.pw === e.target.value) {
-      this.setState({
-        pwccheck: true,
-        pwc: e.target.value
-      })
-    }
+    this.state.pw !== e.target.value
+      ? this.setState({ pwccheck: false, pwc: e.target.value })
+      : this.setState({ pwccheck: true, pwc: e.target.value })
   }
 
   mobileFormChecker = e => {
-    if (!e.target.value.includes("-")) {
-      this.setState({
-        mobileformcheck: true,
-        mobile: e.target.value
-      })
-    }
-    if (e.target.value.includes("-")) {
-      this.setState({
-        mobileformcheck: false,
-        mobile: e.target.value
-      })
-    }
+    !e.target.value.includes("-")
+      ? this.setState({ mobileformcheck: true, mobile: e.target.value })
+      : this.setState({ mobileformcheck: false, mobile: e.target.value })
   }
 
   addressFindChecker = () => {
-    if (this.state.addressfindcheck === false) {
-      this.setState({
-        addressfindcheck: true
-      })
-    }
-    if (this.state.addressfindcheck === true) {
-      this.setState({
-        addressfindcheck: false
-      })
-    }
+    this.state.addressfindcheck === false
+      ? this.setState({ addressfindcheck: true })
+      : this.setState({ addressfindcheck: false })
   }
 
   handleAddress = data => {
@@ -135,11 +98,11 @@ class SignUp extends Component {
       address: fullAddress,
       postcode: extraAddress
     })
-    console.log(this.state.searchAddress) // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+    console.log(this.state.searchAddress)
   }
 
   signUpFetcher = () => {
-    fetch("http://10.58.6.8:8000/user/sign-up", {
+    fetch("http://10.58.3.240:8000/user/sign-up", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.id,
@@ -159,7 +122,7 @@ class SignUp extends Component {
   }
 
   authenFetcher = () => {
-    fetch("http://10.58.5.89:8000/user/verify", {
+    fetch("http://10.58.3.240:8000/user/verify", {
       method: "POST",
       body: JSON.stringify({
         mobile: this.state.mobile
@@ -179,7 +142,7 @@ class SignUp extends Component {
   }
 
   authenPoster = () => {
-    fetch("http://10.58.5.89:8000/user/confirm", {
+    fetch("http://10.58.3.240:8000/user/confirm", {
       method: "POST",
       body: JSON.stringify({
         mobile: this.state.mobile,
@@ -193,33 +156,30 @@ class SignUp extends Component {
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            authenclick: true
+            totaluserinfo: true
           })
         }
       })
   }
 
   onBtnClickTotal = () => {
-    if (this.state.totalagreemode === false) {
-      this.setState({
-        totalagreemode: true,
-        mustagreemode1: true,
-        mustagreemode2: true,
-        mktingagreemode: true,
-        signupactmode: true,
-        agreement: true
-      })
-    }
-    if (this.state.totalagreemode === true) {
-      this.setState({
-        totalagreemode: false,
-        mustagreemode1: false,
-        mustagreemode2: false,
-        mktingagreemode: false,
-        signupactmode: false,
-        agreement: false
-      })
-    }
+    this.state.totalagreemode === false
+      ? this.setState({
+          totalagreemode: true,
+          mustagreemode1: true,
+          mustagreemode2: true,
+          mktingagreemode: true,
+          signupactmode: true,
+          agreement: true
+        })
+      : this.setState({
+          totalagreemode: false,
+          mustagreemode1: false,
+          mustagreemode2: false,
+          mktingagreemode: false,
+          signupactmode: false,
+          agreement: false
+        })
   }
 
   onBtnClickMust1 = () => {
@@ -319,36 +279,6 @@ class SignUp extends Component {
         agreement: false
       })
     }
-  }
-
-  totalUserInfoChecker = () => {
-    if (
-      (this.state.emailformcheck &&
-        this.state.pwformcheck &&
-        this.state.pwccheck &&
-        this.state.mobileformcheck) === true
-    ) {
-      this.setState({
-        totaluserinfo: true
-      })
-    }
-  }
-
-  // handleInput = e => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
-
-  kakaobutton = () => {
-    Kakao.Auth.login({
-      success: authObj => {
-        console.log(authObj)
-      },
-      fail(err) {
-        console.log(JSON.stringify(err))
-      }
-    })
   }
 
   render() {
@@ -533,7 +463,11 @@ class SignUp extends Component {
                       </div>
 
                       <div>
-                        <button className="authenbtn" type="button">
+                        <button
+                          className="authenbtn"
+                          type="button"
+                          onClick={this.authenFetcher}
+                        >
                           인증번호 받기
                         </button>
                       </div>
@@ -552,14 +486,13 @@ class SignUp extends Component {
                             placeholder="휴대전화번호 ( ' - ' 제외)"
                             type="text"
                             onChange={this.mobileFormChecker}
-                            // onChange={this.totalUserInfoChecker}
                           />
                         </div>
                         <div>
                           <button
                             className="authenbtn"
                             type="button"
-                            onClick={this.authenfetcher}
+                            onClick={this.authenFetcher}
                           >
                             인증번호 받기
                           </button>
@@ -594,7 +527,6 @@ class SignUp extends Component {
                             placeholder="인증번호 입력"
                             type="text"
                             onChange={this.SetStater("veri_code")}
-                            // onClick={this.authenPoster}
                           />
                           <button
                             className="toauthenbtn"
