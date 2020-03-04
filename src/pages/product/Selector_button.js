@@ -1,13 +1,13 @@
 /* eslint-disable react/button-has-type */
-import React from "react"
-import "./product.scss"
-import dropDownArrow from "../../images/down-chevron.png"
+import React from 'react'
+import './product.scss'
+import dropDownArrow from '../../images/down-chevron.png'
 
 export default class Selector extends React.Component {
   constructor() {
     super()
     this.state = {
-      showMenu: false
+      showMenu: false,
     }
   }
 
@@ -15,18 +15,18 @@ export default class Selector extends React.Component {
     event.preventDefault()
     this.setState(
       {
-        showMenu: true
+        showMenu: true,
       },
       () => {
-        document.addEventListener("click", this.closeMenu)
-      }
+        document.addEventListener('click', this.closeMenu)
+      },
     )
   }
 
   closeMenu = event => {
     if (!this.dropDownMenu.contains(event.target)) {
       this.setState({ showMenu: false }, () => {
-        document.removeEventListener("click", this.closeMenu)
+        document.removeEventListener('click', this.closeMenu)
       })
     }
   }
