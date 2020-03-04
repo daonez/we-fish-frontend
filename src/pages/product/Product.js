@@ -1,65 +1,79 @@
-import React from "react";
-// import data from "./data";
-import "../../styles/product.scss";
-import Selector from "./Selector_button";
+import React from "react"
+import "../../styles/product.scss"
+import Selector from "./Selector_button"
+import Layout from "../../component/Layout"
 
 class Products extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      data: []
-    };
+      fish: [],
+      urchin: [],
+      fishMarket: [],
+      shrimpType: [],
+      seafoodType: [],
+      soupType: [],
+      sauce: [],
+      prepared: [],
+      dried: [],
+      seaweed: [],
+      seasonal: []
+    }
   }
 
   componentDidMount() {
-    this.fetchProduct();
+    this.fetchProduct()
   }
-  //Fetch 함수로 data.json
+
+  // Fetch 함수로 data.json
   fetchProduct() {
-    fetch("http://localhost:3000/data/data.json")
+    fetch("http://localhost:3000/data/category_list.json")
       .then(request => request.json())
       .then(request => {
-        console.log("여기가 request다: ", request);
-        this.setState({ data: request.data });
-      });
+        this.setState({ fish: request.descending_price[3]["자연산 회"] })
+      })
+    console.log(this.state.fish)
   }
+
   render() {
-    const { data } = this.state;
-    console.log(this.state);
+    const { fish } = this.state
+    console.log(fish)
     return (
-      <div className="content-wrapper">
-        <section className="product-main-container">
-          <div className="productList-section">
-            <div className="productList__nav">
-              <h1>자연산 회</h1>
-              <Selector />
-            </div>
-            <ul className="productList">
-              {data.map(item => (
-                <li className="product-item">
-                  <div className="productCard">
-                    <div className="parent">
-                      <img src={item.image} alt="" />
+      <Layout>
+        <div className="content-wrapper">
+          <section className="product-main-container">
+            <div className="productList-section">
+              <div className="productList__nav">
+                <h1>자연산 회</h1>
+                <Selector />
+              </div>
+              <ul className="productList">
+                {fish.map(item => (
+                  <li className="product-item">
+                    <div className="productCard">
+                      <div className="parent">
+                        <img src={item.image} alt="" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="productCardContent">
-                    <h1>{item.name}</h1>
-                    <p>
-                      <span>{item.price}</span>원
-                    </p>
-                    <p>
-                      <span>{item.rating}</span>
-                      <span className="review">· 후기</span>
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </div>
-    );
+                    <div className="productCardContent">
+                      <h1>{item.name}</h1>
+                      <p>
+                        <span>{Number(item.price).toLocaleString("kr")}</span>원
+                      </p>
+                      <p>
+                        <span>{item.rating}</span>
+                        <span className="review">· 후기</span>
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </Layout>
+    )
   }
 }
 
-export default Products;
+export default Products
