@@ -6,17 +6,18 @@ import { withRouter } from 'react-router-dom';
 export class NavSideBarLogin extends Component {
   render() {
     return (
-      <div className="navSideBars">
+      <div className="navSideBarLogin">
         <div className="profileLoggedOut">
           <div className="profileLoggedOut02">
             <p className="loginButton">
-              <span href="/">로그인 해주세요</span>
-            </p>
-            <p className="lineBar">|</p>
-            <p className="registerButton">
-              <span href="/">회원가입</span>
+              <span href="/" className="buttonname">김현준<span> 님</span></span>
             </p>
           </div>
+        </div>
+        <div className="promotion">
+          <div className="promoleft"><div className="promotion1">할인쿠폰</div><div className="promotion12">0<span>장</span></div></div>
+          <div><div className="promotionbar"></div></div>
+          <div className="promoright"><div className="promotion1">포인트</div><div className="promotion2">3,000<span>P</span></div></div>
         </div>
         <div className="search">
           <form action="/">
@@ -127,6 +128,7 @@ export class NavSideBarLogin extends Component {
           <a href="/">주문내역</a>
           <a href="/">상품후기</a>
           <a href="/">1:1문의</a>
+          <a href="/">내 정보 관리</a>
         </div>
         <div className="sideBarFooter">
           <div className="fl">

@@ -69,6 +69,9 @@ class Nav extends Component {
     goToWhere(){
         this.props.history.push('/cart')
     }
+    goToHome(){
+        this.props.history.push('/home')
+    }
 
     render() {
         return (
@@ -79,7 +82,7 @@ class Nav extends Component {
                     <div className="nmain_right">
                         <img className="right" src={ThreeBar} alt="bar"
                         onClick={this.handleChange}></img>
-                        <img className="left" src={TextLogo} alt="Textlogo"></img>
+                        <img className="left" src={TextLogo} alt="Textlogo" onClick={this.goToHome.bind(this)}></img>
                     </div>
                     <div className="nmain_left">
                         <div>

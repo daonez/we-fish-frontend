@@ -1,9 +1,50 @@
 import React, { Component } from "react";
 import "./NavSideBar.scss";
 import search from "../../../img/search.png";
+import { withRouter } from 'react-router-dom';
 
 class NavSideBar extends Component {
+  state={
+    search:"",
+    search_results:[]
+  }
+  handleSearch = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+    console.log("etargetvalue:",e.target.value)
+  }
+  saveSearch= e => {
+    e.preventDefault();
+  }
+  saveSearch1= e =>{
+    this.state.base.push(this.state.search)
+  }
+
+goToSave = () => {
+  const queryId = this.state.search
+  this.props.history.push(`/searchresult?keyword=${queryId}`)
+
+
+  
+  // fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`,{
+  //           method:'GET',
+  //       })
+  //       .then(response => { return response.json() })
+  //       .then(response => {
+  //           this.setState({ search_results: response.search_results})
+  //           this.props.history.push(`/searchresult?keyword=${queryId}`)
+  //           console.log(response)
+            
+  //       })
+    }
+
+
+
+
   render() {
+   console.log("state.search:",this.state.search)
+   console.log("database:",this.state.search_results)
     return (
       <div className="navSideBar">
         <div className="profileLoggedOut">
@@ -18,14 +59,16 @@ class NavSideBar extends Component {
           </div>
         </div>
         <div className="search">
-          <form action="/">
-            <button>
+          <form onSubmit={this.saveSearch}>
+            <button
+            onClick={this.goToSave}> 
               <i></i>
             </button>
             <input
               type="text"
-              name="name"
+              name="search"
               placeholder="'보리숭어'를 검색하세요"
+              onChange={this.handleSearch}
             ></input>
           </form>
         </div>
@@ -141,4 +184,4 @@ class NavSideBar extends Component {
   }
 }
 
-export default NavSideBar;
+export default withRouter(NavSideBar)
