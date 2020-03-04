@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/product.scss"
+import "./product.scss"
 import Selector from "./Selector_button"
 import Layout from "../../component/Layout"
 

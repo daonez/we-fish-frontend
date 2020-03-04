@@ -1,17 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from "react"
+import "./Main"
 import Slider from "react-slick"
-import "../../styles/main.scss"
 
+const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false
+}
 export default class GuestOrderSlider extends Component {
   render() {
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false
-    }
     return (
       <Slider {...settings}>
         <div>

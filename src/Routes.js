@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 import Home from "./pages/Home"
-import ccyHome from "./pages/ccyHome"
+import Main from "./pages/main/Main"
 import Product from "./pages/product/Product"
 import Detail from "./pages/Detail"
 import NavCart from "./component/navAdd/NavCart"
@@ -21,9 +21,9 @@ class Routes extends React.Component {
           <Route exact path="/home" component={Home} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/main" component={Main} />
           <Route exact path="/product" component={Product} />
           <Route exact path="/detail" component={Detail} />
-          <Route exact path="/main" component={ccyHome} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/delete" component={NavSideBarLogin} />
         </Switch>
