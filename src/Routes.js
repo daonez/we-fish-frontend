@@ -10,6 +10,7 @@ import Detail from './pages/detail/Detail'
 import NavCart from './component/navAdd/NavCart'
 import NavSideBarLogin from './component/nav/NavSideBar/NavSideBarLogin'
 import Cart from './pages/Cart'
+import Main from './pages/main/Main'
 
 class Routes extends React.Component {
   render() {

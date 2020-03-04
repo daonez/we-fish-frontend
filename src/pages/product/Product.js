@@ -1,7 +1,7 @@
-import React from "react"
-import "./product.scss"
-import Selector from "./Selector_button"
-import Layout from "../../component/Layout"
+import React from 'react'
+import './product.scss'
+import Layout from 'component/Layout'
+import Selector from './Selector_button'
 
 class Products extends React.Component {
   constructor() {
@@ -17,7 +17,7 @@ class Products extends React.Component {
       prepared: [],
       dried: [],
       seaweed: [],
-      seasonal: []
+      seasonal: [],
     }
   }
 
@@ -27,10 +27,10 @@ class Products extends React.Component {
 
   // Fetch 함수로 data.json
   fetchProduct() {
-    fetch("http://localhost:3000/data/category_list.json")
+    fetch('http://localhost:3000/data/category_list.json')
       .then(request => request.json())
       .then(request => {
-        this.setState({ fish: request.descending_price[3]["자연산 회"] })
+        this.setState({ fish: request.descending_price[3]['자연산 회'] })
       })
     console.log(this.state.fish)
   }
@@ -58,7 +58,7 @@ class Products extends React.Component {
                     <div className="productCardContent">
                       <h1>{item.name}</h1>
                       <p>
-                        <span>{Number(item.price).toLocaleString("kr")}</span>원
+                        <span>{Number(item.price).toLocaleString('kr')}</span>원
                       </p>
                       <p>
                         <span>{item.rating}</span>
