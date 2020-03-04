@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './NavAskWrite.scss';
 import { FaCamera } from 'react-icons/fa';
 import { withRouter } from 'react-router-dom';
+import ImageUploader from "react-images-upload";
 
 class NavAskWrite extends Component {
     state={
@@ -10,8 +11,16 @@ class NavAskWrite extends Component {
         email:"",
         content:"",
         image:"",
-        data:[]
+        data:[],
+        picture:[]
     }
+    onDrop = this.onDrop
+    onDrop(pictureFiles, pictureDataURLs) {
+        this.setState({
+          pictures: this.state.pictures.concat(pictureFiles)
+        });
+      }
+
     handleSave = e => {
         this.setState({
             [e.target.name]: e.target.value   
@@ -94,7 +103,6 @@ class NavAskWrite extends Component {
                     </div>
                     <div className="upload">
                         <div>이미지 업로드</div>
-                        <button><FaCamera size="23"/></button>
                     </div>
                     <div className="buttonClick">
                         <input type="checkbox" ></input> <span>공개 여부</span>
@@ -104,6 +112,13 @@ class NavAskWrite extends Component {
                         <button
                         onClick={this.handleClick}>저장하기</button>
                     </div>
+                    <ImageUploader
+                    withIcon={true}
+                    buttonText=""
+                    onChange={this.onDrop}
+                    imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                    maxFileSize={5242880}
+                     />
 
 
                 </div>

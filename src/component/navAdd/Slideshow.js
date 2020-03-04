@@ -39,6 +39,6 @@ const Slideshow = () => {
       </div>
     )
 }
-export default Slideshow
+export default Slideshow;
 
 
