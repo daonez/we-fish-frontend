@@ -36,10 +36,7 @@ const Slideshow = () => {
     </div>
   )
 }
-<<<<<<< HEAD
+
 export default Slideshow;
 
 
-=======
-export default Slideshow
->>>>>>> a1abe1b6061183488a67c14160a750784a4a41b8
