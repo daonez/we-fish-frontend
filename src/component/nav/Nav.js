@@ -1,20 +1,20 @@
-import React, { Component } from "react"
-import "./Nav.scss"
-import { withRouter } from "react-router-dom"
-import NavSideBar from "./NavSideBar/NavSideBar"
-import TextLogo from "../../img/logotext.png"
-import ThreeBar from "../../img/threebar.svg"
-import DownArrow from "../../img/dropdown.png"
-import Cart from "../../img/cart.png"
-import Slideshow from "../navAdd/Slideshow"
+import React, { Component } from 'react'
+import './Nav.scss'
+import { withRouter } from 'react-router-dom'
+import NavSideBar from './NavSideBar/NavSideBar'
+import TextLogo from '../../img/logotext.png'
+import ThreeBar from '../../img/threebar.svg'
+import DownArrow from '../../img/dropdown.png'
+import Cart from '../../img/cart.png'
+import Slideshow from '../navAdd/Slideshow'
 
 class Nav extends Component {
   state = {
     toggle: true,
-    transition: "",
-    transform: "translateX(0px)",
+    transition: '',
+    transform: 'translateX(0px)',
     switch: true,
-    display: "none"
+    display: 'none',
   }
 
   handleChange = () => {
@@ -22,18 +22,18 @@ class Nav extends Component {
       this.setState(
         {
           toggle: false,
-          transition: "transform .3s ease-in",
-          transform: "translateX(410px)"
+          transition: 'transform .3s ease-in',
+          transform: 'translateX(410px)',
         },
         () => {
           console.log(this.state)
-        }
+        },
       )
     } else if (!this.state.toggle) {
       this.setState({
         toggle: true,
-        transition: "transform .3s ease-in",
-        transform: "translateX(0px)"
+        transition: 'transform .3s ease-in',
+        transform: 'translateX(0px)',
       })
     }
   }
@@ -42,8 +42,8 @@ class Nav extends Component {
     if (!this.state.toggle) {
       this.setState({
         toggle: true,
-        transition: "transform .3s ease-in",
-        transform: "translateX(0px)"
+        transition: 'transform .3s ease-in',
+        transform: 'translateX(0px)',
       })
     }
   }
@@ -53,12 +53,12 @@ class Nav extends Component {
     if (this.state.switch) {
       this.setState({
         switch: false,
-        display: "block"
+        display: 'block',
       })
     } else if (!this.state.switch) {
       this.setState({
         switch: true,
-        display: "none"
+        display: 'none',
       })
     }
   }
@@ -68,13 +68,17 @@ class Nav extends Component {
     if (!this.state.switch) {
       this.setState({
         switch: true,
-        display: "none"
+        display: 'none',
       })
     }
   }
 
   goToWhere() {
-    this.props.history.push("/cart")
+    this.props.history.push('/cart')
+  }
+
+  goToHome() {
+    this.props.history.push('/home')
   }
 
   render() {
@@ -92,7 +96,12 @@ class Nav extends Component {
               alt="bar"
               onClick={this.handleChange}
             />
-            <img className="left" src={TextLogo} alt="Textlogo" />
+            <img
+              className="left"
+              src={TextLogo}
+              alt="Textlogo"
+              onClick={this.goToHome.bind(this)}
+            />
           </div>
           <div className="nmain_left">
             <div>
@@ -129,7 +138,7 @@ class Nav extends Component {
           className="navsidebarDiv"
           style={{
             transition: this.state.transition,
-            transform: this.state.transform
+            transform: this.state.transform,
           }}
         >
           <NavSideBar />
