@@ -8,18 +8,21 @@ import NavOrderList from "../component/nav/NavSideBar/NavSideBarChild/NavOrderLi
 import NavReview from "../component/nav/NavSideBar/NavSideBarChild/NavReview"
 import NavMyPage from "../component/nav/NavSideBar/NavSideBarChild/NavMyPage"
 import "../styles/layout.scss"
+import "../styles/main.scss"
 import SectionLeft from "../component/LayoutLeft"
 import Slideshow from "../component/navAdd/Slideshow"
 import NavFooter from "../component/navAdd/NavFooter"
 import NavCart from "../component/navAdd/NavCart"
+import Main from "./main/Main"
 
-class Home extends Component {
+class ccyHome extends Component {
   render() {
     return (
       <>
         <div>
           <Nav>
             <Slideshow />
+            <Main />
             <NavFooter />
           </Nav>
         </div>
@@ -34,4 +37,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default ccyHome

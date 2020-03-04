@@ -1,33 +1,35 @@
-import React from "react";
-import "../../styles/product.scss";
-import dropDownArrow from "../../images/down-chevron.png";
+/* eslint-disable react/button-has-type */
+import React from "react"
+import "../../styles/product.scss"
+import dropDownArrow from "../../images/down-chevron.png"
 
 export default class Selector extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      //menu를 false로 하여 보여주지 않게함.
       showMenu: false
-    };
+    }
   }
+
   showMenu = event => {
-    event.preventDefault();
+    event.preventDefault()
     this.setState(
       {
         showMenu: true
       },
       () => {
-        document.addEventListener("click", this.closeMenu);
+        document.addEventListener("click", this.closeMenu)
       }
-    );
-  };
+    )
+  }
+
   closeMenu = event => {
     if (!this.dropDownMenu.contains(event.target)) {
       this.setState({ showMenu: false }, () => {
-        document.removeEventListener("click", this.closeMenu);
-      });
+        document.removeEventListener("click", this.closeMenu)
+      })
     }
-  };
+  }
 
   render() {
     return (
@@ -40,7 +42,7 @@ export default class Selector extends React.Component {
           <div
             className="dropDown_lists"
             ref={element => {
-              this.dropDownMenu = element;
+              this.dropDownMenu = element
             }}
           >
             <ul className="dropDown_lists">
@@ -63,6 +65,6 @@ export default class Selector extends React.Component {
           </div>
         ) : null}
       </div>
-    );
+    )
   }
 }

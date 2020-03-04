@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import SectionLeft from "./LayoutLeft";
-import Header from "./nav/Nav";
-import "../styles/layout.scss";
+import React, { Component } from "react"
+import SectionLeft from "./LayoutLeft"
+import Header from "./nav/Nav"
+import "../styles/layout.scss"
 
 class Layout extends Component {
   render() {
@@ -15,8 +15,8 @@ class Layout extends Component {
           </section>
         </section>
       </div>
-    );
+    )
   }
 }
 
-export default Layout;
+export default Layout
