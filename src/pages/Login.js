@@ -1,21 +1,21 @@
-import React, { Component } from "react"
-import "./login.scss"
-import { withRouter } from "react-router"
-import Kakao from "kakaojs"
-import orange from "../images/animal.svg"
+import React, { Component } from 'react'
+import './login.scss'
+import { withRouter } from 'react-router'
+import Kakao from 'kakaojs'
+import orange from '../images/animal.svg'
 
 class Login extends Component {
   componentDidMount() {
-    Kakao.init("e3e82dffc2b3f62d521ecdb7a1954e17")
+    Kakao.init('e3e82dffc2b3f62d521ecdb7a1954e17')
   }
 
   constructor(props) {
     super(props)
 
     this.state = {
-      mode: "unclicked",
-      id: "",
-      pw: ""
+      mode: 'unclicked',
+      id: '',
+      pw: '',
     }
   }
 
@@ -28,53 +28,53 @@ class Login extends Component {
   }
 
   onBtnClick = () => {
-    if (this.state.mode === "unclicked") {
+    if (this.state.mode === 'unclicked') {
       this.setState({
-        mode: "clicked"
+        mode: 'clicked',
       })
     } else {
       this.setState({
-        mode: "unclicked"
+        mode: 'unclicked',
       })
     }
   }
 
   handleSignID = e => {
     this.setState({
-      id: e.target.value
+      id: e.target.value,
     })
     console.log(this.state.id)
   }
 
   handleSignPW = e => {
     this.setState({
-      pw: e.target.value
+      pw: e.target.value,
     })
     console.log(this.state.pw)
   }
 
   toSignUp = () => {
-    this.props.history.push("/SignUp")
+    this.props.history.push('/SignUp')
   }
 
   toFindId = () => {
-    this.props.history.push("/FindId")
+    this.props.history.push('/FindId')
   }
 
   toFindPw = () => {
-    this.props.history.push("/FindPw")
+    this.props.history.push('/FindPw')
   }
 
   fetcher = () => {
-    fetch("http://10.58.6.8:8000/user/sign-in", {
-      method: "POST",
+    fetch('http://10.58.6.8:8000/user/sign-in', {
+      method: 'POST',
       headers: {
-        "Content-type": "application/json"
+        'Content-type': 'application/json',
       },
       body: JSON.stringify({
         email: this.state.id,
-        password: this.state.pw
-      })
+        password: this.state.pw,
+      }),
     })
       .then(response => {
         console.log(response)
@@ -82,13 +82,13 @@ class Login extends Component {
       })
       .then(response => {
         if (response.token) {
-          localStorage.setItem("fish", response.token)
+          localStorage.setItem('fish', response.token)
         }
       })
       .then(response => {
         if (response.status === 200) {
         }
-        this.props.history.push("/home")
+        this.props.history.push('/home')
       })
   }
 
@@ -99,7 +99,7 @@ class Login extends Component {
       },
       fail(err) {
         console.log(JSON.stringify(err))
-      }
+      },
     })
   }
 
@@ -113,18 +113,18 @@ class Login extends Component {
                 <input
                   className="loginID"
                   placeholder="이메일"
-                  onChange={this.SetStater("id")}
+                  onChange={this.SetStater('id')}
                 />
                 <input
                   className="loginPW"
                   placeholder="비밀번호(8-16자리 영문,숫자 조합)"
-                  onChange={this.SetStater("pw")}
+                  onChange={this.SetStater('pw')}
                 />
                 <section className="sectionAuthen">
                   <div className="checkboxwrap">
                     <div className="checkbox">
                       <div>
-                        {this.state.mode === "unclicked" ? (
+                        {this.state.mode === 'unclicked' ? (
                           <div className="checkbox">
                             <input className="checkboxinput" type="checkbox" />
                             <span

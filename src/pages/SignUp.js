@@ -1,32 +1,32 @@
-import React, { Component } from "react"
-import "./signup.scss"
-import Kakao from "kakaojs"
-import DaumPostcode from "react-daum-postcode"
-import fish from "../images/animal.svg"
+import React, { Component } from 'react'
+import './signup.scss'
+import Kakao from 'kakaojs'
+import DaumPostcode from 'react-daum-postcode'
+import fish from '../images/animal.svg'
 
 class SignUp extends Component {
   componentDidMount() {
-    Kakao.init("e3e82dffc2b3f62d521ecdb7a1954e17")
+    Kakao.init('e3e82dffc2b3f62d521ecdb7a1954e17')
   }
 
   constructor() {
     super()
 
     this.state = {
-      id: "",
+      id: '',
       emailformcheck: true,
-      pw: "",
+      pw: '',
       pwformcheck: true,
-      pwc: "",
+      pwc: '',
       pwccheck: true,
-      name: "",
-      postcode: "",
+      name: '',
+      postcode: '',
       addressfindcheck: false,
-      address: "",
-      address_detail: "",
-      mobile: "",
+      address: '',
+      address_detail: '',
+      mobile: '',
       mobileformcheck: true,
-      veri_code: "",
+      veri_code: '',
       agreement: false,
       totalagreemode: false,
       mustagreemode1: false,
@@ -35,7 +35,7 @@ class SignUp extends Component {
       signupactmode: false,
       totaluserinfo: false,
       authenclick: false,
-      kakaotoken: ""
+      kakaotoken: '',
     }
   }
 
@@ -44,12 +44,12 @@ class SignUp extends Component {
       success: authObj => {
         console.log(authObj)
         this.setState({
-          kakaotoken: authObj.access_token
+          kakaotoken: authObj.access_token,
         })
       },
       fail(err) {
         console.log(JSON.stringify(err))
-      }
+      },
     })
   }
 
@@ -62,7 +62,7 @@ class SignUp extends Component {
   }
 
   emailFormChecker = e => {
-    e.target.value.includes("@" && "com")
+    e.target.value.includes('@' && 'com')
       ? this.setState({ emailformcheck: true, id: e.target.value })
       : this.setState({ emailformcheck: false, id: e.target.value })
   }
@@ -80,7 +80,7 @@ class SignUp extends Component {
   }
 
   mobileFormChecker = e => {
-    !e.target.value.includes("-")
+    !e.target.value.includes('-')
       ? this.setState({ mobileformcheck: true, mobile: e.target.value })
       : this.setState({ mobileformcheck: false, mobile: e.target.value })
   }
@@ -95,19 +95,19 @@ class SignUp extends Component {
     let fullAddress = data.address
     const extraAddress = data.zonecode
 
-    if (data.addressType === "R") {
+    if (data.addressType === 'R') {
       fullAddress += data.buildingName
     }
     this.setState({
       address: fullAddress,
-      postcode: extraAddress
+      postcode: extraAddress,
     })
     console.log(this.state.searchAddress)
   }
 
   signUpFetcher = () => {
-    fetch("http://10.58.3.240:8000/user/sign-up", {
-      method: "POST",
+    fetch('http://10.58.3.240:8000/user/sign-up', {
+      method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw,
@@ -115,22 +115,22 @@ class SignUp extends Component {
         postcode: this.state.postcode,
         address: this.state.address,
         mobile: this.state.mobile,
-        agreement: this.state.agreement
-      })
+        agreement: this.state.agreement,
+      }),
     }).then(response => {
       console.log(response)
       if (response.status === 200) {
-        this.props.history.push("/home")
+        this.props.history.push('/home')
       }
     })
   }
 
   authenFetcher = () => {
-    fetch("http://10.58.3.240:8000/user/verify", {
-      method: "POST",
+    fetch('http://10.58.3.240:8000/user/verify', {
+      method: 'POST',
       body: JSON.stringify({
-        mobile: this.state.mobile
-      })
+        mobile: this.state.mobile,
+      }),
     })
       .then(response => {
         console.log(response)
@@ -139,19 +139,19 @@ class SignUp extends Component {
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            authenclick: true
+            authenclick: true,
           })
         }
       })
   }
 
   authenPoster = () => {
-    fetch("http://10.58.3.240:8000/user/confirm", {
-      method: "POST",
+    fetch('http://10.58.3.240:8000/user/confirm', {
+      method: 'POST',
       body: JSON.stringify({
         mobile: this.state.mobile,
-        code: this.state.veri_code
-      })
+        code: this.state.veri_code,
+      }),
     })
       .then(response => {
         console.log(response)
@@ -160,7 +160,7 @@ class SignUp extends Component {
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            totaluserinfo: true
+            totaluserinfo: true,
           })
         }
       })
@@ -174,7 +174,7 @@ class SignUp extends Component {
           mustagreemode2: true,
           mktingagreemode: true,
           signupactmode: true,
-          agreement: true
+          agreement: true,
         })
       : this.setState({
           totalagreemode: false,
@@ -182,14 +182,14 @@ class SignUp extends Component {
           mustagreemode2: false,
           mktingagreemode: false,
           signupactmode: false,
-          agreement: false
+          agreement: false,
         })
   }
 
   onBtnClickMust1 = () => {
     if (this.state.mustagreemode1 === false) {
       this.setState({
-        mustagreemode1: true
+        mustagreemode1: true,
       })
     }
     if (
@@ -200,7 +200,7 @@ class SignUp extends Component {
         totalagreemode: true,
         mustagreemode1: true,
         agreement: true,
-        signupactmode: true
+        signupactmode: true,
       })
     }
     if (
@@ -212,12 +212,12 @@ class SignUp extends Component {
       this.setState({
         mustagreemode1: false,
         totalagreemode: false,
-        signupactmode: false
+        signupactmode: false,
       })
     }
     if (this.state.mustagreemode1 === true) {
       this.setState({
-        mustagreemode1: false
+        mustagreemode1: false,
       })
     }
   }
@@ -225,7 +225,7 @@ class SignUp extends Component {
   onBtnClickMust2 = () => {
     if (this.state.mustagreemode2 === false) {
       this.setState({
-        mustagreemode2: true
+        mustagreemode2: true,
       })
     }
     if (
@@ -236,7 +236,7 @@ class SignUp extends Component {
         totalagreemode: true,
         mustagreemode2: true,
         agreement: true,
-        signupactmode: true
+        signupactmode: true,
       })
     }
     if (
@@ -248,12 +248,12 @@ class SignUp extends Component {
       this.setState({
         mustagreemode2: false,
         totalagreemode: false,
-        signupactmode: false
+        signupactmode: false,
       })
     }
     if (this.state.mustagreemode2 === true) {
       this.setState({
-        mustagreemode2: false
+        mustagreemode2: false,
       })
     }
   }
@@ -262,7 +262,7 @@ class SignUp extends Component {
     if (this.state.mktingagreemode === false) {
       this.setState({
         mktingagreemode: true,
-        agreement: true
+        agreement: true,
       })
     }
     if (
@@ -273,14 +273,14 @@ class SignUp extends Component {
       this.setState({
         mktingagreemode: true,
         agreement: true,
-        totalagreemode: true
+        totalagreemode: true,
       })
     }
     if (this.state.mktingagreemode === true) {
       this.setState({
         mktingagreemode: false,
         totalagreemode: false,
-        agreement: false
+        agreement: false,
       })
     }
   }
@@ -334,7 +334,7 @@ class SignUp extends Component {
                     <input
                       placeholder="이름"
                       type="text"
-                      onChange={this.SetStater("name")}
+                      onChange={this.SetStater('name')}
                     />
                   </div>
                 </div>
@@ -396,7 +396,7 @@ class SignUp extends Component {
                           placeholder="우편번호"
                           type="text"
                           value={this.state.postcode}
-                          onChange={this.SetStater("postcode")}
+                          onChange={this.SetStater('postcode')}
                         />
                       </div>
 
@@ -415,7 +415,7 @@ class SignUp extends Component {
                       <input
                         placeholder="상세주소"
                         type="text"
-                        onChange={this.SetStater("address_detail")}
+                        onChange={this.SetStater('address_detail')}
                       />
                     </div>
                   </div>
@@ -449,7 +449,7 @@ class SignUp extends Component {
                       <input
                         placeholder="상세주소"
                         type="text"
-                        onChange={this.SetStater("address_detail")}
+                        onChange={this.SetStater('address_detail')}
                       />
                     </div>
                   </div>
@@ -530,7 +530,7 @@ class SignUp extends Component {
                             className="authennuminput"
                             placeholder="인증번호 입력"
                             type="text"
-                            onChange={this.SetStater("veri_code")}
+                            onChange={this.SetStater('veri_code')}
                           />
                           <button
                             className="toauthenbtn"

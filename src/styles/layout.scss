@@ -1,20 +1,18 @@
-$mobile: "Only screen and (max-width: 420px)";
+$mobile: 'screen and (max-width: 420px)';
 
 .wrap {
   display: flex;
   justify-content: flex-end;
-
-  @media #{$mobile} {
-    display: block;
-    justify-content: normal;
-  }
 }
 
 .section-left {
   width: 50%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  background-color: #fff;
+  z-index: 200;
 
   &__wrap {
     position: absolute;
@@ -38,7 +36,7 @@ $mobile: "Only screen and (max-width: 420px)";
       color: #8a8a8a;
       font-size: 40px;
       letter-spacing: -0.6px;
-      font-family: "Spoqa Han Sans Thin";
+      font-family: 'Spoqa Han Sans Thin';
 
       span {
         display: block;
@@ -91,10 +89,6 @@ $mobile: "Only screen and (max-width: 420px)";
       color: #ff9f6a;
     }
   }
-
-  @media #{$mobile} {
-    display: none;
-  }
 }
 
 .section-right {
@@ -103,8 +97,14 @@ $mobile: "Only screen and (max-width: 420px)";
   &__main {
     max-width: 420px;
   }
+}
 
-  @media #{$mobile} {
+@media #{$mobile} {
+  .section-left {
+    display: none;
+  }
+
+  .section-right {
     width: 100%;
   }
 }
