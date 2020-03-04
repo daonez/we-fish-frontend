@@ -15,15 +15,7 @@ class Postcode extends React.Component {
     const extraAddress = data.zonecode
 
     if (data.addressType === "R") {
-      // if (data.bname !== "") {
-      //   extraAddress += data.bname
-      // }
-      // // if (data.buildingName !== "") {
-      // //   extraAddress +=
-      // //     extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName
-      // // }
       fullAddress += extraAddress !== "" ? ` (${data.buildingName})` : ""
-      // return fullAddress
     }
     this.setState({
       searchAddress: fullAddress,

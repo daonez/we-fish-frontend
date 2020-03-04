@@ -2,17 +2,17 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 
+const sliderSetting1 = {
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true,
+  arrows: false,
+}
+
 class MainSlider extends Component {
   render() {
-    const sliderSetting1 = {
-      dots: true,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      adaptiveHeight: true,
-      arrows: false,
-    }
-
     return (
       <div className="detail-product__main-slider">
         <div>

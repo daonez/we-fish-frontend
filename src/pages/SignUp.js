@@ -1,33 +1,35 @@
-import React, { Component } from "react"
-import "../styles/signup.scss"
-import orange from "../images/animal.svg"
-import Postcode from "./Postcode"
+import React, { Component } from 'react'
+import '../styles/signup.scss'
+import orange from '../images/animal.svg'
+import Postcode from './Postcode'
 
 class SignUp extends Component {
   constructor() {
     super()
 
     this.state = {
+      id: '',
       emailformcheck: true,
-      id: "",
+      pw: '',
       pwformcheck: true,
-      pw: "",
-      pwc: "",
+      pwc: '',
       pwccheck: true,
-      name: "",
-      postcode: "",
+      name: '',
+      postcode: '',
       addressfindcheck: false,
-      address: "",
-      address_detail: "",
-      mobile: "",
+      address: '',
+      address_detail: '',
+      mobile: '',
       mobileformcheck: true,
+      veri_code: '',
       agreement: false,
       totalagreemode: false,
       mustagreemode1: false,
       mustagreemode2: false,
       mktingagreemode: false,
       signupactmode: false,
-      totaluserinfo: false
+      totaluserinfo: false,
+      authenclick: false,
     }
   }
 
@@ -46,14 +48,14 @@ class SignUp extends Component {
   // }
 
   emailFormChecker = e => {
-    if (e.target.value.includes("@", ".com")) {
+    if (e.target.value.includes('@', '.com')) {
       this.setState({
-        emailformcheck: true
+        emailformcheck: true,
       })
     }
-    if (!e.target.value.includes("@", ".com")) {
+    if (!e.target.value.includes('@', '.com')) {
       this.setState({
-        emailformcheck: false
+        emailformcheck: false,
       })
     }
   }
@@ -61,12 +63,12 @@ class SignUp extends Component {
   passwordFormChecker = e => {
     if (e.target.value.length >= 6) {
       this.setState({
-        pwformcheck: true
+        pwformcheck: true,
       })
     }
     if (e.target.value.length < 6) {
       this.setState({
-        pwformcheck: false
+        pwformcheck: false,
       })
     }
   }
@@ -74,25 +76,25 @@ class SignUp extends Component {
   pwcChecker = e => {
     if (this.state.pw !== e.target.value) {
       this.setState({
-        pwccheck: false
+        pwccheck: false,
       })
     }
     if (this.state.pw === e.target.value) {
       this.setState({
-        pwccheck: true
+        pwccheck: true,
       })
     }
   }
 
   mobileFormChecker = e => {
-    if (!e.target.value.includes("-")) {
+    if (!e.target.value.includes('-')) {
       this.setState({
-        mobileformcheck: true
+        mobileformcheck: true,
       })
     }
-    if (e.target.value.includes("-")) {
+    if (e.target.value.includes('-')) {
       this.setState({
-        mobileformcheck: false
+        mobileformcheck: false,
       })
     }
   }
@@ -100,19 +102,19 @@ class SignUp extends Component {
   addressFindChecker = () => {
     if (this.state.addressfindcheck === false) {
       this.setState({
-        addressfindcheck: true
+        addressfindcheck: true,
       })
     }
     if (this.state.addressfindcheck === true) {
       this.setState({
-        addressfindcheck: false
+        addressfindcheck: false,
       })
     }
   }
 
-  signUpFetch = () => {
-    fetch("http://10.58.6.8:8000/user/sign-up", {
-      method: "POST",
+  signUpFetcher = () => {
+    fetch('http://10.58.6.8:8000/user/sign-up', {
+      method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw,
@@ -120,8 +122,45 @@ class SignUp extends Component {
         postcode: this.state.postcode,
         address: this.state.address,
         mobile: this.state.mobile,
-        agreement: this.state.agreement
-      })
+        agreement: this.state.agreement,
+      }),
+    })
+  }
+
+  authenFetcher = () => {
+    fetch('http://10.58.5.89:8000/user/verify', {
+      method: 'POST',
+      body: JSON.stringify({
+        mobile: this.state.mobile,
+      }),
+    }).then(response => {
+      console.log(response)
+      return response
+    })
+  }
+
+  //   })
+
+  //   })
+  //   // .then(response => {
+  //   //   if (response.status === 200) {
+  //   //     this.setState({
+  //   //       authenclick: true
+  //   //     })
+  //   //   }
+  //   // })
+  // }
+
+  authenPoster = () => {
+    fetch('http://10.58.5.89:8000/user/confirm', {
+      method: 'POST',
+      body: JSON.stringify({
+        mobile: this.state.mobile,
+        code: this.state.veri_code,
+      }),
+    }).then(response => {
+      console.log(response)
+      return response
     })
   }
 
@@ -133,7 +172,7 @@ class SignUp extends Component {
         mustagreemode2: true,
         mktingagreemode: true,
         signupactmode: true,
-        agreement: true
+        agreement: true,
       })
     }
     if (this.state.totalagreemode === true) {
@@ -143,7 +182,7 @@ class SignUp extends Component {
         mustagreemode2: false,
         mktingagreemode: false,
         signupactmode: false,
-        agreement: false
+        agreement: false,
       })
     }
   }
@@ -151,7 +190,7 @@ class SignUp extends Component {
   onBtnClickMust1 = () => {
     if (this.state.mustagreemode1 === false) {
       this.setState({
-        mustagreemode1: true
+        mustagreemode1: true,
       })
     }
     if (
@@ -162,7 +201,7 @@ class SignUp extends Component {
         totalagreemode: true,
         mustagreemode1: true,
         agreement: true,
-        signupactmode: true
+        signupactmode: true,
       })
     }
     if (
@@ -174,12 +213,12 @@ class SignUp extends Component {
       this.setState({
         mustagreemode1: false,
         totalagreemode: false,
-        signupactmode: false
+        signupactmode: false,
       })
     }
     if (this.state.mustagreemode1 === true) {
       this.setState({
-        mustagreemode1: false
+        mustagreemode1: false,
       })
     }
   }
@@ -187,7 +226,7 @@ class SignUp extends Component {
   onBtnClickMust2 = () => {
     if (this.state.mustagreemode2 === false) {
       this.setState({
-        mustagreemode2: true
+        mustagreemode2: true,
       })
     }
     if (
@@ -198,7 +237,7 @@ class SignUp extends Component {
         totalagreemode: true,
         mustagreemode2: true,
         agreement: true,
-        signupactmode: true
+        signupactmode: true,
       })
     }
     if (
@@ -210,12 +249,12 @@ class SignUp extends Component {
       this.setState({
         mustagreemode2: false,
         totalagreemode: false,
-        signupactmode: false
+        signupactmode: false,
       })
     }
     if (this.state.mustagreemode2 === true) {
       this.setState({
-        mustagreemode2: false
+        mustagreemode2: false,
       })
     }
   }
@@ -224,7 +263,7 @@ class SignUp extends Component {
     if (this.state.mktingagreemode === false) {
       this.setState({
         mktingagreemode: true,
-        agreement: true
+        agreement: true,
       })
     }
     if (
@@ -235,14 +274,14 @@ class SignUp extends Component {
       this.setState({
         mktingagreemode: true,
         agreement: true,
-        totalagreemode: true
+        totalagreemode: true,
       })
     }
     if (this.state.mktingagreemode === true) {
       this.setState({
         mktingagreemode: false,
         totalagreemode: false,
-        agreement: false
+        agreement: false,
       })
     }
   }
@@ -255,7 +294,7 @@ class SignUp extends Component {
         this.state.mobileformcheck) === true
     ) {
       this.setState({
-        totaluserinfo: true
+        totaluserinfo: true,
       })
     }
   }
@@ -286,9 +325,8 @@ class SignUp extends Component {
               <h2 className="signupemailtxt">이메일 회원가입</h2>
               {this.state.emailformcheck === false ? (
                 <div>
-                  <div className="inputemailwrap">
+                  <div>
                     <input
-                      className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
                       onChange={this.emailFormChecker}
@@ -300,9 +338,8 @@ class SignUp extends Component {
                 </div>
               ) : (
                 <div>
-                  <div className="inputemailwrap">
+                  <div>
                     <input
-                      className="inputemail"
                       placeholder="이메일 주소 입력"
                       type="text"
                       onChange={this.emailFormChecker}
@@ -314,11 +351,9 @@ class SignUp extends Component {
               <div>
                 <div>
                   <input
-                    className="inputname"
                     placeholder="이름"
                     type="text"
-                    onChange={this.SetStater("name")}
-                    // name="id"
+                    onChange={this.SetStater('name')}
                   />
                 </div>
               </div>
@@ -326,10 +361,9 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpw"
                       placeholder="비밀번호(6자리 이상)"
                       type="text"
-                      onKeyPress={this.SetStater("pw")}
+                      onKeyPress={this.SetStater('pw')}
                       onChange={this.passwordFormChecker}
                     />
                   </div>
@@ -341,10 +375,9 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpw"
                       placeholder="비밀번호(6자리 이상)"
                       type="text"
-                      onKeyPress={this.SetStater("pw")}
+                      onKeyPress={this.SetStater('pw')}
                       onChange={this.passwordFormChecker}
                     />
                   </div>
@@ -354,11 +387,9 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpwcheck"
                       placeholder="비밀번호 확인"
                       type="text"
-                      onKeyPress={this.SetStater("pwc")}
-                      // onKeyPress={this.handleSignUpPWC}
+                      onKeyPress={this.SetStater('pwc')}
                       onChange={this.pwcChecker}
                     />
                   </div>
@@ -370,10 +401,9 @@ class SignUp extends Component {
                 <div>
                   <div>
                     <input
-                      className="inputpwcheck"
                       placeholder="비밀번호 확인"
                       type="text"
-                      onKeyPress={this.SetStater("pwc")}
+                      onKeyPress={this.SetStater('pwc')}
                       onChange={this.pwcChecker}
                     />
                   </div>
@@ -388,7 +418,7 @@ class SignUp extends Component {
                         className="inputpost"
                         placeholder="우편번호"
                         type="text"
-                        onChange={this.SetStater("postcode")}
+                        onChange={this.SetStater('postcode')}
                       />
                     </div>
 
@@ -404,46 +434,14 @@ class SignUp extends Component {
                   </div>
                   <div>
                     <input
-                      className="inputdetailadd"
                       placeholder="상세주소"
                       type="text"
-                      onChange={this.SetStater("address_detail")}
+                      onChange={this.SetStater('address_detail')}
                     />
                   </div>
                 </div>
               ) : (
                 <Postcode />
-                // <div>
-                //   <div className="postaddwrap">
-                //     <div className="inputpostwrap">
-                //       <input
-                //         className="inputpost"
-                //         placeholder="우편번호"
-                //         type="text"
-                //         onChange={this.SetStater("postcode")}
-                //       />
-                //     </div>
-                //     <div className="inputaddwrap">
-                //       <input
-                //         className="inputaddress"
-                //         placeholder="주소 찾기"
-                //         type="text"
-                //         value={this.props.value}
-                //         onClick={this.addressFindChecker}
-                //       />
-                //     </div>
-                //   </div>
-                //   <div>
-                //     <Postcode />
-                //   </div>
-                //   <div>
-                //     <input
-                //       className="inputdetailadd"
-                //       placeholder="상세주소"
-                //       type="text"
-                //     />
-                //   </div>
-                // </div>
               )}
               {this.state.mobileformcheck === false ? (
                 <div>
@@ -453,7 +451,7 @@ class SignUp extends Component {
                         className="phonenum"
                         placeholder="휴대전화번호 ( ' - ' 제외)"
                         type="text"
-                        onKeyDown={this.SetStater("mobile")}
+                        onKeyDown={this.SetStater('mobile')}
                         onChange={this.mobileFormChecker}
                       />
                     </div>
@@ -470,23 +468,62 @@ class SignUp extends Component {
                 </div>
               ) : (
                 <div>
-                  <div className="phoneauthenwrap">
-                    <div>
-                      <input
-                        className="phonenum"
-                        placeholder="휴대전화번호 ( ' - ' 제외)"
-                        type="text"
-                        onKeyDown={this.SetStater("mobile")}
-                        onKeyPress={this.mobileFormChecker}
-                        onChange={this.totalUserInfoChecker}
-                      />
+                  {this.state.authenclick === false ? (
+                    <div className="phoneauthenwrap">
+                      <div>
+                        <input
+                          className="phonenum"
+                          placeholder="휴대전화번호 ( ' - ' 제외)"
+                          type="text"
+                          onKeyDown={this.SetStater('mobile')}
+                          onKeyPress={this.mobileFormChecker}
+                          onChange={this.totalUserInfoChecker}
+                        />
+                      </div>
+                      <div>
+                        <button
+                          className="authenbtn"
+                          type="button"
+                          onClick={this.authenfetcher}
+                        >
+                          인증번호 받기
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <button className="authenbtn" type="button">
-                        인증번호 받기
-                      </button>
+                  ) : (
+                    <div className="phoneauthenwrap">
+                      <div>
+                        <input
+                          className="phonenum"
+                          placeholder="휴대전화번호 ( ' - ' 제외)"
+                          type="text"
+                          onKeyDown={this.SetStater('mobile')}
+                          onKeyPress={this.mobileFormChecker}
+                          onChange={this.totalUserInfoChecker}
+                        />
+                      </div>
+                      <div className="authennumwrap">
+                        <div>
+                          <button
+                            className="authenbtn"
+                            type="button"
+                            onClick={this.authenFetcher}
+                          >
+                            인증번호 받기
+                          </button>
+                        </div>
+                        <div>
+                          <input
+                            className="authennuminput"
+                            placeholder="인증번호 입력"
+                            type="text"
+                            onChange={this.SetStater('veri_code')}
+                            onClick={this.authenPoster}
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
               <p className="under14txt">
@@ -509,7 +546,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickTotal}
-                            oncChange={this.onAgreeClick}
                           />
                         </div>
                       ) : (
@@ -519,7 +555,6 @@ class SignUp extends Component {
                             src={orange}
                             className="agreespanact"
                             onClick={this.onBtnClickTotal}
-                            oncChange={this.onAgreeClick}
                           />
                         </div>
                       )}
@@ -541,7 +576,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickMust1}
-                            onChange={this.onAgreeClick}
                           />
                         </div>
                       </label>
@@ -582,7 +616,6 @@ class SignUp extends Component {
                           <span
                             className="agreespan"
                             onClick={this.onBtnClickMust2}
-                            onChange={this.onAgreeClick}
                           />
                         </div>
                       </label>
@@ -660,7 +693,7 @@ class SignUp extends Component {
               <button
                 className="signupact"
                 type="button"
-                onClick={this.signUpFetch}
+                onClick={this.signUpFetcher}
               >
                 회원가입
               </button>

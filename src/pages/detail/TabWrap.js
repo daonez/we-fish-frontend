@@ -13,14 +13,12 @@ class TapWrap extends Component {
 
     this.state = {
       name: '',
-      detail: this.props.detail,
     }
   }
 
+  //    detail: this.props.detail,
+
   pHandleClick = dataFromChild => {
-    if (dataFromChild === 'detail-product__cont__detail') {
-      this.setState({ name: dataFromChild, detail: this.state.detail })
-    }
     this.setState({ name: dataFromChild })
   }
 

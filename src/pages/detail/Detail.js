@@ -27,7 +27,7 @@ class Detail extends Component {
       caution: '',
       image: '',
       detail: '',
-      slideArr: [],
+      nArr: [],
     }
   }
 
@@ -36,22 +36,36 @@ class Detail extends Component {
   }
 
   fetchFnc = () => {
-    fetch('http://localhost:3000/data/detail_list.json')
+    fetch('http://10.58.1.185:8000/product/detail/4')
       .then(res => res.json())
       .then(res =>
-        this.setState({
-          tagline: res.detail_list[0].tagline,
-          name: res.detail_list[0].name,
-          price: res.detail_list[0].price,
-          unit: res.detail_list[0].unit,
-          package: res.detail_list[0].package,
-          origin: res.detail_list[0].origin,
-          delivery: res.detail_list[0].delivery,
-          caution: res.detail_list[0].caution,
-          image: res.detail_list[0].image,
-          detail: res.detail_list[0].detail,
-          slideArr: res.detail_list,
-        }),
+        this.setState(
+          {
+            tagline: res.product_data[0].tagline,
+            name: res.product_data[0].name,
+            price: res.product_data[0].price,
+            unit: res.product_data[0].unit,
+            package: res.product_data[0].package,
+            origin: res.product_data[0].origin,
+            delivery: res.product_data[0].delivery,
+            caution: res.product_data[0].caution,
+            image: res.product_data[0].image_url,
+            detail: res.product_data[0].description,
+          },
+          () => {
+            for (let i = 0; i < 10; i++) {
+              const ten =
+                res.detail_list[
+                  Math.floor(Math.random() * res.product_data.length)
+                ]
+
+              this.state.nArr.push(ten)
+            }
+            this.setState({
+              nArr: this.state.nArr,
+            })
+          },
+        ),
       )
   }
 
@@ -75,7 +89,7 @@ class Detail extends Component {
           />
           <Cart />
           {/* <Together /> */}
-          <SubSlider arr={this.state.slideArr} />
+          <SubSlider arr={this.state.nArr} />
           <TabWrap detail={this.state.detail} />
           {/* <SubSlider /> */}
         </>
