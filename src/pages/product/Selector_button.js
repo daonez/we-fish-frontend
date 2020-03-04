@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React from 'react'
 import '../../styles/product.scss'
 import dropDownArrow from '../../images/down-chevron.png'
@@ -6,7 +7,6 @@ export default class Selector extends React.Component {
   constructor() {
     super()
     this.state = {
-      // menu를 false로 하여 보여주지 않게함.
       showMenu: false,
     }
   }

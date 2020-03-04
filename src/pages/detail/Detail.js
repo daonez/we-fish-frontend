@@ -53,7 +53,7 @@ class Detail extends Component {
             detail: res.product_data[0].description,
           },
           () => {
-            for (let i = 0; i < 10; i++) {
+            /* for (let i = 0; i < 10; i++) {
               const ten =
                 res.detail_list[
                   Math.floor(Math.random() * res.product_data.length)
@@ -63,7 +63,7 @@ class Detail extends Component {
             }
             this.setState({
               nArr: this.state.nArr,
-            })
+            }) */
           },
         ),
       )

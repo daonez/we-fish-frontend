@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react"
 import { FaAngleLeft } from "react-icons/fa"
 import "./NavOrderList.scss"

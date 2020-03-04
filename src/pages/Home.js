@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react'
 import Nav from '../component/nav/Nav'
 import NavSideBar from '../component/nav/NavSideBar/NavSideBar'
