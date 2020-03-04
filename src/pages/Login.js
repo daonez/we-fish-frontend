@@ -1,9 +1,14 @@
 import React, { Component } from "react"
 import "../styles/login.scss"
 import { withRouter } from "react-router"
+import Kakao from "kakaojs"
 import orange from "../images/animal.svg"
 
 class Login extends Component {
+  componentDidMount() {
+    Kakao.init("e3e82dffc2b3f62d521ecdb7a1954e17")
+  }
+
   constructor(props) {
     super(props)
 
@@ -35,7 +40,15 @@ class Login extends Component {
   }
 
   toSignUp = () => {
-    this.props.history.push("/signup")
+    this.props.history.push("/SignUp")
+  }
+
+  toFindId = () => {
+    this.props.history.push("/FindId")
+  }
+
+  toFindPw = () => {
+    this.props.history.push("/FindPw")
   }
 
   fetcher = () => {
@@ -63,6 +76,17 @@ class Login extends Component {
         }
         this.props.history.push("/home")
       })
+  }
+
+  kakaobutton = () => {
+    Kakao.Auth.login({
+      success: authObj => {
+        console.log(authObj)
+      },
+      fail(err) {
+        console.log(JSON.stringify(err))
+      }
+    })
   }
 
   render() {
@@ -110,9 +134,19 @@ class Login extends Component {
                   </div>
 
                   <div>
-                    <a className="findid">아이디 찾기</a>
+                    <button
+                      className="findid"
+                      // onClick={this.toFindId}
+                    >
+                      아이디 찾기
+                    </button>
                     <span className="IDPWLine">|</span>
-                    <a className="findpw">비밀번호 찾기</a>
+                    <button
+                      className="findpw"
+                      // onClick={this.toFindPw}
+                    >
+                      비밀번호 찾기
+                    </button>
                   </div>
                 </section>
                 <button
@@ -122,7 +156,7 @@ class Login extends Component {
                 >
                   로그인하기
                 </button>
-                <a className="kakaologinbtn">
+                <a className="kakaologinbtn" onClick={this.kakaobutton}>
                   <img alt="temp" className="imgorange" src={orange} />
                   카카오톡으로 로그인하기
                 </a>

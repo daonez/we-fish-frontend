@@ -6,7 +6,8 @@ class Postcode extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchAddress: ""
+      searchAddress: "",
+      searchZonecode: ""
     }
   }
 
@@ -15,7 +16,8 @@ class Postcode extends React.Component {
     const extraAddress = data.zonecode
 
     if (data.addressType === "R") {
-      fullAddress += extraAddress !== "" ? ` (${data.buildingName})` : ""
+      fullAddress += data.buildingName
+      // fullAddress += extraAddress !== "" ? ` (${data.buildingName})` : ""
     }
     this.setState({
       searchAddress: fullAddress,

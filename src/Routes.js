@@ -7,10 +7,14 @@ import Home from "./pages/Home"
 import MainPage from "./pages/main/Main"
 import Product from "./pages/product/Product"
 import Detail from "./pages/Detail"
-import NavCart from "./component//navAdd/NavCart"
+import NavCart from "./component/navAdd/NavCart"
 import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
-import Cart from "../src/pages/Cart"
+import Cart from "./pages/Cart"
 import dd from "./component/nav/dd"
+import LayoutPrac from "./pages/LayoutPrac"
+import FindPw from "./pages/FindPw"
+import FindId from "./pages/FindId"
+
 class Routes extends React.Component {
   render() {
     return (
@@ -24,6 +28,9 @@ class Routes extends React.Component {
           <Route exact path="/main" component={MainPage} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/delete" component={NavSideBarLogin} />
+          <Route exact path="/FindId" component={FindId} />
+          <Route exact path="/FindPw" component={FindPw} />
+          <Route exact path="/LayoutPrac" component={LayoutPrac} />
         </Switch>
       </Router>
     )
