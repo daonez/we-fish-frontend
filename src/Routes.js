@@ -10,7 +10,11 @@ import Detail from "./pages/Detail"
 import NavCart from "./component//navAdd/NavCart"
 import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
 import Cart from "../src/pages/Cart"
-import dd from "./component/nav/dd"
+import NavMyPage from "./component/nav/NavSideBar/NavSideBarChild/NavMyPage"
+import AskReview from "./pages/AskReview"
+import NavAskWrite from "./component//nav/NavSideBar/NavSideBarChild/NavAskWrite"
+import Write from "./pages/Write"
+import SearchResult from "./pages/SearchResult"
 class Routes extends React.Component {
   render() {
     return (
@@ -23,7 +27,12 @@ class Routes extends React.Component {
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/main" component={MainPage} />
           <Route exact path="/cart" component={Cart} />
-          <Route exact path="/delete" component={NavSideBarLogin} />
+          <Route exact path="/navlogin" component={NavSideBarLogin} />
+          <Route exact path="/mypage" component={NavMyPage} />
+          <Route exact path="/ask" component={AskReview} />
+          <Route exact path="/askchild" component={Write} />
+          <Route exact path="/searchresult" component={SearchResult}/>
+
         </Switch>
       </Router>
     )

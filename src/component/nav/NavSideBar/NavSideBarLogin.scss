@@ -1,4 +1,4 @@
-.navSideBars{
+.navSideBarLogin{
     position: absolute;
     background-color:white;
     z-index:20;
@@ -16,31 +16,65 @@
             left:10px;
             display:flex;
             .loginButton{
-                span{
+                .buttonname{
                     letter-spacing: -0.05em;
+                    font-weight:bold;
                     text-decoration:none;
                     font-size:20px;
                     color:black;
                 }
-
             }
-            .lineBar{
-                margin:0px 2px 0px 2px;
+        }
+    }
+    .promotion{
+        width:397x;
+        height:100px;
+        display:flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #eeeeee;
+        .promoleft{
+            position: relative;
+            top:10px;
+        }
+        .promoright{
+            position: relative;
+            top:10px;
+        }
+        div{
+            .promotion1{
+                font-size:17px;
+                letter-spacing: -0.1em;
+                color:#666666;
+            }
+            .promotionbar{
+                width:10px;
+                height:60px;
                 position:relative;
-                padding: 5px;
-                font-size: 13px;
-                color: rgba(153,153,153,0.5);
-                top:3px;
-    
+                top:20px;
+                border-left: 1px solid #eeeeee;
             }
-            .registerButton{
+            .promotion12{
+                position:relative;
+                left:11px;
+                font-size:27px;
+                font-weight:900;
+                letter-spacing:-0.05em;
                 span{
-                    letter-spacing: -0.1em;
-                    text-decoration:none;
                     font-size:16px;
-                    color: #666666;
-                    position: relative;
-                    top:3px;
+                    font-weight:bold;
+                    margin-left:5px;
+                }
+            }
+            .promotion2{
+                position:relative;
+                right:12px;
+                font-size:27px;
+                font-weight:900;
+                letter-spacing:-0.05em;
+                span{
+                    font-size:16px;
+                    font-weight:bold;
+                    margin-left:5px;
                 }
             }
         }
@@ -49,7 +83,7 @@
         width:340px;
         height:56px;
         form{
-            margin-top:10px;
+            margin-top:15px;
             position:relative;
             left:20px;
             border-bottom: 1px solid #DCDCDC;

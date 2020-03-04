@@ -1,9 +1,31 @@
 .NavReview{
     width:500px;
-
+    height:1000px;
+    .navReviewrepl{
+        margin-top:30px;
+        height:65px;
+        border-bottom: 1px solid #c2bdbd;
+        &:hover{
+            cursor: pointer;
+        }
+        .navReviewrepl1{
+            margin-left:10px;
+            .subject{
+                font-size:18px;
+                color:rgb(109, 39, 39);
+                margin-bottom:7px;
+            }
+            .writer{
+                .writerspan{
+                    font-weight:bold;
+                }
+            }
+        }
+    }
     .NavReviewSearch{
         display: flex;
         margin-top:100px;
+        margin-left:20px;
     }
     button{
         border: 3px solid black;
@@ -35,7 +57,7 @@
 
     input{
         font-size:20px;
-        width:300px;
+        width:350px;
         height:50px;
         &:focus{
             outline:none;
