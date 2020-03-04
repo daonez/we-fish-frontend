@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "../styles/signup.scss"
+import "./signup.scss"
 import Kakao from "kakaojs"
 import DaumPostcode from "react-daum-postcode"
 import fish from "../images/animal.svg"
@@ -34,7 +34,8 @@ class SignUp extends Component {
       mktingagreemode: false,
       signupactmode: false,
       totaluserinfo: false,
-      authenclick: false
+      authenclick: false,
+      kakaotoken: ""
     }
   }
 
@@ -42,6 +43,9 @@ class SignUp extends Component {
     Kakao.Auth.login({
       success: authObj => {
         console.log(authObj)
+        this.setState({
+          kakaotoken: authObj.access_token
+        })
       },
       fail(err) {
         console.log(JSON.stringify(err))

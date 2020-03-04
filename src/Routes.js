@@ -11,10 +11,7 @@ import Detail from "./pages/Detail"
 import NavCart from "./component/navAdd/NavCart"
 import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
 import Cart from "./pages/Cart"
-import dd from "./component/nav/dd"
 import LayoutPrac from "./pages/LayoutPrac"
-import FindPw from "./pages/FindPw"
-import FindId from "./pages/FindId"
 
 class Routes extends React.Component {
   render() {
@@ -29,8 +26,6 @@ class Routes extends React.Component {
           <Route exact path="/main" component={ccyHome} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/delete" component={NavSideBarLogin} />
-          <Route exact path="/FindId" component={FindId} />
-          <Route exact path="/FindPw" component={FindPw} />
           <Route exact path="/LayoutPrac" component={LayoutPrac} />
         </Switch>
       </Router>

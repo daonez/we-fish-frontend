@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "../styles/login.scss"
+import "./login.scss"
 import { withRouter } from "react-router"
 import Kakao from "kakaojs"
 import orange from "../images/animal.svg"
