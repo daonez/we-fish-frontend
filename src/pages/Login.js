@@ -39,6 +39,20 @@ class Login extends Component {
     }
   }
 
+  handleSignID = e => {
+    this.setState({
+      id: e.target.value
+    })
+    console.log(this.state.id)
+  }
+
+  handleSignPW = e => {
+    this.setState({
+      pw: e.target.value
+    })
+    console.log(this.state.pw)
+  }
+
   toSignUp = () => {
     this.props.history.push("/SignUp")
   }

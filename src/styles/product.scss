@@ -1,108 +1,109 @@
 //* 전체 고정
 .content-wrapper {
-  padding: 0 14px;
-}
+  padding: 114px 0 0 19px;
+  width: 490px;
 
-section.product-main-container {
-  display: flex;
-  max-width: 500px;
-}
-
-//* Header부분
-.productList__nav {
-  display: flex;
-  justify-content: space-between;
-  & h1 {
-    font-weight: 700;
+  section.product-main-container {
+    display: flex;
+    max-width: 500px;
   }
-}
-//* Selector
-.filterDropdown {
-  position: relative;
-}
-
-.filterDropdown .dropDown {
-  font-size: 16px;
-  color: #929292;
-  padding-right: 0;
-  background: none;
-  border: none;
-  outline: none;
-}
-
-.dropDown {
-  justify-content: center;
-  & img {
-    background: none;
-    width: 12px;
-    padding: 0 0px 2px 8px;
-  }
-}
-
-.filterDropdown .dropDown_lists {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 10;
-  width: 100px;
-}
-
-.dropDown_lists {
-  &.dropDown_lists_item {
-    background: white;
-  }
-}
-
-li.dropDown_lists_item {
-  background: white;
-  &:hover {
-    background: none;
-  }
-}
-
-button.dropDown__button {
-  border: none;
-  font-size: 16px;
-  background: none;
-  outline: none;
-  cursor: pointer;
-}
-
-//* 제품들 (Product)
-ul.productList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.product-item {
-  flex: 0 1 50%;
-}
-.productCard {
-  .parent {
-    margin: 4px 9px 0px 0px;
-    overflow: hidden;
-  }
-  & img {
-    width: 100%;
-    height: 100%;
-    &:hover {
-      transform: scale(1.2);
-      cursor: pointer;
+  .dropDown {
+    justify-content: center;
+    & img {
+      background: none;
+      width: 12px;
+      background: none;
+      width: 12px;
+      padding: 0 5px 2px 8px;
     }
   }
-}
 
-//*Product .map 한것들
-.productCardContent {
-  padding: 14px 0px;
-  & h1 {
-    font-weight: 400;
+  //* Header부분
+  .productList__nav {
+    display: flex;
+    justify-content: space-between;
+    & h1 {
+      font-weight: 700;
+    }
   }
-  & span {
-    font-weight: bold;
+  //* Selector
+  .filterDropdown {
+    position: relative;
   }
-  & .review {
-    font-weight: 400;
-    color: #bababa;
+
+  .filterDropdown .dropDown {
+    font-size: 16px;
+    color: #929292;
+    padding-right: 0;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .filterDropdown .dropDown_lists {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 10;
+    width: 100px;
+  }
+
+  .dropDown_lists {
+    &.dropDown_lists_item {
+      background: white;
+    }
+  }
+
+  li.dropDown_lists_item {
+    background: white;
+    &:hover {
+      background: none;
+    }
+  }
+
+  button.dropDown__button {
+    border: none;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  //* 제품들 (Product)
+  ul.productList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-item {
+    flex: 0 1 50%;
+  }
+  .productCard {
+    .parent {
+      margin: 4px 9px 0px 0px;
+      overflow: hidden;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+  //*Product .map 한것들
+  .productCardContent {
+    padding: 14px 0px;
+    & h1 {
+      font-weight: 400;
+    }
+    & span {
+      font-weight: bold;
+    }
+    & .review {
+      font-weight: 400;
+      color: #bababa;
+    }
   }
 }
