@@ -25,6 +25,8 @@
     -->
     <title>오늘회 :: 오늘손질 오늘배송 ::</title>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,11 +42,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
-
-
-
-
-        
+<script>
+    
+    var message = "aaa@aaa.com""; 
+    var passphrase = "aaa123";
+    var encrypt = CryptoJS.AES.encrypt(message, passphrase);
+    var decrypted = CryptoJS.AES.decrypt(encrypt, passphrase );
+ 
+    // 암호화 이전의 문자열은 toString 함수를 사용하여 추출할 수 있다.
+    var text = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log(encrypt)
+</script>
   </body>
 </html>
