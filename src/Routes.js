@@ -7,7 +7,7 @@ import SignUp from "./pages/SignUp"
 import Home from "./pages/Home"
 import ccyHome from "./pages/ccyHome"
 import Product from "./pages/product/Product"
-import Detail from "./pages/Detail"
+import Detail from "./pages/detail/Detail"
 import NavCart from "./component/navAdd/NavCart"
 import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
 import Cart from "../src/pages/Cart"
@@ -16,8 +16,8 @@ import AskReview from "./pages/AskReview"
 import NavAskWrite from "./component//nav/NavSideBar/NavSideBarChild/NavAskWrite"
 import Write from "./pages/Write"
 import SearchResult from "./pages/SearchResult"
-import Cart from './pages/Cart'
 import LayoutPrac from './pages/LayoutPrac'
+import AskReviewDetail from './pages/AskReviewDetail'
 
 
 class Routes extends React.Component {
@@ -39,6 +39,7 @@ class Routes extends React.Component {
           <Route exact path="/ask" component={AskReview} />
           <Route exact path="/askchild" component={Write} />
           <Route exact path="/searchresult" component={SearchResult}/>
+          <Route exact path="/askdetail" component={AskReviewDetail}/>
         </Switch>
       </Router>
     )
