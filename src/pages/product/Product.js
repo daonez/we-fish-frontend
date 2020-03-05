@@ -3,6 +3,7 @@ import './product.scss'
 import Layout from 'component/Layout'
 import axios from 'axios'
 import queryString from 'query-string'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Selector from './Selector_button'
 
 class Products extends React.Component {
@@ -11,19 +12,19 @@ class Products extends React.Component {
     this.state = {
       title: [],
       product: [],
+      id: [],
     }
   }
 
   componentDidMount() {
     // this.fetchProduct()
     this.FetchProduct()
-    console.log(this.props.location.search)
   }
 
   FetchProduct() {
     // const queryId = this.props.location.search.split('=')[1]
     // const queryId = this.props.location.search.split('=')[1]
-    const min = 4
+    const min = 0
     const max = 14
     const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
@@ -43,13 +44,13 @@ class Products extends React.Component {
     )
     //* control all promise
     axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
-      console.log(responseOne, responseTwo)
       this.setState({
-        title: responseOne.data.category_list,
+        title: responseOne.category_list,
         product: responseTwo.data.data,
       })
+      console.log(this.state.title)
     })
-    console.log(this.state)
+    console.log(this.state.title)
   }
 
   // Fetch 함수로 data.json
@@ -70,7 +71,11 @@ class Products extends React.Component {
           <section className="product-main-container">
             <div className="productList-section">
               <div className="productList__nav">
-                <h1>자연산회</h1>
+                {/* {title.map(title => (
+                  <div>
+                    <h1>{title.name.id}</h1>
+                  </div>
+                ))} */}
                 <Selector />
               </div>
               <ul className="productList">
