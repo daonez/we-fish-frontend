@@ -16,7 +16,7 @@ class Slide extends Component {
         </em>
         {/* 제목 */}
         <strong className="detail-product__sub-slider__price">
-          <span>{this.props.price}</span>원
+          <span>{Number(this.props.price).toLocaleString('kr')}</span>원
         </strong>
         {/* 가격 */}
         <span className="detail-product__sub-slider__review-num">
