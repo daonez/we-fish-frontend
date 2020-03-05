@@ -10,7 +10,6 @@ import Product from "./pages/product/Product"
 import Detail from "./pages/Detail"
 import NavCart from "./component/navAdd/NavCart"
 import NavSideBarLogin from "./component/nav/NavSideBar/NavSideBarLogin"
-
 import Cart from "../src/pages/Cart"
 import NavMyPage from "./component/nav/NavSideBar/NavSideBarChild/NavMyPage"
 import AskReview from "./pages/AskReview"
