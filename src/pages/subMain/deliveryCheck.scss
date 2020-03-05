@@ -1,0 +1,50 @@
+$thin: 'Spoqa Han Sans Thin';
+$light: 'Spoqa Han Sans Light';
+$regular: 'Spoqa Han Sans Regular';
+$bold: 'Spoqa Han Sans Bold';
+
+.delivery-image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.delivery-search {
+  display: flex;
+  margin: 0 30px;
+
+  input {
+    display: block;
+    width: calc(100% - 69px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #202329;
+  }
+
+  button {
+    display: block;
+    width: 49px;
+    height: 40px;
+    color: #fff;
+    background-color: #202329;
+    border: 1px solid #202329;
+  }
+}
+
+.delivery-table {
+  h3 {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 22px;
+    font-family: $bold;
+    letter-spacing: -0.6px;
+  }
+
+  th,
+  td {
+    color: #111;
+  }
+}

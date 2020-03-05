@@ -2,7 +2,26 @@
 import React, { Component } from 'react'
 /* import { TiArrowSortedDown } from 'react-icons/ti' */
 
-class Cart extends Component {
+class ProductCart extends Component {
+  cartFetch = () => {
+
+    fetch('http://10.58.1.185:8000/order/cart', {
+      method: 'POST',
+      headers: {
+        'Authorization':
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxfQ.SAa5RFLev-OZMBqY2mDjAeftZE0kH4FJUSOwCS4HsGA',
+      },
+      body: JSON.stringify({"cart":[{'product_id' : Number(this.props.no), 'quantity': 1 }]}),
+    })
+      .then(res => res.json())
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      .catch(error => console.error('Error:', error))
+  }
+
+  addCart = () => {
+    this.cartFetch()
+  }
+
   render() {
     return (
       <div className="detail-product__cart">
@@ -21,7 +40,11 @@ class Cart extends Component {
             </i>
           </div>
     </div> */}
-        <button type="button" className="detail-product__cart__button">
+        <button
+          onClick={this.addCart}
+          type="submit"
+          className="detail-product__cart__button"
+        >
           장바구니에 담기
         </button>
       </div>
@@ -29,4 +52,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+export default ProductCart
