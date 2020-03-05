@@ -39,6 +39,10 @@
             width:450px;
             display:flex;
             justify-content: space-between;
+            .camera{
+                position:relative;
+                right:25px;
+            }
             div{
                 position: relative;
                 top:25px;

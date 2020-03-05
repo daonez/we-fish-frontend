@@ -1,0 +1,43 @@
+.NavReviewDetail{
+    width:500px;
+    height:1000px;
+    .reviewtitle{
+        position:absolute;
+        top:200px;
+        .title{
+            font-size:30px;
+            margin-bottom:20px;
+        }
+        .delete{
+            width:80px;
+            position:relative;
+            color: black;
+            font-size:20px;
+            left:300px;
+            top:30px;
+            cursor: pointer;
+        }
+        .detail{
+            position:relative;
+            left:15px;
+            span{
+                font-size:20px;
+                color: #046d8b;
+                margin:0px 5px 0px 5px;
+            }
+        }
+        .content{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top:30px;
+            font-size:25px;
+            font-weight:light;
+
+        }
+        .back{
+            margin-top:30px;
+            color:rgb(145, 135, 135);
+            cursor: pointer;
+
+        }
+    }
+}
