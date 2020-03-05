@@ -4,7 +4,8 @@ import SectionLeft from './LayoutLeft'
 import Header from './nav/Nav'
 import Footer from './navAdd/NavFooter'
 import '../styles/layout.scss'
-import Nav from '../component/nav/Nav'
+
+
 
 class Layout extends Component {
   render() {

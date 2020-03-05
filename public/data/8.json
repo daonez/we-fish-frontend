@@ -1,0 +1,196 @@
+
+    "data": [
+        {
+            "id": 171,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/549/%EB%A7%88%EB%A5%B8%EC%95%88%EC%A3%BC%EC%84%B8%ED%8A%B8-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "[오늘회] 건어물 오형제",
+            "price": "9900.00"
+        },
+        {
+            "id": 169,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/546/115d42_200223095204.jpg?w=525&q=80",
+            "name": "[오늘회] 조개구이/탕 세트",
+            "price": "26900.00"
+        },
+        {
+            "id": 165,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/537/fbd3f6_200223095433.jpg?w=525&q=80",
+            "name": "[거제] 비단가리비",
+            "price": "10900.00"
+        },
+        {
+            "id": 148,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/512/83568e_200223095241.jpg?w=525&q=80",
+            "name": "[거제] 활 돌낙지",
+            "price": "13900.00"
+        },
+        {
+            "id": 143,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/507/%EC%8A%A4%ED%8C%80%EB%B2%A0%EC%9D%B4%ED%81%AC%EC%98%A4%EC%A7%95%EC%96%B4%EB%A6%AC%EB%89%B4%EC%96%BC-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "스팀베이크 통오징어",
+            "price": "3900.00"
+        },
+        {
+            "id": 139,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/502/411f40_200209095058.jpg?w=525&q=80",
+            "name": "[거제] 자연산 돌문어숙회",
+            "price": "19900.00"
+        },
+        {
+            "id": 130,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/473/-2__1_.jpg?w=525&q=80",
+            "name": "[완도] 활전복",
+            "price": "9900.00"
+        },
+        {
+            "id": 120,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/453/%EB%B0%B1%EC%A7%84%EB%AF%B8%EC%B1%84-%EC%8D%B8%EB%84%A4%EC%9D%BC2.jpg?w=525&q=80",
+            "name": "[바다로] 백진미채",
+            "price": "12000.00"
+        },
+        {
+            "id": 119,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/451/%ED%99%8D%EC%A7%84%EB%AF%B8%EC%B1%84-%EC%8D%B8%EB%84%A4%EC%9D%BC2.jpg?w=525&q=80",
+            "name": "[바다로] 홍진미채",
+            "price": "12000.00"
+        },
+        {
+            "id": 102,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/423/862a9d_200110105640.jpg?w=525&q=80",
+            "name": "[대건수산] 광어우럭전복회",
+            "price": "46900.00"
+        },
+        {
+            "id": 98,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/418/%EC%9C%A1%ED%83%95%EC%9D%B4-%EC%8D%B8%EB%84%A4%EC%9D%BC2.jpg?w=525&q=80",
+            "name": "[일월수산] 육탕이",
+            "price": "23900.00"
+        },
+        {
+            "id": 97,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/417/%EC%98%A4%EC%A7%95%EC%A7%9C%EA%B8%B8%EC%96%B4-%EC%8D%B8%EB%84%A4%EC%9D%BC2.jpg?w=525&q=80",
+            "name": "오징짜길어(대패오징어)",
+            "price": "8900.00"
+        },
+        {
+            "id": 96,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/414/acdfaf_200205104830.jpg?w=525&q=80",
+            "name": "[포항] 19cm 총알 오징어",
+            "price": "13900.00"
+        },
+        {
+            "id": 94,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/412/%EA%BC%AC%EB%A7%88%EC%A0%84%EB%B3%B5-%EC%8D%B8%EB%84%A4%EC%9D%BC2.jpg?w=525&q=80",
+            "name": "[완도] 꼬마 라면 전복",
+            "price": "7900.00"
+        },
+        {
+            "id": 75,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/385/%ED%95%B4%EB%AC%BC%EC%B0%9C_%EC%8D%B8%EB%84%A4%EC%9D%BC1.jpg?w=525&q=80",
+            "name": "새우조개 모듬찜",
+            "price": "49900.00"
+        },
+        {
+            "id": 73,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/382/%ED%94%BC%EB%8D%B0%EA%B8%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC1.jpg?w=525&q=80",
+            "name": "[구룡포] 당일바리 피데기",
+            "price": "5500.00"
+        },
+        {
+            "id": 68,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/374/%EB%82%A8%EC%9B%90%EA%B5%AC%EC%9D%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC1.jpg?w=525&q=80",
+            "name": "모듬구이스페셜",
+            "price": "34900.00"
+        },
+        {
+            "id": 64,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/367/1c04cd_200202100538.jpg?w=525&q=80",
+            "name": "[대원유통] 전복회",
+            "price": "42900.00"
+        },
+        {
+            "id": 62,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/365/%EB%A7%9B%EC%A1%B0%EA%B0%9C-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "[라브루훌라] 스페인 맛조개 캔드푸드",
+            "price": "18900.00"
+        },
+        {
+            "id": 60,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/363/b1965a_200223095110.jpg?w=525&q=80",
+            "name": "[남해] 자연산 키조개관자",
+            "price": "16500.00"
+        },
+        {
+            "id": 39,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/334/%EC%97%B0%EC%96%B4%EC%95%8C.jpg?w=525&q=80",
+            "name": "간장연어알 (이쿠라 소유 쯔케)",
+            "price": "17900.00"
+        },
+        {
+            "id": 38,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/331/%EB%A7%A5%EB%B0%98%EC%84%9D%EC%98%A4%EC%A7%95%EC%96%B4-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "맥반석 오징어",
+            "price": "12900.00"
+        },
+        {
+            "id": 35,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/326/%EC%8A%A4%EC%A7%80%EC%BD%94-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "간장바다연어알(스지코)",
+            "price": "41000.00"
+        },
+        {
+            "id": 34,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/325/379cc9_200214104643.jpg?w=525&q=80",
+            "name": "[진해만] 자연산 피조개회 ",
+            "price": "12900.00"
+        },
+        {
+            "id": 33,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/324/368ffd_200220101208.jpg?w=525&q=80",
+            "name": "[오늘회] 오징어물회",
+            "price": "14900.00"
+        },
+        {
+            "id": 14,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/283/%EB%82%99%EC%A7%80%EC%A0%93%EA%B0%88-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "한끼 낙지 젓갈",
+            "price": "5900.00"
+        },
+        {
+            "id": 13,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/282/%EB%AA%85%EB%9E%80%EC%A0%93%EA%B0%88-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "한끼 명란 젓갈",
+            "price": "6900.00"
+        },
+        {
+            "id": 12,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/281/%EC%94%A8%EC%95%97%EC%98%A4%EC%A7%95%EC%96%B4-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "한끼 씨앗오징어 젓갈",
+            "price": "4900.00"
+        },
+        {
+            "id": 11,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/280/%EA%B0%80%EB%A6%AC%EB%B9%84%EC%A0%93%EA%B0%88-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "한끼 가리비 젓갈",
+            "price": "4900.00"
+        },
+        {
+            "id": 10,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/279/%EC%98%A4%EC%A7%95%EC%96%B4%EC%A0%93%EA%B0%88-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "한끼 오징어 젓갈",
+            "price": "4900.00"
+        },
+        {
+            "id": 9,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/276/%EB%8B%B9%EB%A9%B4%EA%B0%9C%EC%A1%B0%EA%B0%9C-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+            "name": "광동 夜시장 당면개조개",
+            "price": "8900.00"
+        },
+        {
+            "id": 3,
+            "image": "https://cdn.onul-hoi.com/uploads/store_package/image/270/77b75f_200223095446.jpg?w=525&q=80",
+            "name": "썰어먹는 자숙 통문어",
+            "price": "16900.00"
+        }
+    ]
+}
