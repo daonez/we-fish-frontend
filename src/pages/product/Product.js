@@ -2,6 +2,7 @@ import React from 'react'
 import './product.scss'
 import Layout from 'component/Layout'
 import axios from 'axios'
+import queryString from 'query-string'
 import Selector from './Selector_button'
 
 class Products extends React.Component {
@@ -16,15 +17,30 @@ class Products extends React.Component {
   componentDidMount() {
     // this.fetchProduct()
     this.FetchProduct()
+    console.log(this.props.location.search)
   }
 
   FetchProduct() {
     // const queryId = this.props.location.search.split('=')[1]
-    //* requests
-    const requestOne = axios.get('http://localhost:3000/data/categorylist.json')
-    const requestTwo = axios.get('http://localhost:3000/data/4.json')
-    // const requestTwo = axios.get(`http://localhost:3000/data/${queryId}`)
+    // const queryId = this.props.location.search.split('=')[1]
+    const min = 4
+    const max = 14
+    const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
+    const values = queryString.stringify({
+      category: randomNumber,
+    })
+    console.log(values)
+
+    //* requests
+    const requestOne = axios.get(
+      'http://52.78.241.65:8000/product/category_list',
+    )
+    // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
+    const requestTwo = axios.get(
+      // `http://52.79.185.94:8000/product?category=4&query=updated_at`
+      `http://52.78.241.65:8000/product?${values}&query=-updated_at`,
+    )
     //* control all promise
     axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       console.log(responseOne, responseTwo)
@@ -33,7 +49,7 @@ class Products extends React.Component {
         product: responseTwo.data.data,
       })
     })
-    console.log(this.title, this.product)
+    console.log(this.state)
   }
 
   // Fetch 함수로 data.json

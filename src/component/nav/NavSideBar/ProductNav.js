@@ -3,6 +3,7 @@ import './NavSideBar.scss'
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
+import queryString from 'query-string'
 
 export default class ProductNav extends Component {
   constructor() {
@@ -20,11 +21,23 @@ export default class ProductNav extends Component {
 
   FetchProduct() {
     // const queryId = this.props.location.search.split('=')[1]
+    const min = 4
+    const max = 14
+    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+
+    console.log(randomNumber)
+    const values = queryString.stringify({
+      category: randomNumber,
+    })
+    console.log(values)
+
     //* requests
     const requestOne = axios.get('http://localhost:3000/data/categorylist.json')
-    const requestTwo = axios.get('http://localhost:3000/data/4.json')
-    // const requestTwo = axios.get(`http://localhost:3000/product/${queryId}`)
-
+    // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
+    const requestTwo = axios.get(
+      // `http://52.79.185.94:8000/product?category=4&query=updated_at`
+      `http://52.78.241.65:8000/product?${values}&query=-updated_at`,
+    )
     //* control all promise
     axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       console.log(responseOne, responseTwo)
