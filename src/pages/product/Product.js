@@ -54,7 +54,6 @@ class Products extends React.Component {
         const newId = value.id
         this.state.id.push(newId)
       }
-      const 
     })
 
     console.log(this.state.title, this.state.id)
