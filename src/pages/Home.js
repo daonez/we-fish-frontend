@@ -12,6 +12,7 @@ import SectionLeft from '../component/LayoutLeft'
 import Slideshow from '../component/navAdd/Slideshow'
 import NavFooter from '../component/navAdd/NavFooter'
 import NavCart from '../component/navAdd/NavCart'
+import Detail from '../pages/detail/Detail'
 
 class Home extends Component {
   render() {
@@ -19,7 +20,7 @@ class Home extends Component {
       <>
         <div>
           <Nav>
-            <Slideshow />
+           
             <NavFooter />
           </Nav>
         </div>
