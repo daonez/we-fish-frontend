@@ -43,14 +43,21 @@ class Products extends React.Component {
       `http://52.78.241.65:8000/product?${values}&query=-updated_at`,
     )
     //* control all promise
-    axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
+    Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       this.setState({
-        title: responseOne.category_list,
+        title: responseOne.data.category_list,
         product: responseTwo.data.data,
       })
-      console.log(this.state.title)
+      console.log(this.state.title, this.state.product)
+      const getId = Object.values(this.state.title)
+      for (const value of getId) {
+        const newId = value.id
+        this.state.id.push(newId)
+      }
+      const 
     })
-    console.log(this.state.title)
+
+    console.log(this.state.title, this.state.id)
   }
 
   // Fetch 함수로 data.json
@@ -63,8 +70,8 @@ class Products extends React.Component {
   // }
 
   render() {
-    const { title, product } = this.state
-    console.log(title, product)
+    const { title, product, b } = this.state
+    console.log(title, product, b)
     return (
       <Layout>
         <div className="content-wrapper">
