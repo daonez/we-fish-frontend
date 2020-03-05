@@ -3,8 +3,8 @@
 import React, { Component } from 'react'
 import Layout from '../../component/Layout'
 import MainSlider from './MainSlider'
-import Info from './Info'
-import Cart from './Cart'
+import ProductInfo from './ProductInfo'
+import ProductCart from './ProductCart'
 import Notice from './Notice'
 import SubSlider from './SubSlider'
 /* import Together from './Together' */
@@ -17,6 +17,8 @@ class Detail extends Component {
     super(props)
 
     this.state = {
+      num: 1,
+      no: '',
       tagline: '',
       name: '',
       price: '',
@@ -36,34 +38,41 @@ class Detail extends Component {
   }
 
   fetchFnc = () => {
-    fetch('http://10.58.1.185:8000/product/detail/4')
-      .then(res => res.json())
-      .then(res =>
+    const mockArr1 = 'http://localhost:3000/data/detail_list.json'
+    const realArr1 = 'http://10.58.1.185:8000/product/detail/4'
+
+    const mockArr2 = 'http://localhost:3000/data/random_list.json'
+    const realArr2 = 'http://10.58.1.185:8000/product?category=4&query=id'
+
+    Promise.all([fetch(mockArr1), fetch(mockArr2)])
+      .then(([resDetail, resList]) =>
+        Promise.all([resDetail.json(), resList.json()]),
+      )
+      .then(([dataDetail, dataList]) =>
         this.setState(
           {
-            tagline: res.product_data[0].tagline,
-            name: res.product_data[0].name,
-            price: res.product_data[0].price,
-            unit: res.product_data[0].unit,
-            package: res.product_data[0].package,
-            origin: res.product_data[0].origin,
-            delivery: res.product_data[0].delivery,
-            caution: res.product_data[0].caution,
-            image: res.product_data[0].image_url,
-            detail: res.product_data[0].description,
+            no: dataDetail.product_data[0].no,
+            tagline: dataDetail.product_data[0].tagline,
+            name: dataDetail.product_data[0].name,
+            price: dataDetail.product_data[0].price,
+            unit: dataDetail.product_data[0].unit,
+            package: dataDetail.product_data[0].package,
+            origin: dataDetail.product_data[0].origin,
+            delivery: dataDetail.product_data[0].delivery,
+            caution: dataDetail.product_data[0].caution,
+            image: dataDetail.product_data[0].image_url,
+            detail: dataDetail.product_data[0].description,
           },
           () => {
-            /* for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) {
               const ten =
-                res.detail_list[
-                  Math.floor(Math.random() * res.product_data.length)
-                ]
+                dataList.data[Math.floor(Math.random() * dataList.data.length)]
 
               this.state.nArr.push(ten)
             }
             this.setState({
               nArr: this.state.nArr,
-            }) */
+            })
           },
         ),
       )
@@ -75,7 +84,7 @@ class Detail extends Component {
         <>
           {/* etail-product__title */}
           <MainSlider image={this.state.image} />
-          <Info
+          <ProductInfo
             tagline={this.state.tagline}
             name={this.state.name}
             price={this.state.price}
@@ -87,7 +96,7 @@ class Detail extends Component {
             delivery={this.state.delivery}
             caution={this.state.caution}
           />
-          <Cart />
+          <ProductCart num={this.state.num} no={this.state.no} />
           {/* <Together /> */}
           <SubSlider arr={this.state.nArr} />
           <TabWrap detail={this.state.detail} />
