@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 // 이거는 Routes.js
+
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Login from './pages/Login'
@@ -17,6 +18,7 @@ import NavAskWrite from './component/nav/NavSideBar/NavSideBarChild/NavAskWrite'
 import Write from './pages/Write'
 import SearchResult from './pages/SearchResult'
 import LayoutPrac from './pages/LayoutPrac'
+import AskReviewDetail from './pages/AskReviewDetail'
 
 class Routes extends React.Component {
   render() {
@@ -37,6 +39,7 @@ class Routes extends React.Component {
           <Route exact path="/ask" component={AskReview} />
           <Route exact path="/askchild" component={Write} />
           <Route exact path="/searchresult" component={SearchResult} />
+          <Route exact path="/askdetail" component={AskReviewDetail} />
         </Switch>
       </Router>
     )

@@ -10,7 +10,9 @@ import { withRouter } from 'react-router-dom';
 export class NavCart extends Component {
     state={
         item:1,
-        price: 25900  
+        name:"",
+        price: "",
+        image_url:""
     }
     NumberFormat = (inputNumber) => 
         inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); //숫자 천단위마다 콤마찍어주는 함수.
@@ -60,7 +62,8 @@ export class NavCart extends Component {
                     <div className="font">장바구니</div>
                 </div>
                 <div className="NavCartProduct">
-                    <div className="productImage"></div>
+                    <div className="productImage" 
+                    style={{ backgroundImage: "url('https://cdn.onul-hoi.com/uploads/store_package/image/580/799b56_200225094425.jpg')"}}></div>
                     <div className="productTitleMany">
                         <div className="productTitle">[거제] 해금강 보리숭어</div>
                         <div className="productMany">
@@ -85,6 +88,12 @@ export class NavCart extends Component {
                             <div className="navCartPrice01">상품금액</div>
                             <div className="navCartPrice02">{text.toLocaleString()}원</div>
                         </div>
+                        
+                        
+                    
+                        
+                        
+                        
                         <div className="navCartBar2"></div>
                         <div className="navCartAdd">+ 메뉴 더 담으러 가기</div>
                         <div className="navCartDelivery">
@@ -97,7 +106,7 @@ export class NavCart extends Component {
                         <button className="navCartConfirmButton">구매하기</button>
                         
                     </div>
-                    <div></div>
+                
 
                 </div>
                 <div className="NavCartFooter">

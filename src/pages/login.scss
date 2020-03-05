@@ -1,11 +1,12 @@
 .loginContainer {
-  background-color: grey;
+  background-color: white;
   height: 716.8px;
   max-height: 717px;
-  width: 420px;
+  width: 380px;
   display: flex;
   margin-bottom: 44px;
   margin: 0 auto;
+  z-index: 1000000000px;
 }
 
 .loginInput {

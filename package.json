@@ -11,6 +11,7 @@
     "crypto-js": "^4.0.0",
     "kakaojs": "^1.2.0",
     "node-sass": "^4.13.1",
+    "profile-picture": "git+https://github.com/dsalvagni/react-profile-picture.git",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-daum-postcode": "^1.8.4",
