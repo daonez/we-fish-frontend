@@ -1,50 +1,49 @@
-import React, { Component } from "react";
-import "./NavSideBar.scss";
-import search from "../../../img/search.png";
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react'
+import './NavSideBar.scss'
+import { withRouter } from 'react-router-dom'
+import ProductNav from 'component/nav/NavSideBar/ProductNav'
+import search from '../../../img/search.png'
 
 class NavSideBar extends Component {
-  state={
-    search:"",
-    search_results:[]
+  state = {
+    search: '',
+    search_results: [],
   }
+
   handleSearch = e => {
     this.setState({
-      [e.target.name]: e.target.value
-    });
-    console.log("etargetvalue:",e.target.value)
+      [e.target.name]: e.target.value,
+    })
+    console.log('etargetvalue:', e.target.value)
   }
-  saveSearch= e => {
-    e.preventDefault();
+
+  saveSearch = e => {
+    e.preventDefault()
   }
-  saveSearch1= e =>{
+
+  saveSearch1 = e => {
     this.state.base.push(this.state.search)
   }
 
-goToSave = () => {
-  const queryId = this.state.search
-  this.props.history.push(`/searchresult?keyword=${queryId}`)
+  goToSave = () => {
+    const queryId = this.state.search
+    this.props.history.push(`/searchresult?keyword=${queryId}`)
 
+    // fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`,{
+    //           method:'GET',
+    //       })
+    //       .then(response => { return response.json() })
+    //       .then(response => {
+    //           this.setState({ search_results: response.search_results})
+    //           this.props.history.push(`/searchresult?keyword=${queryId}`)
+    //           console.log(response)
 
-  
-  // fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`,{
-  //           method:'GET',
-  //       })
-  //       .then(response => { return response.json() })
-  //       .then(response => {
-  //           this.setState({ search_results: response.search_results})
-  //           this.props.history.push(`/searchresult?keyword=${queryId}`)
-  //           console.log(response)
-            
-  //       })
-    }
-
-
-
+    //       })
+  }
 
   render() {
-   console.log("state.search:",this.state.search)
-   console.log("database:",this.state.search_results)
+    console.log('state.search:', this.state.search)
+    console.log('database:', this.state.search_results)
     return (
       <div className="navSideBar">
         <div className="profileLoggedOut">
@@ -60,19 +59,19 @@ goToSave = () => {
         </div>
         <div className="search">
           <form onSubmit={this.saveSearch}>
-            <button
-            onClick={this.goToSave}> 
-              <i></i>
+            <button onClick={this.goToSave}>
+              <i />
             </button>
             <input
               type="text"
               name="search"
               placeholder="'보리숭어'를 검색하세요"
               onChange={this.handleSearch}
-            ></input>
+            />
           </form>
         </div>
-        <div className="category-header">
+        <ProductNav />
+        {/* <div className="category-header">
           <p>카테고리</p>
         </div>
         <div className="categories">
@@ -164,7 +163,7 @@ goToSave = () => {
               </span>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div className="otherContents">
           <a href="/">주문내역</a>
           <a href="/">상품후기</a>
@@ -176,11 +175,11 @@ goToSave = () => {
             <p className="phone">1661-1319</p>
           </div>
           <div className="fr">
-            <a href="/"></a>
+            <a href="/" />
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 

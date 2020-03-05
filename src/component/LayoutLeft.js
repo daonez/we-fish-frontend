@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import logo from "../images/logo_img.png";
+import React, { Component } from "react"
+import logo from "../images/logo_img.png"
 
 class LayoutLeft extends Component {
   render() {
@@ -30,8 +30,8 @@ class LayoutLeft extends Component {
           </p>
         </div>
       </section>
-    );
+    )
   }
 }
 
-export default LayoutLeft;
+export default LayoutLeft

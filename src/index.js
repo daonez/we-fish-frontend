@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Kakao from 'kakaojs'
+
 import Routes from './Routes'
 import './styles/index.scss'
 import './fonts/Spoqa Han Sans Regular.ttf'

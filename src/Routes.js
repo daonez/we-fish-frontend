@@ -19,6 +19,7 @@ import Write from './pages/Write'
 import SearchResult from './pages/SearchResult'
 import LayoutPrac from './pages/LayoutPrac'
 import AskReviewDetail from './pages/AskReviewDetail'
+import DeliveryCheck from './pages/subMain/DeliveryCheck'
 
 class Routes extends React.Component {
   render() {
@@ -28,9 +29,11 @@ class Routes extends React.Component {
           <Route exact path="/home" component={Home} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/main" component={Main} />
           <Route exact path="/product" component={Product} />
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/main" component={ccyHome} />
+          <Route exact path="/delivery" component={DeliveryCheck} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/delete" component={NavSideBarLogin} />
           <Route exact path="/LayoutPrac" component={LayoutPrac} />
