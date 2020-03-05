@@ -18,10 +18,11 @@ $orange: 'orange';
 }
 
 .detail-product {
-  padding-bottom: 40px;
   letter-spacing: -0.6px;
 
   &__main-slider {
+    padding-top: 120px;
+
     div {
       width: 100%;
       height: auto;
