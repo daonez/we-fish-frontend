@@ -12,6 +12,7 @@ import Slideshow from "../component/navAdd/Slideshow"
 import NavFooter from "../component/navAdd/NavFooter"
 import NavCart from "../component/navAdd/NavCart"
 import NavAsk from "../component/nav/NavSideBar/NavSideBarChild/NavReview"
+import { withRouter } from 'react-router-dom';
 
 
 class AskReview extends Component {
@@ -36,4 +37,4 @@ class AskReview extends Component {
   }
 }
 
-export default AskReview
+export default withRouter(AskReview)

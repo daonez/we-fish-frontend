@@ -6,37 +6,43 @@ import { withRouter } from 'react-router-dom';
 
 class NavReview extends Component {
     state={
-        profiles:[]
+        Ask:[]
     }
 
     componentDidMount(){
-        fetch('http://localhost:3000/data/nav.json')
+        fetch('http://52.79.185.94:8000/user/ask',{
+            method: 'GET',
+            headers: {
+                'Authorization':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxNn0.i313BFWqrzy6A36imjxkkYyjLh_CBulLZ1o0X4-n_Sw'
+            }
+        })
          .then(res => {return res.json()})
          .then(res => {
-             this.setState({profiles: res.profiles})
+             this.setState({Ask: res.Ask})
          })
     }
 
-    goToWhere(){
+    goToWhere = id => {
+        // const queryId = this.state.Ask.title
+        this.props.history.push(`/askdetail?keyword=${id}`)
+    }
+    goToWrite = () => {
         this.props.history.push('/askchild')
     }
 
     render() {
-        const { profiles } =this.state;
+        const { Ask } =this.state;
+        
         return (
             <div className="NavReview">
-                {/* <div className="navReviewrepl">
-                    <div className="navReviewrepl1">
-                        <div className="subject">오늘회</div>
-                        <div className="writer"><span className="writerspan">김현준</span></div>
-                    </div>
-                </div> */}
-                {profiles.map((el)=>{
+                {Ask && Ask.map((el)=>{
                     return(
                         <div className="navReviewrepl">
                         <div className="navReviewrepl1">
-                            <div className="subject">{el.subject}</div>
-                            <div className="writer"><span className="writerspan">{el.writer}</span></div>
+                            <div className="subject"
+                            onClick={() => this.goToWhere(el.id)}
+                            >{el.title}</div>
+                            <div className="writer"><span className="writerspan">{el.email}</span></div>
                         </div>
                     </div>
                     )})
@@ -51,7 +57,7 @@ class NavReview extends Component {
                         <button className="faSearch"><FaSearch size="22"/></button>
                     </div>
                     <div>
-                        <button className="faPencil" onClick={this.goToWhere.bind(this)}><FaPen size="22"/></button>
+                        <button className="faPencil" onClick={this.goToWrite}><FaPen size="22"/></button>
                     </div>
                 </div>
             </div>
