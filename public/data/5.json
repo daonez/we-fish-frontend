@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": 183,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/570/1dd8b3_200212110827.jpg?w=525&q=80",
+      "name": "캐나다 성게알 페이스트 60g",
+      "price": "10900.00"
+    },
+    {
+      "id": 172,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/552/%EC%B9%A0%EB%A0%88%EB%83%89%EB%8F%99%EC%84%B1%EA%B2%8C%EC%95%8C-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+      "name": "[오늘회] 칠레바다 성게알",
+      "price": "14900.00"
+    },
+    {
+      "id": 135,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/489/684b7d_200217053013.jpg?w=525&q=80",
+      "name": "[오늘회] 生크림 성게알",
+      "price": "20500.00"
+    },
+    {
+      "id": 115,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/447/3302b1_200203022531.jpg?w=525&q=80",
+      "name": "[오늘회] 성게알 페이스트 소스",
+      "price": "29900.00"
+    },
+    {
+      "id": 85,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/400/14364f_200217053107.jpg?w=525&q=80",
+      "name": "[오늘회] 캐나다 냉장성게알",
+      "price": "29900.00"
+    },
+    {
+      "id": 67,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/371/671046_200217053159.jpg?w=525&q=80",
+      "name": "[오늘회] 마루히데 성게알",
+      "price": "22900.00"
+    },
+    {
+      "id": 63,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/366/d9ca63_200217094326.jpg?w=525&q=80",
+      "name": "[오늘회] 야마진 성게알 (냉장)",
+      "price": "24900.00"
+    },
+    {
+      "id": 17,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/288/%EC%9A%B0%EB%8B%88%ED%9E%88%EC%8B%9C%EC%98%A4-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?w=525&q=80",
+      "name": "성게알 간장(우니히시오 소스)",
+      "price": "26900.00"
+    },
+    {
+      "id": 1,
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/264/70a7c0_200131094546.jpg?w=525&q=80",
+      "name": "[오늘회] 떠먹는 성게알",
+      "price": "13900.00"
+    }
+  ]
+}

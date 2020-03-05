@@ -5,6 +5,7 @@
   width: 420px;
   display: flex;
   margin-bottom: 44px;
+  margin: 0 auto;
 }
 
 .loginInput {
@@ -124,11 +125,19 @@
 .findid {
   cursor: pointer;
   letter-spacing: -0.06em;
+  border: none;
+  background-color: white;
+  color: #929292;
+  font-size: 12px;
 }
 
 .findpw {
   cursor: pointer;
   letter-spacing: -0.06em;
+  border: none;
+  background-color: white;
+  color: #929292;
+  font-size: 12px;
 }
 
 .IDPWLine {
@@ -178,7 +187,7 @@
   z-index: 100;
 }
 
-.imgorange {
+.imgfish {
   width: 25px;
   height: 25px;
   margin-right: 4px;

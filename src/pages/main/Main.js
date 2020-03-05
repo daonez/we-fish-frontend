@@ -1,36 +1,45 @@
-import React from "react"
-// import Slider from "react-slick"
-import ThreeImageSlider from "./ThreeImageSlider"
-import ButtonSlider from "./ButtonSlider"
-import firstTimeBanner from "./mainImage/first-time-wefish.jpeg"
-import todayOrderBanner from "./mainImage/today-can-order-fish.jpg"
-import plusFriend from "./mainImage/plusfriendKakao.jpeg"
-import deliver from "./mainImage/처움추천이벤트-배송지역확인.jpg"
-import GuestOrderSlider from "./GuestOrderSlider"
-import Layout from "../../component/Layout"
+import React from 'react'
+import ThreeImageSlider from './ThreeImageSlider'
+import ButtonSlider from './ButtonSlider'
+import firstTimeBanner from './mainImage/first-time-wefish.jpeg'
+import todayOrderBanner from './mainImage/today-can-order-fish.jpg'
+import plusFriend from './mainImage/plusfriendKakao.jpeg'
+import deliver from './mainImage/처움추천이벤트-배송지역확인.jpg'
+import GuestOrderSlider from './GuestOrderSlider'
+import Layout from '../../component/Layout'
+import './main.scss'
+import axios from 'axios'
 
 export default class Main extends React.Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      product: [],
     }
   }
 
   componentDidMount() {
-    this.fetchProduct()
+    this.FetchProduct()
   }
 
-  fetchProduct() {
-    fetch("http://localhost:3000/data/category_list.json")
-      .then(request => request.json())
-      .then(request => {
-        this.setState({ data: request.descending_price })
+  FetchProduct() {
+    //* requests
+    const requestOne = axios.get('http://localhost:3000/data/categorylist.json')
+    const requestTwo = axios.get('http://localhost:3000/data/4.json')
+
+    //* control all promise
+    axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
+      console.log(responseOne, responseTwo)
+      this.setState({
+        title: responseOne.data.category_list,
+        product: responseTwo.data.data,
       })
+    })
+    console.log(this.title, this.product)
   }
 
   render() {
-    const { data } = this.state
+    const { product } = this.state
 
     return (
       <Layout>
@@ -86,7 +95,7 @@ export default class Main extends React.Component {
             <div className="recomend">
               <h1>알아서 추천드립니다 ></h1>
               <ul className="productList">
-                {data.map(item => (
+                {product.map(item => (
                   <li className="recommend-product-item">
                     <div className="productCard">
                       <div className="parent">

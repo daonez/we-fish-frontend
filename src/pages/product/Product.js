@@ -1,54 +1,64 @@
 import React from 'react'
 import './product.scss'
 import Layout from 'component/Layout'
+import axios from 'axios'
 import Selector from './Selector_button'
 
 class Products extends React.Component {
   constructor() {
     super()
     this.state = {
-      fish: [],
-      urchin: [],
-      fishMarket: [],
-      shrimpType: [],
-      seafoodType: [],
-      soupType: [],
-      sauce: [],
-      prepared: [],
-      dried: [],
-      seaweed: [],
-      seasonal: [],
+      title: [],
+      product: [],
     }
   }
 
   componentDidMount() {
-    this.fetchProduct()
+    // this.fetchProduct()
+    this.FetchProduct()
+  }
+
+  FetchProduct() {
+    // const queryId = this.props.location.search.split('=')[1]
+    //* requests
+    const requestOne = axios.get('http://localhost:3000/data/categorylist.json')
+    const requestTwo = axios.get('http://localhost:3000/data/4.json')
+    // const requestTwo = axios.get(`http://localhost:3000/data/${queryId}`)
+
+    //* control all promise
+    axios.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
+      console.log(responseOne, responseTwo)
+      this.setState({
+        title: responseOne.data.category_list,
+        product: responseTwo.data.data,
+      })
+    })
+    console.log(this.title, this.product)
   }
 
   // Fetch 함수로 data.json
-  fetchProduct() {
-    fetch('http://localhost:3000/data/category_list.json')
-      .then(request => request.json())
-      .then(request => {
-        this.setState({ fish: request.descending_price[3]['자연산 회'] })
-      })
-    console.log(this.state.fish)
-  }
+  // fetchProduct() {
+  //   fetch('http://localhost:3000/data/4.json')
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       this.setState({ data: res.data, title: res.category_list })
+  //     })
+  // }
 
   render() {
-    const { fish } = this.state
-    console.log(fish)
+    const { title, product } = this.state
+    console.log(title, product)
     return (
       <Layout>
         <div className="content-wrapper">
           <section className="product-main-container">
             <div className="productList-section">
               <div className="productList__nav">
-                <h1>자연산 회</h1>
+                <h1>자연산회</h1>
                 <Selector />
               </div>
               <ul className="productList">
-                {fish.map(item => (
+                {product.map(item => (
                   <li className="product-item">
                     <div className="productCard">
                       <div className="parent">

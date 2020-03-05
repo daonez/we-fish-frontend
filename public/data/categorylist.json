@@ -1,0 +1,74 @@
+{
+  "category_list": [
+    {
+      "id": 1,
+      "name": "후기많은상품",
+      "is_real_category": true
+    },
+    {
+      "id": 2,
+      "name": "이번주 신상품",
+      "is_real_category": true
+    },
+    {
+      "id": 3,
+      "name": "오늘 저녁배송",
+      "is_real_category": true
+    },
+    {
+      "id": 4,
+      "name": "자연산 회",
+      "is_real_category": true
+    },
+    {
+      "id": 5,
+      "name": "성게알",
+      "is_real_category": true
+    },
+    {
+      "id": 6,
+      "name": "수산시장 회",
+      "is_real_category": true
+    },
+    {
+      "id": 7,
+      "name": "새우•게•랍스터",
+      "is_real_category": true
+    },
+    {
+      "id": 8,
+      "name": "오징어•조개•해산물",
+      "is_real_category": true
+    },
+    {
+      "id": 9,
+      "name": "초밥•국물•매운탕",
+      "is_real_category": true
+    },
+    {
+      "id": 10,
+      "name": "소스·곁들임",
+      "is_real_category": true
+    },
+    {
+      "id": 11,
+      "name": "수산가공품",
+      "is_real_category": true
+    },
+    {
+      "id": 12,
+      "name": "건어물",
+      "is_real_category": true
+    },
+    {
+      "id": 13,
+      "name": "김•미역•해조류",
+      "is_real_category": true
+    },
+    {
+      "id": 14,
+      "name": "제철회",
+      "is_real_category": true
+    }
+  ]
+}
