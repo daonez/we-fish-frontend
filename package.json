@@ -10,6 +10,7 @@
     "cheerio": "^1.0.0-rc.3",
     "kakaojs": "^1.2.0",
     "node-sass": "^4.13.1",
+    "profile-picture": "git+https://github.com/dsalvagni/react-profile-picture.git",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
     "react": "^16.13.0",

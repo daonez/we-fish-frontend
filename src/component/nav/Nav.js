@@ -83,12 +83,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <div
-        className="Nav"
-        onClick={this.handleDisplayOff}
-        onClick={this.handleChange1}
-      >
-        <div className="nmain">
+      <div className="Nav">
+        <div className="nmain" onClick={this.handleChange1}>
           <div className="nmain_right">
             <img
               className="right"
