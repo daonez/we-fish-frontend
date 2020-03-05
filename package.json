@@ -12,6 +12,7 @@
     "node-sass": "^4.13.1",
     "profile-picture": "git+https://github.com/dsalvagni/react-profile-picture.git",
     "prop-types": "^15.7.2",
+    "query-string": "^6.11.1",
     "react": "^16.13.0",
     "react-daum-postcode": "^1.8.4",
     "react-dom": "^16.13.0",

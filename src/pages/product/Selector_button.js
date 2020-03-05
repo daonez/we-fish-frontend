@@ -1,7 +1,7 @@
 /* eslint-disable react/button-has-type */
 import React from 'react'
-import '../../styles/product.scss'
-import dropDownArrow from '../../images/down-chevron.png'
+import './product.scss'
+import dropDownArrow from 'images/down-chevron.png'
 
 export default class Selector extends React.Component {
   constructor() {
