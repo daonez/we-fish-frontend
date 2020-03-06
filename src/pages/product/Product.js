@@ -58,6 +58,7 @@ class Products extends React.Component {
   //     .then(res => {
   //       this.setState({ data: res.data, title: res.category_list })
   //     })
+
   // }
 
   render() {
@@ -73,22 +74,24 @@ class Products extends React.Component {
                 <Selector />
               </div>
               <ul className="productList">
-                {product.map(item => (
+                {product.map((item, id) => (
                   <li className="product-item">
                     <Link to={`/product/detail/${item.id}`}>
                       <div className="productCard">
                         <div className="parent">
-                          <img src={item.image} alt="" />
+                          <img src={item.image} alt="" key={item.id} />
                         </div>
                       </div>
                       <div className="productCardContent">
                         <h1 key={item.id}>{item.name}</h1>
                         <p>
-                          <span>{Number(item.price).toLocaleString('kr')}</span>
+                          <span key={item.id}>
+                            {Number(item.price).toLocaleString('kr')}
+                          </span>
                           원
                         </p>
                         <p>
-                          <span>{item.rating}</span>
+                          <span key={item.id}>{item.rating}</span>
                           <span className="review">· 후기</span>
                         </p>
                       </div>

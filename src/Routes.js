@@ -16,7 +16,7 @@ import NavMyPage from './component/nav/NavSideBar/NavSideBarChild/NavMyPage'
 import AskReview from './pages/AskReview'
 import NavAskWrite from './component/nav/NavSideBar/NavSideBarChild/NavAskWrite'
 import Write from './pages/Write'
-import SearchResult from './pages/SearchResult'
+// import SearchResult from './pages/SearchResult'
 import LayoutPrac from './pages/LayoutPrac'
 import AskReviewDetail from './pages/AskReviewDetail'
 import DeliveryCheck from './pages/subMain/DeliveryCheck'
@@ -43,7 +43,7 @@ class Routes extends React.Component {
           <Route exact path="/mypage" component={NavMyPage} />
           <Route exact path="/ask" component={AskReview} />
           <Route exact path="/askchild" component={Write} />
-          <Route exact path="/searchresult" component={SearchResult} />
+          {/* <Route exact path="/searchresult" component={SearchResult} /> */}
           <Route exact path="/askdetail" component={AskReviewDetail} />
           <Route exact path="/mostreviewpage" component={MostReviewPage} />
           <Route exact path="/tonightdelivery" component={TonightDelivery} />
