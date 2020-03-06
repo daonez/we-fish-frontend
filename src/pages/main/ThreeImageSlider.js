@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import queryString from 'query-string'
 
 const settings = {
   infinite: true,
@@ -24,35 +25,33 @@ export default class ThreeImageSlider extends Component {
   }
 
   fetchProduct() {
-    // const queryId = this.props.location.search.split('=')[1]
-    // const queryId = this.props.location.search.split('=')[1]
-    // const min = 0
-    // const max = 14
-    // const randomNumber = Math.floor(Math.random() * (max - min) + min)
+    const min = 0
+    const max = 14
+    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+
+    const values = queryString.stringify({
+      category: randomNumber,
+    })
 
     // const values = this.props.match.params.category
 
     //* requests
-    const requestOne = axios.get(
-      // 'http://52.78.241.65:8000/product/category_list',
-      `http://localhost:3000/data/categorylist.json`,
-    )
+
     // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
-    const requestTwo = axios.get(
+    const request = axios.get(
       // `http://52.79.185.94:8000/product?category=4&query=updated_at`
       'http://52.79.185.94:8000/product?category=${values}&query=-updated_at',
       // `http://52.78.241.65:8000/product?category=${values}&query=-updated_at`,
     )
     //* control all promise
-    Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
+    Promise.all([request]).then(([response]) => {
       this.setState({
-        title: responseOne.data.category_list,
-        data: responseTwo.data.data,
+        data: response.data.data,
       })
-      console.log(this.state.title, this.state.product)
+      console.log(this.state.data)
     })
 
-    console.log(this.state.title, this.state.id)
+    console.log(this.state.data)
   }
 
   render() {
