@@ -45,6 +45,7 @@ class SignUp extends Component {
         this.setState({
           kakaotoken: authObj.access_token,
         })
+        localStorage.setItem('kakao_keep', this.state.kakaotoken)
       },
     })
     fetch('http://52.79.185.94:8000/user/kakao', {
@@ -58,18 +59,12 @@ class SignUp extends Component {
         address: this.state.address,
       }),
     }).then(response => {
-      console.log(response)
       if (response.status === 200) {
+        alert('카카오로 로그인하셨군요! Welcome to We-Fish!')
         this.props.history.push('/home')
       }
     })
   }
-
-  //   // },
-  //   // fail(err) {
-  //   //   console.log(JSON.stringify(err))
-  //   // },
-  // })
 
   SetStater = key => {
     return function(e) {
@@ -128,7 +123,7 @@ class SignUp extends Component {
   }
 
   signUpFetcher = () => {
-    fetch('http://52.79.185.94:8000/user/sign-up', {
+    fetch('http://52.78.241.65:8000/user/sign-up', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -346,9 +341,14 @@ class SignUp extends Component {
                           onChange={this.emailFormChecker}
                         />
                       </div>
-                      <div className="emailformfalse">
-                        <p>&nbsp; 이메일 형식을 맞춰주세요</p>
-                      </div>
+
+                      {this.state.emailformcheck === false ? (
+                        <div className="emailformfalse">
+                          <p>&nbsp; 이메일 형식을 맞춰주세요</p>
+                        </div>
+                      ) : (
+                        <span />
+                      )}
                     </div>
                     <div>
                       <div className="postaddwrap">
@@ -433,7 +433,7 @@ class SignUp extends Component {
                       <div>
                         <input
                           placeholder="비밀번호(6자리 이상)"
-                          type="text"
+                          type="password"
                           onChange={this.passwordFormChecker}
                         />
                       </div>
@@ -446,7 +446,7 @@ class SignUp extends Component {
                       <div>
                         <input
                           placeholder="비밀번호(6자리 이상)"
-                          type="text"
+                          type="password"
                           onChange={this.passwordFormChecker}
                         />
                       </div>
@@ -457,7 +457,7 @@ class SignUp extends Component {
                       <div>
                         <input
                           placeholder="비밀번호 확인"
-                          type="text"
+                          type="password"
                           onChange={this.pwcChecker}
                         />
                       </div>
@@ -470,7 +470,7 @@ class SignUp extends Component {
                       <div>
                         <input
                           placeholder="비밀번호 확인"
-                          type="text"
+                          type="password"
                           onChange={this.pwcChecker}
                         />
                       </div>
