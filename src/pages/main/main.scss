@@ -9,6 +9,7 @@
   margin-left: 11px;
   a {
     text-decoration: none;
+    color: black;
   }
   &-p {
     font-size: 12px;
@@ -126,5 +127,8 @@
     & img {
       width: 100px;
     }
+  }
+  h2 {
+    font-weight: bold;
   }
 }

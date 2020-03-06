@@ -31,8 +31,7 @@ class Products extends React.Component {
 
     //* requests
     const requestOne = axios.get(
-      //   'http://52.78.241.65:8000/product/category_list',
-      `http://localhost:3000/data/categorylist.json`,
+      'http://52.78.241.65:8000/product/category_list',
     )
     // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
     const requestTwo = axios.get(
@@ -43,7 +42,7 @@ class Products extends React.Component {
     //* control all promise
     Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       this.setState({
-        // title: responseOne.data.category_list,
+        title: responseOne.data.category_list,
         product: responseTwo.data.data,
       })
       console.log(this.state.title, this.state.product, this.state.id)
@@ -74,24 +73,22 @@ class Products extends React.Component {
                 <Selector />
               </div>
               <ul className="productList">
-                {product.map((item, id) => (
+                {product.map(item => (
                   <li className="product-item">
-                    <Link to="/product/detail/{{this.match.params.id}}">
+                    <Link to={`/product/detail/${item.id}`}>
                       <div className="productCard">
                         <div className="parent">
-                          <img src={item.image} alt="" key={item.id} />
+                          <img src={item.image} alt="" />
                         </div>
                       </div>
                       <div className="productCardContent">
                         <h1 key={item.id}>{item.name}</h1>
                         <p>
-                          <span key={item.id}>
-                            {Number(item.price).toLocaleString('kr')}
-                          </span>
+                          <span>{Number(item.price).toLocaleString('kr')}</span>
                           원
                         </p>
                         <p>
-                          <span key={item.id}>{item.rating}</span>
+                          <span>{item.rating}</span>
                           <span className="review">· 후기</span>
                         </p>
                       </div>

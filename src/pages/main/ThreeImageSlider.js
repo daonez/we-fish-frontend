@@ -57,21 +57,23 @@ export default class ThreeImageSlider extends Component {
         <Slider {...settings}>
           {data.map(item => (
             <li className="product-item">
-              <div className="product-items_Card">
-                <div className="parent">
-                  <img src={item.image} alt="" />
+              <Link to={`/product/detail/${item.id}`}>
+                <div className="product-items_Card">
+                  <div className="parent">
+                    <img src={item.image} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="productCardContent">
-                <h1>{item.name}</h1>
-                <p>
-                  <span>{Number(item.price).toLocaleString('kr')}</span>원
-                </p>
-                <p>
-                  <span>{item.rating}</span>
-                  <span className="review">· 후기</span>
-                </p>
-              </div>
+                <div className="productCardContent">
+                  <h1>{item.name}</h1>
+                  <p>
+                    <span>{Number(item.price).toLocaleString('kr')}</span>원
+                  </p>
+                  <p>
+                    <span>{item.rating}</span>
+                    <span className="review">· 후기</span>
+                  </p>
+                </div>
+              </Link>
             </li>
           ))}
         </Slider>

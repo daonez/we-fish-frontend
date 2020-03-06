@@ -108,7 +108,7 @@ export default class Main extends React.Component {
             <ul className="productList">
               {product.map(item => (
                 <li className="recommend-product-item">
-                  <Link to={{ pathname: `/product/detail/:id` }}>
+                  <Link to={`/product/detail/${item.id}`}>
                     <div className="productCard">
                       <div className="parent">
                         <img src={item.image} alt="" />
