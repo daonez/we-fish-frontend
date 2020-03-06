@@ -59,6 +59,7 @@ class Products extends React.Component {
   //     .then(res => {
   //       this.setState({ data: res.data, title: res.category_list })
   //     })
+
   // }
 
   render() {
@@ -76,7 +77,7 @@ class Products extends React.Component {
               <ul className="productList">
                 {product.map((item, id) => (
                   <li className="product-item">
-                    <Link to="/product/detail/:id">
+                    <Link to={`/product/detail/${item.id}`}>
                       <div className="productCard">
                         <div className="parent">
                           <img src={item.image} alt="" key={item.id} />

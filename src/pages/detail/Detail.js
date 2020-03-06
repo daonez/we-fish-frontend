@@ -35,17 +35,18 @@ class Detail extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.match.params.id)
-
     this.fetchFnc()
   }
 
   fetchFnc = () => {
+    const prdId = this.props.match.params.id
+    const randomId = Math.floor(Math.random() * 17)
+
     const mockArr1 = 'http://localhost:3000/data/detail_list.json'
-    const realArr1 = 'http://10.58.1.185:8000/product/detail/4'
+    const realArr1 = `http://52.78.241.65:8000/product/detail/${prdId}`
 
     const mockArr2 = 'http://localhost:3000/data/random_list.json'
-    const realArr2 = 'http://10.58.1.185:8000/product?category=4&query=id'
+    const realArr2 = `http://52.78.241.65:8000/product?category=${randomId}&query=id`
 
     Promise.all([fetch(realArr1), fetch(realArr2)])
       .then(([resDetail, resList]) =>

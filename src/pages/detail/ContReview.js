@@ -7,7 +7,7 @@ class ContReview extends Component {
   render() {
     return (
       <div className="detail-product__cont__review">
-        <ol>
+        {/* <ol>
           <li>
             <em className="detail-product__cont__review__title">
               [거제] 해금강 보리숭어
@@ -47,7 +47,7 @@ class ContReview extends Component {
           <button type="button">3</button>
           <button type="button">4</button>
           <button type="button">5</button>
-        </div>
+        </div> */}
       </div>
     )
   }

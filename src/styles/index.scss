@@ -1,4 +1,6 @@
 @import 'reset.scss';
+@import 'layout.scss';
+$mobile: 'only screen and (max-width: 420px)';
 
 html {
   scroll-behavior: smooth;
@@ -54,4 +56,14 @@ td {
   font-family: 'Spoqa Han Sans Bold';
   src: local('Spoqa Han Sans Bold'),
     url('../fonts/Spoqa Han Sans Bold.ttf') format('truetype');
+}
+
+@media #{$mobile} {
+  .section-left {
+    display: none;
+  }
+
+  .section-right {
+    width: 100%;
+  }
 }
