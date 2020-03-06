@@ -122,7 +122,9 @@ class Nav extends Component {
             <div>후기많은상품</div>
           </Link>
           <div>오늘회 꿀조합</div>
-          <div>오늘저녁배송</div>
+          <Link to="/tonightdelivery">
+            <div>오늘저녁배송</div>
+          </Link>
           <Link to="/delivery">
             <div>배송확인</div>
           </Link>

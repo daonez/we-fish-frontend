@@ -10,6 +10,8 @@ import Layout from '../../component/Layout'
 import './main.scss'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import ReactSlick from 'react-slick'
+import queryString from 'query-string'
 
 export default class Main extends React.Component {
   constructor() {
@@ -19,45 +21,34 @@ export default class Main extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.FetchProduct()
-  // }
+  componentDidMount() {
+    this.fetchProduct()
+  }
 
-  // FetchProduct() {
-  //   // const queryId = this.props.location.search.split('=')[1]
-  //   // const queryId = this.props.location.search.split('=')[1]
-  //   const min = 0
-  //   const max = 14
-  //   const randomNumber = Math.floor(Math.random() * (max - min) + min)
+  fetchProduct() {
+    const min = 3
+    const max = 14
+    const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
-  //   // const values = this.props.match.params.category
+    const values = queryString.stringify({
+      category: randomNumber,
+    })
+    console.log(values)
 
-  //   //* requests
-  //   const requestOne = axios.get(
-  //     'http://52.78.241.65:8000/product/category_list',
-  //   )
-  //   // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
-  //   const requestTwo = axios.get(
-  //     // `http://52.79.185.94:8000/product?category=4&query=updated_at`
-  //     // `http://52.78.241.65:8000/product?${values}&query=-updated_at`,
-  //     `http://52.78.241.65:8000/product?category=4&query=-updated_at`,
-  //   )
-  //   //* control all promise
-  //   Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
-  //     this.setState({
-  //       title: responseOne.data.category_list,
-  //       product: responseTwo.data.data,
-  //     })
-  //     console.log(this.state.title, this.state.product)
-  //     // const getId = Object.values(this.state.title)
-  //     // for (const value of getId) {
-  //     //   const newId = value.id
-  //     //   this.state.id.push(newId)
-  //     }
-  //   })
+    // const values = this.props.match.params.category
 
-  //   console.log(this.state.title, this.state.id)
-  // }
+    //* requests
+    fetch('http://52.79.185.94:8000/product?${values}&query=-price')
+      .then(request => request.json())
+      .then(response => {
+        this.setState({
+          data: response.data,
+        })
+        console.log(this.state.data)
+      })
+
+    console.log(this.state.data)
+  }
 
   render() {
     const { product } = this.state
@@ -117,7 +108,7 @@ export default class Main extends React.Component {
             <ul className="productList">
               {product.map(item => (
                 <li className="recommend-product-item">
-                  <Link to={{ pathname: `/product/detail/:id` }}>
+                  <Link to={`/product/detail/${item.id}`}>
                     <div className="productCard">
                       <div className="parent">
                         <img src={item.image} alt="" />
@@ -202,27 +193,7 @@ export default class Main extends React.Component {
           <h2>오늘회 신상품 ></h2>
         </div>
         <div>
-          {/* <Slider {...settings}>
-            {data.map(item => (
-              <li className="product-item">
-                <div className="product-items_Card">
-                  <div className="parent">
-                    <img src={item.image} alt="" />
-                  </div>
-                </div>
-                <div className="productCardContent">
-                  <h1>{item.name}</h1>
-                  <p>
-                    <span>{item.price}</span>원
-                  </p>
-                  <p>
-                    <span>{item.rating}</span>
-                    <span className="review">· 후기</span>
-                  </p>
-                </div>
-              </li>
-            ))}
-          </Slider> */}
+          <ThreeImageSlider />
         </div>
       </div>
     )

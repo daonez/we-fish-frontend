@@ -17,7 +17,7 @@ class MostReviewPage extends React.Component {
   }
 
   fetchProduct() {
-    fetch('http://52.79.185.94:8000/product?category=1&query=-price')
+    fetch('http://52.79.185.94:8000/product?category=3&query=-price')
       .then(res => res.json())
       .then(res => {
         this.setState({

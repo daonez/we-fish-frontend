@@ -25,71 +25,59 @@ export default class ThreeImageSlider extends Component {
   }
 
   fetchProduct() {
-    const min = 0
+    const min = 3
     const max = 14
     const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
     const values = queryString.stringify({
       category: randomNumber,
     })
+    console.log(values)
 
     // const values = this.props.match.params.category
 
     //* requests
-
-    // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
-    const request = axios.get(
-      // `http://52.79.185.94:8000/product?category=4&query=updated_at`
-      'http://52.79.185.94:8000/product?category=${values}&query=-updated_at',
-      // `http://52.78.241.65:8000/product?category=${values}&query=-updated_at`,
-    )
-    //* control all promise
-    Promise.all([request]).then(([response]) => {
-      this.setState({
-        data: response.data.data,
+    fetch(`http://52.78.241.65:8000/product?${values}&query=-price`)
+      .then(request => request.json())
+      .then(response => {
+        this.setState({
+          data: response.data,
+        })
+        console.log(this.state.data)
       })
-      console.log(this.state.data)
-    })
 
     console.log(this.state.data)
   }
 
   render() {
     const { data } = this.state
-    console.log(this.state)
+    console.log(data)
     return (
-      <Link
-        to={{
-          pathname: '/product/detail/:id',
-          state: {
-            data,
-          },
-        }}
-      >
-        <div>
-          <Slider {...settings}>
-            {data.map(item => (
-              <li className="product-item">
+      <div>
+        <Slider {...settings}>
+          {data.map(item => (
+            <li className="product-item">
+              <Link to={`/product/detail/${item.id}`}>
                 <div className="product-items_Card">
                   <div className="parent">
-                    <img src={item.image} alt="" key={data.index} />
+                    <img src={item.image} alt="" />
                   </div>
                 </div>
                 <div className="productCardContent">
                   <h1>{item.name}</h1>
                   <p>
-                    <span>{item.price}</span>원
+                    <span>{Number(item.price).toLocaleString('kr')}</span>원
                   </p>
                   <p>
                     <span>{item.rating}</span>
                     <span className="review">· 후기</span>
                   </p>
                 </div>
-              </li>
-            ))}
-          </Slider>
-        </div>
-      </Link>
+              </Link>
+            </li>
+          ))}
+        </Slider>
+      </div>
     )
   }
 }

@@ -31,8 +31,7 @@ class Products extends React.Component {
 
     //* requests
     const requestOne = axios.get(
-      //   'http://52.78.241.65:8000/product/category_list',
-      `http://localhost:3000/data/categorylist.json`,
+      'http://52.78.241.65:8000/product/category_list',
     )
     // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
     const requestTwo = axios.get(
@@ -43,10 +42,10 @@ class Products extends React.Component {
     //* control all promise
     Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       this.setState({
-        // title: responseOne.data.category_list,
+        title: responseOne.data.category_list,
         product: responseTwo.data.data,
       })
-      console.log(this.state.title, this.state.product)
+      console.log(this.state.title, this.state.product, this.state.id)
     })
 
     console.log(this.state.title, this.state.id)
@@ -62,33 +61,28 @@ class Products extends React.Component {
   // }
 
   render() {
-    const { title, product, id } = this.state
+    const { title, product } = this.state
     console.log('this.props: ', this.props)
-    console.log(title, product, id)
+    console.log(title, product)
     return (
       <Layout>
         <div className="content-wrapper">
           <section className="product-main-container">
             <div className="productList-section">
               <div className="productList__nav">
-                {id.map(id => (
-                  <div>
-                    <h1>{id}</h1>
-                  </div>
-                ))}
                 <Selector />
               </div>
               <ul className="productList">
                 {product.map(item => (
                   <li className="product-item">
-                    <Link to="/product/detail/:id">
+                    <Link to={`/product/detail/${item.id}`}>
                       <div className="productCard">
                         <div className="parent">
                           <img src={item.image} alt="" />
                         </div>
                       </div>
                       <div className="productCardContent">
-                        <h1>{item.name}</h1>
+                        <h1 key={item.id}>{item.name}</h1>
                         <p>
                           <span>{Number(item.price).toLocaleString('kr')}</span>
                           원

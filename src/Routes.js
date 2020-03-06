@@ -21,6 +21,7 @@ import LayoutPrac from './pages/LayoutPrac'
 import AskReviewDetail from './pages/AskReviewDetail'
 import DeliveryCheck from './pages/subMain/DeliveryCheck'
 import MostReviewPage from './pages/subMain/MostReviewPage'
+import TonightDelivery from './pages/subMain/TonightDelivery'
 
 class Routes extends React.Component {
   render() {
@@ -45,6 +46,7 @@ class Routes extends React.Component {
           <Route exact path="/searchresult" component={SearchResult} />
           <Route exact path="/askdetail" component={AskReviewDetail} />
           <Route exact path="/mostreviewpage" component={MostReviewPage} />
+          <Route exact path="/tonightdelivery" component={TonightDelivery} />
         </Switch>
       </Router>
     )

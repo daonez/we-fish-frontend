@@ -123,7 +123,7 @@ q {
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -133,6 +133,8 @@ q:after {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  text-decoration: none;
+  color: black;
 }
 
 ​ ins {
