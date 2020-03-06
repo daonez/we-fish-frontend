@@ -32,23 +32,16 @@ class SearchResult extends Component {
     }
   }
 
-  // fetchProduct() {
-  //   const queryId = this.props.location.search.split('=')[1]
+  fetchProduct() {
+    const queryId = this.props.location.search.split('=')[1]
 
-  //   fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`)
-  //     .then(request => request.json())
-  //     .then(request => {
-  //       console.log('여기가 request다: ', request)
-  //       this.setState({ search_results: request.search_results })
-  //     })
-  // }
-
-  //     fetch(`http://52.78.241.65:8000/product/search?keyword=${queryId}`)
-  //       .then(request => request.json())
-  //       .then(request => {
-  //         console.log("여기가 request다: ", request);
-  //         this.setState({ search_results: request.search_results });
-  //       });
+    fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`)
+      .then(request => request.json())
+      .then(request => {
+        console.log('여기가 request다: ', request)
+        this.setState({ search_results: request.search_results })
+      })
+  }
 
   render() {
     const { search_results } = this.state

@@ -1,13 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { Component } from "react"
-import Slider from "react-slick"
-import { Link } from "react-router-dom"
+import React, { Component } from 'react'
+import Slider from 'react-slick'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import queryString from 'query-string'
 
+const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  arrows: true,
+}
 export default class ThreeImageSlider extends Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      data: [],
     }
   }
 
@@ -16,31 +25,45 @@ export default class ThreeImageSlider extends Component {
   }
 
   fetchProduct() {
-    fetch("http://localhost:3000/data/category_list.json")
-      .then(request => request.json())
-      .then(request => {
-        console.log(request)
-        this.setState({ data: request.descending_price[3]["자연산 회"] })
+    const min = 0
+    const max = 14
+    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+
+    const values = queryString.stringify({
+      category: randomNumber,
+    })
+
+    // const values = this.props.match.params.category
+
+    //* requests
+
+    // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
+    const request = axios.get(
+      // `http://52.79.185.94:8000/product?category=4&query=updated_at`
+      'http://52.79.185.94:8000/product?category=${values}&query=-updated_at',
+      // `http://52.78.241.65:8000/product?category=${values}&query=-updated_at`,
+    )
+    //* control all promise
+    Promise.all([request]).then(([response]) => {
+      this.setState({
+        data: response.data.data,
       })
+      console.log(this.state.data)
+    })
+
+    console.log(this.state.data)
   }
 
   render() {
     const { data } = this.state
     console.log(this.state)
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 2,
-      arrows: true
-    }
     return (
       <Link
         to={{
-          pathname: "/product",
+          pathname: '/product/detail/:id',
           state: {
-            data
-          }
+            data,
+          },
         }}
       >
         <div>

@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 import SectionLeft from './LayoutLeft'
 import Header from './nav/Nav'
 import Footer from './navAdd/NavFooter'
-import 'styles/layout.scss'
+import '../styles/layout.scss'
+
+
 
 class Layout extends Component {
   render() {
