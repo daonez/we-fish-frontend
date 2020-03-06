@@ -39,64 +39,64 @@
                 letter-spacing: -0.08em;
                 font-size:19px;
             }
-            .productMany{
+        .productMany{
 
-                position:relative;
-                top:5px;
-                .productSpan0{
-                    width:400px;
-                    height:80px;
+            position:relative;
+            top:5px;
+            .productSpan0{
+                width:400px;
+                height:80px;
+                display:flex;
+                .productSpan1{
+                    position:relative;
+                    top:10px;
+                    font-size:17px;
+                    color:#838383;
+                    font-weight:bold;
+                }
+                .productSpan2{
                     display:flex;
-                    .productSpan1{
-                        position:relative;
-                        top:10px;
-                        font-size:17px;
-                        color:#838383;
-                        font-weight:bold;
+                    position:relative;
+                    left:30px;
+                    top:10px;
+                    width:200px;
+                    height:60px;
+                    button{
+                        width:40px;
+                        height:30px;
+                        border-radius:1px;
+                        cursor: pointer;
+                        &:focus{
+                            outline:none;
+                        }
                     }
-                    .productSpan2{
-                        display:flex;
+                    .span2button{
+                        border-right:none;
+                        
+                    }
+                    .span2button1{
+                        border-left:none;
+                    }
+                    span{
+                        font-size:18px;
+                        font-weight:bold;
+                        text-align: center;
+                        display:block;
                         position:relative;
-                        left:30px;
-                        top:10px;
-                        width:200px;
-                        height:60px;
-                        button{
-                            width:40px;
-                            height:30px;
-                            border-radius:1px;
-                            cursor: pointer;
-                            &:focus{
-                                outline:none;
-                            }
-                        }
-                        .span2button{
-                            border-right:none;
-                            
-                        }
-                        .span2button1{
-                            border-left:none;
-                        }
-                        span{
-                            font-size:18px;
-                            font-weight:bold;
-                            text-align: center;
-                            display:block;
-                            position:relative;
-                            width:50px;
-                            height:28px;
-                            border: 1px solid rgb(201, 195, 195);
-                        }
+                        width:50px;
+                        height:28px;
+                        border: 1px solid rgb(201, 195, 195);
                     }
                 }
             }
         }
-        .cartClose{
-            cursor:pointer;
-            position:relative;
-            left:330px;
-            bottom:110px;
-        }
+    }
+    .cartClose{
+        cursor:pointer;
+        position:relative;
+        left:330px;
+        bottom:110px;
+    }
         .navCartBar{
             position:relative;
             bottom:25px;
@@ -202,4 +202,5 @@
         position:relative;
         top:15%;
     }
+        
 }

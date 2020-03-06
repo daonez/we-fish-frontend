@@ -13,6 +13,7 @@ import Slideshow from '../component/navAdd/Slideshow'
 import NavFooter from '../component/navAdd/NavFooter'
 import NavCart from '../component/navAdd/NavCart'
 import Main from './main/Main'
+import Detail from './detail/Detail'
 
 class Home extends Component {
   render() {
