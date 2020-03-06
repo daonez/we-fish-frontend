@@ -84,7 +84,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <div className="nmain" onClick={this.handleChange1}>
+        {/* <div className="nmain" onClick={this.handleChange1}>
           <div className="nmain_right">
             <img
               className="right"
@@ -115,13 +115,13 @@ class Nav extends Component {
               <strong className="picker">1</strong>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="nav_bar" />
         <div className="nav_bottom">
-          <div>후기많은상품</div>
+          {/* <div>후기많은상품</div>
           <div>오늘회 꿀조합</div>
           <div>오늘저녁배송</div>
-          <div>배송확인</div>
+          <div>배송확인</div> */}
         </div>
         <div className="datePickerList" style={{ display: this.state.display }}>
           <div>1일(일)</div>
