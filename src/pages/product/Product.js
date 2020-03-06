@@ -46,7 +46,7 @@ class Products extends React.Component {
         // title: responseOne.data.category_list,
         product: responseTwo.data.data,
       })
-      console.log(this.state.title, this.state.product)
+      console.log(this.state.title, this.state.product, this.state.id)
     })
 
     console.log(this.state.title, this.state.id)
@@ -62,39 +62,36 @@ class Products extends React.Component {
   // }
 
   render() {
-    const { title, product, id } = this.state
+    const { title, product } = this.state
     console.log('this.props: ', this.props)
-    console.log(title, product, id)
+    console.log(title, product)
     return (
       <Layout>
         <div className="content-wrapper">
           <section className="product-main-container">
             <div className="productList-section">
               <div className="productList__nav">
-                {id.map(id => (
-                  <div>
-                    <h1>{id}</h1>
-                  </div>
-                ))}
                 <Selector />
               </div>
               <ul className="productList">
-                {product.map(item => (
+                {product.map((item, id) => (
                   <li className="product-item">
-                    <Link to="/product/detail/:id">
+                    <Link to="/product/detail/{{this.match.params.id}}">
                       <div className="productCard">
                         <div className="parent">
-                          <img src={item.image} alt="" />
+                          <img src={item.image} alt="" key={item.id} />
                         </div>
                       </div>
                       <div className="productCardContent">
-                        <h1>{item.name}</h1>
+                        <h1 key={item.id}>{item.name}</h1>
                         <p>
-                          <span>{Number(item.price).toLocaleString('kr')}</span>
+                          <span key={item.id}>
+                            {Number(item.price).toLocaleString('kr')}
+                          </span>
                           원
                         </p>
                         <p>
-                          <span>{item.rating}</span>
+                          <span key={item.id}>{item.rating}</span>
                           <span className="review">· 후기</span>
                         </p>
                       </div>
