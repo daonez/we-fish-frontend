@@ -6,6 +6,10 @@ $bold: 'Spoqa Han Sans Bold';
 .delivery-image {
   width: 100%;
 
+  &:first-child {
+    padding-top: 120px;
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -47,4 +51,8 @@ $bold: 'Spoqa Han Sans Bold';
   td {
     color: #111;
   }
+}
+
+.delivery-gray {
+  background-color: #efefef;
 }

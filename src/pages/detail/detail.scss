@@ -388,8 +388,8 @@ $orange: 'orange';
     .slick-next:before {
       position: absolute;
       top: 50%;
-      right: 5px;
-      margin-top: -20px;
+      right: 9px;
+      margin-top: -12px;
       content: '>';
       font-weight: 900;
     }
@@ -582,7 +582,7 @@ $orange: 'orange';
         text-decoration: none;
         color: #3c1e1e;
         background-color: #f7e317;
-        background-image: url('../images/kakao-plus.png');
+        background-image: url('../../images/kakao-plus.png');
         background-repeat: no-repeat;
         background-size: 40px auto;
         background-position: 7px center;

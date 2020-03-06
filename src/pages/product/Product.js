@@ -2,7 +2,6 @@ import React from 'react'
 import './product.scss'
 import Layout from 'component/Layout'
 import axios from 'axios'
-import queryString from 'query-string'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Selector from './Selector_button'
 
@@ -17,43 +16,37 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
-    // this.fetchProduct()
-    this.FetchProduct()
+    this.fetchProduct()
+    // this.FetchProduct()
   }
 
-  FetchProduct() {
+  fetchProduct() {
     // const queryId = this.props.location.search.split('=')[1]
     // const queryId = this.props.location.search.split('=')[1]
-    const min = 0
-    const max = 14
-    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+    // const min = 0
+    // const max = 14
+    // const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
-    const values = queryString.stringify({
-      category: randomNumber,
-    })
-    console.log(values)
+    const values = this.props.match.params.category
 
     //* requests
     const requestOne = axios.get(
-      'http://52.78.241.65:8000/product/category_list',
+      //   'http://52.78.241.65:8000/product/category_list',
+      `http://localhost:3000/data/categorylist.json`,
     )
     // const requestTwo = axios.get('http://52.79.185.94/product?category=4&');
     const requestTwo = axios.get(
-      // `http://52.79.185.94:8000/product?category=4&query=updated_at`
-      `http://52.78.241.65:8000/product?${values}&query=-updated_at`,
+      // `http://52.79.185.94:8000/product?category=4&query=updated_at`,
+      `http://52.79.185.94:8000/product?category=${values}&query=-updated_at`,
+      // `http://52.78.241.65:8000/product?category=${values}&query=-updated_at`,
     )
     //* control all promise
     Promise.all([requestOne, requestTwo]).then(([responseOne, responseTwo]) => {
       this.setState({
-        title: responseOne.data.category_list,
+        // title: responseOne.data.category_list,
         product: responseTwo.data.data,
       })
-      console.log(this.state.title, this.state.product)
-      const getId = Object.values(this.state.title)
-      for (const value of getId) {
-        const newId = value.id
-        this.state.id.push(newId)
-      }
+      console.log(this.state.title, this.state.product, this.state.id)
     })
 
     console.log(this.state.title, this.state.id)
@@ -69,39 +62,40 @@ class Products extends React.Component {
   // }
 
   render() {
-    const { title, product, b } = this.state
-    console.log(title, product, b)
+    const { title, product } = this.state
+    console.log('this.props: ', this.props)
+    console.log(title, product)
     return (
       <Layout>
         <div className="content-wrapper">
           <section className="product-main-container">
             <div className="productList-section">
               <div className="productList__nav">
-                {/* {title.map(title => (
-                  <div>
-                    <h1>{title.name.id}</h1>
-                  </div>
-                ))} */}
                 <Selector />
               </div>
               <ul className="productList">
-                {product.map(item => (
+                {product.map((item, id) => (
                   <li className="product-item">
-                    <div className="productCard">
-                      <div className="parent">
-                        <img src={item.image} alt="" />
+                    <Link to="/product/detail/:id">
+                      <div className="productCard">
+                        <div className="parent">
+                          <img src={item.image} alt="" key={item.id} />
+                        </div>
                       </div>
-                    </div>
-                    <div className="productCardContent">
-                      <h1>{item.name}</h1>
-                      <p>
-                        <span>{Number(item.price).toLocaleString('kr')}</span>원
-                      </p>
-                      <p>
-                        <span>{item.rating}</span>
-                        <span className="review">· 후기</span>
-                      </p>
-                    </div>
+                      <div className="productCardContent">
+                        <h1 key={item.id}>{item.name}</h1>
+                        <p>
+                          <span key={item.id}>
+                            {Number(item.price).toLocaleString('kr')}
+                          </span>
+                          원
+                        </p>
+                        <p>
+                          <span key={item.id}>{item.rating}</span>
+                          <span className="review">· 후기</span>
+                        </p>
+                      </div>
+                    </Link>
                   </li>
                 ))}
               </ul>
