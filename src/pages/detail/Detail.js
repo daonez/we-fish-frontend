@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
 import Layout from '../../component/Layout'
 import MainSlider from './MainSlider'
 import ProductInfo from './ProductInfo'
@@ -10,7 +11,7 @@ import SubSlider from './SubSlider'
 /* import Together from './Together' */
 import TabWrap from './TabWrap'
 
-import '../../styles/detail.scss'
+import './detail.scss'
 
 class Detail extends Component {
   constructor(props) {
@@ -38,13 +39,16 @@ class Detail extends Component {
   }
 
   fetchFnc = () => {
+    const prdId = this.props.match.params.id
+    const randomId = Math.floor(Math.random() * 17)
+
     const mockArr1 = 'http://localhost:3000/data/detail_list.json'
-    const realArr1 = 'http://10.58.1.185:8000/product/detail/4'
+    const realArr1 = `http://52.78.241.65:8000/product/detail/${prdId}`
 
     const mockArr2 = 'http://localhost:3000/data/random_list.json'
-    const realArr2 = 'http://10.58.1.185:8000/product?category=4&query=id'
+    const realArr2 = `http://52.78.241.65:8000/product?category=${randomId}&query=id`
 
-    Promise.all([fetch(mockArr1), fetch(mockArr2)])
+    Promise.all([fetch(realArr1), fetch(realArr2)])
       .then(([resDetail, resList]) =>
         Promise.all([resDetail.json(), resList.json()]),
       )

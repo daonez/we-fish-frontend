@@ -40,7 +40,7 @@ class Tab extends Component {
                 onClick={this.handleClick}
                 type="button"
               >
-                후기(2)
+                후기(0)
               </button>
             </li>
             <li>

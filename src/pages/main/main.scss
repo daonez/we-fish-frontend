@@ -2,7 +2,15 @@
 @import '~slick-carousel/slick/slick-theme.css';
 
 .main-content {
-  padding: 10px;
+  position: relative;
+  top: -57px;
+  background: white;
+  border-radius: 17px;
+  margin-left: 11px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
   &-p {
     font-size: 12px;
     color: #929292;
@@ -119,5 +127,8 @@
     & img {
       width: 100px;
     }
+  }
+  h2 {
+    font-weight: bold;
   }
 }

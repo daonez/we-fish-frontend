@@ -4,14 +4,15 @@ import React, { Component } from 'react'
 
 class ProductCart extends Component {
   cartFetch = () => {
-
-    fetch('http://10.58.1.185:8000/order/cart', {
+    fetch('http://52.78.241.65:8000/order/cart', {
       method: 'POST',
       headers: {
         'Authorization':
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxfQ.SAa5RFLev-OZMBqY2mDjAeftZE0kH4FJUSOwCS4HsGA',
       },
-      body: JSON.stringify({"cart":[{'product_id' : Number(this.props.no), 'quantity': 1 }]}),
+      body: JSON.stringify({
+        cart: [{ product_id: Number(this.props.no), quantity: 1 }],
+      }),
     })
       .then(res => res.json())
       .then(response => console.log('Success:', JSON.stringify(response)))

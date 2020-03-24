@@ -9,34 +9,72 @@ import deliveryCont from '../../images/delivery_cont.jpg'
 import './deliveryCheck.scss'
 
 class DeliveryCheck extends Component {
-  handleAddress = data => {
-    const fullAddress = data.address
+  constructor(props) {
+    super(props)
 
-    console.log(fullAddress)
+    this.state = {
+      open: false,
+      disabled: false,
+      bgc: 'gray',
+    }
+  }
+
+  handleClick = () => {
+    this.setState({
+      open: true,
+      disabled: true,
+      bgc: 'delivery-gray',
+    })
+  }
+
+  handleAddress = data => {
+    const zipCode = Number(String(data.zonecode).slice(0, 2))
+
+    if (zipCode < 16) {
+      if (zipCode !== 10 && zipCode !== 12) {
+        alert('해당 지역 저녘 배송이 가능합니다.')
+      }
+    } else if (zipCode < 24 && zipCode > 20) {
+      alert('해당의 일부 지역 저녘 배송이 가능하니, 아래 표를 확인해주세요.')
+    } else {
+      alert('저녘 배송이 불가한 지역입니다.')
+    }
+
+    this.setState({
+      open: false,
+      disabled: false,
+      bgc: 'white',
+    })
   }
 
   render() {
     return (
-      <>
-        <Layout>
-          <div className="delivery-image">
-            <img src={deliveryInfo} alt="우리집도 오늘배송 가능한가요?" />
-          </div>
-          <div className="delivery-search">
-            <input placeholder="배송 가능 지역인지 검색해보세요." type="text" />
-            <button type="button">
-              <FaSearch size="30" />
-            </button>
-          </div>
+      <Layout>
+        <div className="delivery-image">
+          <img src={deliveryInfo} alt="우리집도 오늘배송 가능한가요?" />
+        </div>
+        <div className="delivery-search">
+          <input
+            className={this.state.bgc}
+            onClick={this.handleClick}
+            disabled={this.state.disabled}
+            placeholder="배송 가능 지역인지 검색해보세요."
+            type="text"
+          />
+          <button type="button">
+            <FaSearch size="30" />
+          </button>
+        </div>
+        {this.state.open && (
           <DaumPostCode onComplete={this.handleAddress} autoClose="true" />
-          <div className="delivery-image">
-            <img src={deliveryCont} alt="우리집도 오늘배송 가능한가요?" />
-          </div>
-          <div className="delivery-table">
-            <DinnerDelivery />
-          </div>
-        </Layout>
-      </>
+        )}
+        <div className="delivery-image">
+          <img src={deliveryCont} alt="우리집도 오늘배송 가능한가요?" />
+        </div>
+        <div className="delivery-table">
+          <DinnerDelivery />
+        </div>
+      </Layout>
     )
   }
 }

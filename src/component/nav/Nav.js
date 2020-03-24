@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Nav.scss'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import NavSideBar from './NavSideBar/NavSideBar'
 import TextLogo from '../../img/logotext.png'
 import ThreeBar from '../../img/threebar.svg'
@@ -118,10 +118,16 @@ class Nav extends Component {
         </div>
         <div className="nav_bar" />
         <div className="nav_bottom">
-          <div>후기많은상품</div>
+          <Link to="/mostreviewpage">
+            <div>후기많은상품</div>
+          </Link>
           <div>오늘회 꿀조합</div>
-          <div>오늘저녁배송</div>
-          <div>배송확인</div>
+          <Link to="/tonightdelivery">
+            <div>오늘저녁배송</div>
+          </Link>
+          <Link to="/delivery">
+            <div>배송확인</div>
+          </Link>
         </div>
         <div className="datePickerList" style={{ display: this.state.display }}>
           <div>1일(일)</div>

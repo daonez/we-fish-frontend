@@ -10,7 +10,11 @@ class ContQna extends Component {
           오늘회 카카오톡 플러스친구가
           <span>가장 빠르게 응대해드려요! :D</span>
         </p>
-        <a className="detail-product__cont__qna__katalk" href="#">
+        <a
+          className="detail-product__cont__qna__katalk"
+          href="https://pf.kakao.com/_ALxcnd/chat"
+          target="__blank"
+        >
           상품문의하기
         </a>
       </div>
