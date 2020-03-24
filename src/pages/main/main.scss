@@ -11,10 +11,13 @@
     text-decoration: none;
     color: black;
   }
+  &-header {
+    margin: 10px;
+  }
   &-p {
     font-size: 12px;
     color: #929292;
-    padding: 6px 0;
+    padding: 6px 0 0 11px;
   }
   &_contents {
     display: flex;
@@ -22,7 +25,7 @@
     padding-bottom: 8px;
     & strong {
       font-weight: bold;
-      padding: 2px 0;
+      padding: 2px 7px;
       font-size: 20px;
       width: 230px;
       p {
@@ -31,7 +34,7 @@
     }
   }
   .text {
-    margin: 29px 2px 1px 34px;
+    margin: 29px 0px 1px 4px;
   }
   &_second-productslider {
     &_content {
