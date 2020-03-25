@@ -2,6 +2,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
+import { SERVER_URL } from 'config'
 import Layout from '../../component/Layout'
 import MainSlider from './MainSlider'
 import ProductInfo from './ProductInfo'
@@ -10,7 +11,6 @@ import Notice from './Notice'
 import SubSlider from './SubSlider'
 /* import Together from './Together' */
 import TabWrap from './TabWrap'
-
 import './detail.scss'
 
 class Detail extends Component {
@@ -19,7 +19,7 @@ class Detail extends Component {
 
     this.state = {
       num: 1,
-      no: '',
+      id: '',
       tagline: '',
       name: '',
       price: '',
@@ -43,10 +43,10 @@ class Detail extends Component {
     const randomId = Math.floor(Math.random() * 17)
 
     const mockArr1 = 'http://localhost:3000/data/detail_list.json'
-    const realArr1 = `http://52.78.241.65:8000/product/detail/${prdId}`
+    const realArr1 = `${SERVER_URL}/product/detail/${prdId}`
 
     const mockArr2 = 'http://localhost:3000/data/random_list.json'
-    const realArr2 = `http://52.78.241.65:8000/product?category=${randomId}&query=id`
+    const realArr2 = `${SERVER_URL}/product?category=${randomId}&query=id`
 
     Promise.all([fetch(realArr1), fetch(realArr2)])
       .then(([resDetail, resList]) =>
@@ -55,17 +55,17 @@ class Detail extends Component {
       .then(([dataDetail, dataList]) =>
         this.setState(
           {
-            no: dataDetail.product_data[0].no,
-            tagline: dataDetail.product_data[0].tagline,
-            name: dataDetail.product_data[0].name,
-            price: dataDetail.product_data[0].price,
-            unit: dataDetail.product_data[0].unit,
-            package: dataDetail.product_data[0].package,
-            origin: dataDetail.product_data[0].origin,
-            delivery: dataDetail.product_data[0].delivery,
-            caution: dataDetail.product_data[0].caution,
-            image: dataDetail.product_data[0].image_url,
-            detail: dataDetail.product_data[0].description,
+            id: dataDetail.product.id,
+            tagline: dataDetail.product.tagline,
+            name: dataDetail.product.name,
+            price: dataDetail.product.price,
+            unit: dataDetail.product.unit,
+            package: dataDetail.product.package,
+            origin: dataDetail.product.origin,
+            delivery: dataDetail.product.delivery,
+            caution: dataDetail.product.caution,
+            image: dataDetail.product.image_url,
+            detail: dataDetail.product.description,
           },
           () => {
             for (let i = 0; i < 10; i++) {
@@ -83,6 +83,7 @@ class Detail extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <Layout>
         <>

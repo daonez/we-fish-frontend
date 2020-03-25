@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import queryString from 'query-string'
+import { SERVER_URL } from 'config'
 
 const settings = {
   infinite: true,
@@ -12,7 +13,7 @@ const settings = {
   slidesToScroll: 2,
   arrows: true,
 }
-export default class ThreeImageSlider extends Component {
+class ThreeImageSlider extends Component {
   constructor() {
     super()
     this.state = {
@@ -30,14 +31,14 @@ export default class ThreeImageSlider extends Component {
     const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
     const values = queryString.stringify({
-      category: randomNumber,
+      category_id: randomNumber,
     })
     console.log(values)
 
     // const values = this.props.match.params.category
 
-    //* requests
-    fetch(`http://52.78.241.65:8000/product?${values}&query=-price`)
+    // //* requests
+    fetch(`${SERVER_URL}/product?${values}&query=-price`)
       .then(request => request.json())
       .then(response => {
         this.setState({
@@ -81,3 +82,4 @@ export default class ThreeImageSlider extends Component {
     )
   }
 }
+export default withRouter(ThreeImageSlider)

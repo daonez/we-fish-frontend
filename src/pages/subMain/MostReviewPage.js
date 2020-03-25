@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
 import Selector from 'pages/product/Selector_button'
 import Layout from 'component/Layout'
+import { SERVER_URL } from 'config'
 
 class MostReviewPage extends React.Component {
   constructor() {
@@ -17,7 +18,8 @@ class MostReviewPage extends React.Component {
   }
 
   fetchProduct() {
-    fetch('http://52.79.185.94:8000/product?category=1&query=-price')
+    // fetch(`${SERVER_URL}/product?category_id=1&query=-price`)
+    fetch('http://localhost:3000/data/random_list.json')
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -56,10 +58,10 @@ class MostReviewPage extends React.Component {
                           <span>{Number(item.price).toLocaleString('kr')}</span>
                           원
                         </p>
-                        <p>
+                        {/* <p>
                           <span>{item.rating}</span>
                           <span className="review">· 후기</span>
-                        </p>
+                        </p> */}
                       </div>
                     </Link>
                   </li>

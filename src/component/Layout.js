@@ -5,8 +5,6 @@ import Header from './nav/Nav'
 import Footer from './navAdd/NavFooter'
 import '../styles/layout.scss'
 
-
-
 class Layout extends Component {
   render() {
     const { children } = this.props
@@ -21,7 +19,7 @@ class Layout extends Component {
           <section className="section-right__main">
             <Header />
             <main>{children}</main>
-            <Footer />
+            {/* <Footer /> */}
           </section>
         </section>
       </div>
