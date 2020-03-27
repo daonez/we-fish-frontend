@@ -12,15 +12,15 @@ const sliderSetting2 = {
 }
 
 class SubSlider extends Component {
-  // this.props.arr
+  // //  this.props.arr
 
-  /* constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.state = {
-      p: this.props.arr,
-    }
-  } */
+  //   this.state = {
+  //     p: this.props.arr,
+  //   }
+  // }
 
   render() {
     return (
@@ -31,10 +31,10 @@ class SubSlider extends Component {
             {this.props.arr.map((item, idx) => {
               return (
                 <div key={idx} className="detail-product__sub-slider__slide">
-                  <Slide
-                    price={item.price}
-                    image={item.image}
-                    title={item.name}
+                  <Slider
+                  // price={item.price}
+                  // image={item.image}
+                  // title={item.name}
                   />
                 </div>
               )

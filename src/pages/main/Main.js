@@ -12,6 +12,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import ReactSlick from 'react-slick'
 import queryString from 'query-string'
+import { SERVER_URL } from 'config'
 
 export default class Main extends React.Component {
   constructor() {
@@ -31,14 +32,14 @@ export default class Main extends React.Component {
     const randomNumber = Math.floor(Math.random() * (max - min) + min)
 
     const values = queryString.stringify({
-      category: randomNumber,
+      category_id: randomNumber,
     })
     console.log(values)
 
     // const values = this.props.match.params.category
 
     //* requests
-    fetch('http://52.79.185.94:8000/product?${values}&query=-price')
+    fetch(`${SERVER_URL}/product?category_id${values}&query=-price`)
       .then(request => request.json())
       .then(response => {
         this.setState({
@@ -61,7 +62,7 @@ export default class Main extends React.Component {
               <header>
                 <div className="main-content-header">
                   <p className="main-content-p">제철지도</p>
-                  <a href="https://www.onul-hoi.com/m/new_store_packages?tag=%EC%A0%9C%EC%B2%A0%ED%9A%8C" />
+                  <a href="https://www.onul-hoi.com/m/new_store_packages?tag=%EC%A0%9C%EC%B2%A0" />
                   <div className="main-content_contents">
                     <strong>
                       지금 어떤 수산물이
@@ -93,8 +94,10 @@ export default class Main extends React.Component {
         <div className="main-content-recommend-title">
           <p>후기로 검증된 추천 상차림</p>
           <strong>오늘회 고객님은 이렇게 드셨어요.</strong>
-          <ButtonSlider />
-          <GuestOrderSlider />
+          <div>
+            <ButtonSlider />
+            <GuestOrderSlider />
+          </div>
         </div>
         <div className="main-content-recommend-buttons">
           <div className="main-content-review-best" />
@@ -121,18 +124,16 @@ export default class Main extends React.Component {
                       <p>
                         <span>{item.price}</span>원
                       </p>
-                      <p>
+                      {/* <p>
                         <span>{item.rating}</span>
                         <span className="review">· 후기</span>
-                      </p>
+                      </p> */}
                     </div>
                   </Link>
                 </li>
               ))}
             </ul>
-            <div>
-              <button>성게알 상품 전체보기 ></button>
-            </div>
+            <div>{/* <button>성게알 상품 전체보기 ></button> */}</div>
           </div>
         </div>
         <div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from "react"
-import Slider from "react-slick"
+import React, { Component } from 'react'
+import Slider from 'react-slick'
 
 export default class ButtonSlider extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class ButtonSlider extends Component {
       speed: 500,
       slidesToShow: 2.5,
       slidesToScroll: 2,
-      arrows: false
+      arrows: false,
     }
     return (
       <div className="main-content-button-slider">
