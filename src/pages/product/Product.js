@@ -8,7 +8,7 @@ import {
   Link,
   withRouter,
 } from 'react-router-dom'
-import { SERVER_URL } from 'config'
+import { SERVER_URL, AWS_URL } from 'config'
 import Selector from './Selector_button'
 
 class Products extends React.Component {
@@ -61,7 +61,7 @@ class Products extends React.Component {
   // Fetch 함수로 data.json
   fetchProduct() {
     const values = this.props.match.params.category
-    fetch(`${SERVER_URL}/product?category_id=${values}&query=-updated_at`)
+    fetch(`${AWS_URL}/product?category_id=${values}&query=-updated_at`)
       .then(res => res.json())
       .then(res => {
         this.setState({ product: res.data, title: res.category_list })
