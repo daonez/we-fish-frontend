@@ -92,23 +92,23 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className="main-content-recommend-title">
-          <p>후기로 검증된 추천 상차림</p>
-          <strong>오늘회 고객님은 이렇게 드셨어요.</strong>
-          <div>
+          {/* <p>후기로 검증된 추천 상차림</p>
+          <strong>오늘회 고객님은 이렇게 드셨어요.</strong> */}
+          {/* <div>
             <ButtonSlider />
             <GuestOrderSlider />
-          </div>
+          </div> */}
         </div>
         <div className="main-content-recommend-buttons">
           <div className="main-content-review-best" />
           <div className="products-wrapper">
-            <p>오늘회 후기 보러가기 ></p>
+            {/* <p>오늘회 후기 보러가기 ></p> */}
           </div>
           <div>
             <img src={firstTimeBanner} alt="" />
             <img src={todayOrderBanner} alt="" />
           </div>
-          <div className="recomend">
+          {/* <div className="recomend">
             <h1>알아서 추천드립니다 ></h1>
             <ul className="productList">
               {product.map(item => (
@@ -128,15 +128,15 @@ export default class Main extends React.Component {
                         <span>{item.rating}</span>
                         <span className="review">· 후기</span>
                       </p> */}
-                    </div>
-                  </Link>
-                </li>
+          {/* </div>
+                  </Link> */}
+          {/* </li>
               ))}
-            </ul>
-            <div>{/* <button>성게알 상품 전체보기 ></button> */}</div>
+            </ul> */}
+          {/* <div><button>성게알 상품 전체보기 ></button></div>
           </div>
-        </div>
-        <div>
+        </div> */}
+          {/* <div>
           <h2>오늘회 기획전 ></h2>
         </div>
         <div>
@@ -187,16 +187,17 @@ export default class Main extends React.Component {
               </article>
             </li>
           </ul>
-        </div>
-        <div>
-          <img src={plusFriend} alt="" />
-          <img src={deliver} alt="" />
-        </div>
-        <div>
-          <h2>오늘회 신상품 ></h2>
-        </div>
-        <div>
-          <ThreeImageSlider />
+        </div> */}
+          {/* <div>
+            <img src={plusFriend} alt="" />
+            <img src={deliver} alt="" />
+          </div> */}
+          <div>
+            <h2>오늘회 신상품 ></h2>
+          </div>
+          <div>
+            <ThreeImageSlider />
+          </div>
         </div>
       </div>
     )
