@@ -31,10 +31,10 @@ class SubSlider extends Component {
             {this.props.arr.map((item, idx) => {
               return (
                 <div key={idx} className="detail-product__sub-slider__slide">
-                  <Slider
-                  // price={item.price}
-                  // image={item.image}
-                  // title={item.name}
+                  <Slide
+                    image={item.image}
+                    title={item.name}
+                    price={item.price}
                   />
                 </div>
               )

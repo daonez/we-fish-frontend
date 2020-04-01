@@ -17,10 +17,10 @@ class Info extends Component {
             <i className="star-on">
               <FaStar size="21" />
             </i>
-            4.7
+            0
           </span>
           <button type="button" className="detail-product__info__review-num">
-            &middot; 후기 2458
+            &middot; 후기 0
           </button>
         </div>
       </div>

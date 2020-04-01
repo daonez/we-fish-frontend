@@ -62,14 +62,14 @@ $orange: 'orange';
       font-size: 18px;
       color: #373737;
       letter-spacing: -0.3px;
-      font-family: $regular;
+      font-family: $regular, sans-serif;
       font-weight: 500;
     }
 
     &__title {
       margin-bottom: 15px;
       font-size: 25px;
-      font-family: $light;
+      font-family: $light, sans-serif;
       font-weight: 500;
       letter-spacing: -0.5px;
       line-height: 36px;
@@ -77,7 +77,7 @@ $orange: 'orange';
 
     &__num {
       font-size: 24px;
-      font-family: $bold;
+      font-family: $bold, sans-serif;
       letter-spacing: -0.3px;
     }
 
@@ -97,6 +97,7 @@ $orange: 'orange';
       color: #b7b7b7;
       outline: 0;
       border: 0;
+      background-color: transparent;
     }
   }
 
@@ -127,6 +128,7 @@ $orange: 'orange';
       font-size: 14px;
       font-weight: 600;
       letter-spacing: -0.6px;
+      font-family: $regular, sans-serif;
     }
 
     li > p {
@@ -136,7 +138,7 @@ $orange: 'orange';
     &__recomm {
       width: 100%;
       font-size: 12px;
-      font-family: $light;
+      font-family: $light, sans-serif;
       font-weight: 600;
       letter-spacing: -0.4px;
     }
@@ -196,6 +198,7 @@ $orange: 'orange';
       font-weight: 600;
       border-radius: 30px;
       outline: 0;
+      border: 0;
       cursor: pointer;
     }
   }
@@ -209,7 +212,7 @@ $orange: 'orange';
       margin: 10px 0;
       text-align: left;
       font-size: 20px;
-      font-family: $bold;
+      font-family: $bold, sans-serif;
       letter-spacing: -0.6px;
     }
 
@@ -221,7 +224,7 @@ $orange: 'orange';
         padding: 12px 20px 10px;
         letter-spacing: -0.6px;
         font-size: 17px;
-        font-family: $light;
+        font-family: $light, sans-serif;
         font-weight: 600;
         color: #fff;
         background-color: #343434;
@@ -309,7 +312,7 @@ $orange: 'orange';
         font-size: 18px;
 
         span {
-          font-family: $bold;
+          font-family: $bold, sans-serif;
         }
       }
     }
@@ -326,7 +329,7 @@ $orange: 'orange';
         margin-top: 5px;
         font-style: normal;
         font-size: 17px;
-        font-family: $light;
+        font-family: $light, sans-serif;
         font-weight: 600;
         letter-spacing: -0.6px;
         color: #929292;
@@ -342,7 +345,7 @@ $orange: 'orange';
 
         span {
           font-size: 25px;
-          font-family: $bold;
+          font-family: $bold, sans-serif;
         }
       }
 
@@ -368,7 +371,7 @@ $orange: 'orange';
       text-align: left;
       font-size: 20px;
       font-weight: 600;
-      font-family: $light;
+      font-family: $light, sans-serif;
       letter-spacing: -0.6px;
     }
 
@@ -398,7 +401,7 @@ $orange: 'orange';
 
     &__slide {
       overflow: hidden;
-      width: 145px !important;
+      width: 175px !important;
     }
 
     &__img {
@@ -425,7 +428,7 @@ $orange: 'orange';
       span {
         letter-spacing: -0.6px;
         font-weight: 600;
-        font-family: $light;
+        font-family: $light, sans-serif;
         font-size: 18px;
         color: #373737;
       }
@@ -477,6 +480,7 @@ $orange: 'orange';
       border: 0;
       outline: 0;
       cursor: pointer;
+      background-color: transparent;
 
       &:hover {
         color: #ff7826;
@@ -505,14 +509,14 @@ $orange: 'orange';
         letter-spacing: -0.6px;
         font-size: 20px;
         font-weight: 500;
-        font-family: $light;
+        font-family: $light, sans-serif;
       }
 
       &__user {
         display: block;
         margin: 10px 0;
         font-size: 19px;
-        font-family: $bold;
+        font-family: $bold, sans-serif;
         font-weight: 600;
         letter-spacing: -0.6px;
       }
@@ -521,7 +525,7 @@ $orange: 'orange';
         margin-top: 25px;
         letter-spacing: -0.6px;
         font-weight: 500;
-        font-family: 'Spoqa Han Sans Light';
+        font-family: $light, sans-serif;
         font-size: 18px;
         white-space: pre-line;
       }
@@ -560,7 +564,7 @@ $orange: 'orange';
         letter-spacing: -0.6px;
         font-weight: 500;
         font-size: 19px;
-        font-family: $light;
+        font-family: $light, sans-serif;
       }
 
       p {
@@ -575,7 +579,7 @@ $orange: 'orange';
         display: inline-block;
         width: 220px;
         height: 50px;
-        font-family: $bold;
+        font-family: $bold, sans-serif;
         line-height: 50px;
         letter-spacing: -0.8px;
         font-weight: 800;
@@ -602,14 +606,14 @@ $orange: 'orange';
 
       th,
       td {
-        font-family: $light;
+        font-family: $light, sans-serif;
         font-size: 17px;
         font-weight: 600;
       }
 
       span {
         letter-spacing: -0.6px;
-        font-family: $light;
+        font-family: $light, sans-serif;
         font-size: 17px;
         font-weight: 600;
         color: #4b4b4b;
@@ -619,7 +623,7 @@ $orange: 'orange';
         margin-bottom: 5px;
         font-size: 20px;
         font-weight: 600;
-        font-family: $bold;
+        font-family: $bold, sans-serif;
         letter-spacing: -0.6px;
         color: #111;
       }
@@ -629,7 +633,7 @@ $orange: 'orange';
 
         h3 {
           margin-bottom: 5px;
-          font-family: $bold;
+          font-family: $bold, sans-serif;
           color: #373737;
         }
 
@@ -638,7 +642,7 @@ $orange: 'orange';
           color: #838383;
           font-size: 20px;
           letter-spacing: -0.6px;
-          font-family: $light;
+          font-family: $light, sans-serif;
         }
       }
 
@@ -660,7 +664,7 @@ $orange: 'orange';
           display: block;
           margin: 15px 0 10px;
           font-style: normal;
-          font-family: $bold;
+          font-family: $bold, sans-serif;
           font-size: 18px;
           letter-spacing: -0.6px;
         }
@@ -693,7 +697,7 @@ $orange: 'orange';
         &__katalk,
         &__one-to-one {
           color: #ff7826;
-          font-family: $light;
+          font-family: $light, sans-serif;
           font-weight: 600;
           font-size: 17px;
           letter-spacing: -0.6px;

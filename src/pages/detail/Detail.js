@@ -2,7 +2,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-import { SERVER_URL } from 'config'
+import * as URL from '../../config'
 import Layout from '../../component/Layout'
 import MainSlider from './MainSlider'
 import ProductInfo from './ProductInfo'
@@ -38,15 +38,12 @@ class Detail extends Component {
     this.fetchFnc()
   }
 
-  fetchFnc = () => {
+  fetchFnc = async e => {
     const prdId = this.props.match.params.id
     const randomId = Math.floor(Math.random() * 17)
 
-    const mockArr1 = 'http://localhost:3000/data/detail_list.json'
-    const realArr1 = `${SERVER_URL}/product/detail/${prdId}`
-
-    const mockArr2 = 'http://localhost:3000/data/random_list.json'
-    const realArr2 = `${SERVER_URL}/product?category=${randomId}&query=id`
+    const realArr1 = `${URL.AWS_URL}/product/detail/${prdId}`
+    const realArr2 = `${URL.AWS_URL}/product?category=${randomId}&query=id`
 
     Promise.all([fetch(realArr1), fetch(realArr2)])
       .then(([resDetail, resList]) =>
@@ -55,17 +52,17 @@ class Detail extends Component {
       .then(([dataDetail, dataList]) =>
         this.setState(
           {
-            id: dataDetail.product.id,
-            tagline: dataDetail.product.tagline,
-            name: dataDetail.product.name,
-            price: dataDetail.product.price,
-            unit: dataDetail.product.unit,
-            package: dataDetail.product.package,
-            origin: dataDetail.product.origin,
-            delivery: dataDetail.product.delivery,
-            caution: dataDetail.product.caution,
-            image: dataDetail.product.image_url,
-            detail: dataDetail.product.description,
+            id: dataDetail.product_data[0].id,
+            tagline: dataDetail.product_data[0].tagline,
+            name: dataDetail.product_data[0].name,
+            price: dataDetail.product_data[0].price,
+            unit: dataDetail.product_data[0].unit,
+            package: dataDetail.product_data[0].package,
+            origin: dataDetail.product_data[0].origin,
+            delivery: dataDetail.product_data[0].delivery,
+            caution: dataDetail.product_data[0].caution,
+            image: dataDetail.product_data[0].image_url,
+            detail: dataDetail.product_data[0].description,
           },
           () => {
             for (let i = 0; i < 10; i++) {
