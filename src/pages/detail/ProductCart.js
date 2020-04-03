@@ -7,7 +7,7 @@ class ProductCart extends Component {
     fetch('http://52.78.241.65:8000/order/cart', {
       method: 'POST',
       headers: {
-        'Authorization':
+        Authorization:
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxfQ.SAa5RFLev-OZMBqY2mDjAeftZE0kH4FJUSOwCS4HsGA',
       },
       body: JSON.stringify({
@@ -16,7 +16,10 @@ class ProductCart extends Component {
     })
       .then(res => res.json())
       .then(response => console.log('Success:', JSON.stringify(response)))
-      .catch(error => console.error('Error:', error))
+      .catch(error => {
+        alert('아이디 비밀번호를 다시 입력해주세요.')
+        console.error('Error:', error)
+      })
   }
 
   addCart = () => {

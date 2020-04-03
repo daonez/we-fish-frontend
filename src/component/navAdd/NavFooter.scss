@@ -1,93 +1,91 @@
-.NavFooter{
+.NavFooter {
+  position: relative;
+  right: 10%;
+  margin: 50px 0px 0px 50px;
+  background-color: #eeeeee;
+  width: 500px;
+  height: 330px;
+  .NavFooter1 {
     position: relative;
-    right:10%;
-    margin:50px 0px 0px 50px;
-    background-color: #eeeeee;
-    width:500px;
-    height:330px;
-    .NavFooter1{
-        position:relative;
-        left:10px;
-        top:20px;
-        .footerRule{
-            span{
-                letter-spacing:-0.1em;
-                margin:0px 5px 0px 10px;
-                font-size:13px;
-                color:#929292;
-            }
-        }
-        .footerHelp{
-            margin-top:10px;
-            margin-left:10px;
-            .footerHelp1{
-                letter-spacing:-0.1em;
-                font-size:20px;
-                color:#747474;
-            }
-            .footerHelp2{
-                position:relative;
-                bottom:5px;
-                font-size:20px;
-                color:#373737;
-                font-weight:bold;
-            }
-        }
-        .footerKakao{
-            display:flex;
-    
-            button{
-                width:230px;
-                height:35px;
-                border-radius:50px;
-                font-size:15px;
-                background-color: #ffe000;
-                border:none;
-                margin-left:10px;
-                margin-top:10px;
-                .footerKakao1{
-                    position: relative;
-                    left:5px;
-                    top:5px;
-                    background-image: url('../../img/kakaoplus.png');
-                    background-size: 25px;
-                    width:25px;
-                    height:25px;
-                }
-                .footerKakao2{
-                    letter-spacing:-0.1em;
-                    position:relative;
-                    bottom:18px;
-                    left:10px;
-                    font-size:18px;
-                }
-            }
-        }
-        .footerCustomerService{
-            margin-top:4px;
-            span{
-                letter-spacing:-0.1em;
-                color:#a9a9a9;
-                font-size:15px;
-                margin-left:10px;
-    
-            }
-        }
-        .footerCompanyInformation{
-            margin-top:15px;
-            margin-left:10px;
-            div{
-                letter-spacing:-0.03em;
-                color:#929292;
-                font-size:12px;
-                font-weight: bold;
-            }
-            a{
-                text-decoration: none;
-                color:blue;
-                font-weight:300;
-            }
-        }
+    left: 10px;
+    top: 20px;
+    .footerRule {
+      span {
+        letter-spacing: -0.1em;
+        margin: 0px 5px 0px 10px;
+        font-size: 13px;
+        color: #929292;
+      }
     }
+    .footerHelp {
+      margin-top: 10px;
+      margin-left: 10px;
+      .footerHelp1 {
+        letter-spacing: -0.1em;
+        font-size: 20px;
+        color: #747474;
+      }
+      .footerHelp2 {
+        position: relative;
+        bottom: 5px;
+        font-size: 20px;
+        color: #373737;
+        font-weight: bold;
+      }
+    }
+    .footerKakao {
+      display: flex;
 
+      button {
+        width: 230px;
+        height: 35px;
+        border-radius: 50px;
+        font-size: 15px;
+        background-color: #ffe000;
+        border: none;
+        margin-left: 10px;
+        margin-top: 10px;
+        .footerKakao1 {
+          position: relative;
+          left: 5px;
+          top: 5px;
+          background-image: url('../../img/kakaoplus.png');
+          background-size: 25px;
+          width: 25px;
+          height: 25px;
+        }
+        .footerKakao2 {
+          letter-spacing: -0.1em;
+          position: relative;
+          bottom: 18px;
+          left: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+    .footerCustomerService {
+      margin-top: 4px;
+      span {
+        letter-spacing: -0.1em;
+        color: #a9a9a9;
+        font-size: 15px;
+        margin-left: 10px;
+      }
+    }
+    .footerCompanyInformation {
+      margin-top: 15px;
+      margin-left: 10px;
+      div {
+        letter-spacing: -0.03em;
+        color: #929292;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      a {
+        text-decoration: none;
+        color: blue;
+        font-weight: 300;
+      }
+    }
+  }
 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
 import Selector from 'pages/product/Selector_button'
 import Layout from 'component/Layout'
+import { AWS_URL, SERVER_URL } from 'config'
 
 class MostReviewPage extends React.Component {
   constructor() {
@@ -17,7 +18,7 @@ class MostReviewPage extends React.Component {
   }
 
   fetchProduct() {
-    fetch('http://52.79.185.94:8000/product?category=3&query=-price')
+    fetch(`${AWS_URL}/product?category=3&query=-price`)
       .then(res => res.json())
       .then(res => {
         this.setState({

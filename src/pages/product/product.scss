@@ -111,3 +111,21 @@
     color: black;
   }
 }
+//*Product .map 한것들
+.productCardContent {
+  padding: 14px 0px;
+  & h1 {
+    font-weight: 400;
+  }
+  & span {
+    font-weight: bold;
+  }
+  & .review {
+    font-weight: 400;
+    color: #bababa;
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -23,11 +23,11 @@ class Slide extends Component {
           <i className="star-on">
             <FaStar size="18" />
           </i>
-          4.7
+          0
         </span>
         {/* 평점 */}
         <span className="detail-product__sub-slider__review-count">
-          &middot; 후기 40
+          &middot; 후기 0
         </span>
         {/* 후기 */}
       </>

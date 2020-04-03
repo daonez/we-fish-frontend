@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   font-family: 'Spoqa Han Sans Regular', 'Spoqa Han Sans Bold',
-    'Spoqa Han Sans Light', 'Spoqa Han Sans Thin';
+    'Spoqa Han Sans Light', 'Spoqa Han Sans Thin', 'sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -35,27 +35,6 @@ td {
   vertical-align: middle;
   color: #4b4b4b;
   border: 1px solid #d3d3d3;
-}
-
-@font-face {
-  font-family: 'Spoqa Han Sans Regular';
-  src: local('Spoqa Han Sans Regular'),
-    url('../fonts/Spoqa Han Sans Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Spoqa Han Sans Light';
-  src: local('Spoqa Han Sans Light'),
-    url('../fonts/Spoqa Han Sans Light.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Spoqa Han Sans Thin';
-  src: local('Spoqa Han Sans Thin'),
-    url('../fonts/Spoqa Han Sans Thin.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Spoqa Han Sans Bold';
-  src: local('Spoqa Han Sans Bold'),
-    url('../fonts/Spoqa Han Sans Bold.ttf') format('truetype');
 }
 
 @media #{$mobile} {

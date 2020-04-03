@@ -23,7 +23,7 @@ class Home extends Component {
           <Nav>
             <Slideshow />
             <Main />
-            <NavFooter />
+            {/* <NavFooter /> */}
           </Nav>
         </div>
         <div className="wrap">
