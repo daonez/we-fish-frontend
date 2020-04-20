@@ -1,123 +1,120 @@
-.Nav{
+.Nav {
+  position: absolute;
+  left: 50%;
+  width: 500px;
+  .nmain {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    .nmain_right {
+      .right {
+        width: 60px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .left {
+        position: relative;
+        right: 5px;
+        bottom: 20px;
+        width: 75px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .nmain_left {
+      div {
+        position: relative;
+        bottom: 6px;
+        span {
+          letter-spacing: -0.03em;
+          font-size: 17px;
+          position: relative;
+          bottom: 20px;
+          width: 100px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .right {
+          margin-right: 5px;
+          position: relative;
+          bottom: 15px;
+          width: 25px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .left {
+          width: 62px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .picker {
+          font-size: 10px;
+          letter-spacing: -0.05em;
+          position: absolute;
+          top: 9px;
+          right: 6px;
+          width: 20px;
+          height: 20px;
+          color: #ffffff;
+          border-radius: 20px;
+          line-height: 20px;
+          text-align: center;
+          background-color: #ff731d;
+        }
+      }
+    }
+  }
+  .nav_bar {
+    position: relative;
+    bottom: 8px;
+    width: 510px;
+    border-bottom: 1px solid #c7c6c6;
+  }
+  .nav_bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 0px 20px;
+    div {
+      font-size: 19px;
+      color: #757272;
+      font-weight: 500;
+      letter-spacing: -0.1em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .datePickerList {
+    display: block;
     position: absolute;
-    left:50%;
-    width:500px;
-    .nmain{
-        margin-top:5px;
-        display:flex;
-        justify-content: space-between;
-        .nmain_right{
-            .right{
-                width:60px;
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-            .left{
-                position:relative;
-                right:5px;
-                bottom:20px;
-                width:75px;
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-        }
-        .nmain_left{
-            div{
-                position: relative;
-                bottom:6px;
-                span{
-                    letter-spacing:-0.03em;
-                    font-size:17px;
-                    position:relative;
-                    bottom:20px;
-                    width:100px;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                }
-                .right{
-                    margin-right:5px;
-                    position: relative;
-                    bottom:15px;
-                    width:25px;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                }
-                .left{
-                    width:62px;
-                    &:hover{
-                        cursor: pointer;
-                    }
-        
-                }
-                .picker{
-                    font-size: 10px;
-                    letter-spacing: -0.05em;
-                    position: absolute;
-                    top: 9px;
-                    right: 6px;
-                    width: 20px;
-                    height: 20px;
-                    color: #ffffff;
-                    border-radius: 20px;
-                    line-height: 20px;
-                    text-align: center;
-                    background-color: #ff731d;
-                }
-            }
-
-        }
+    z-index: 10;
+    left: 63%;
+    top: 70px;
+    width: 120px;
+    height: 160px;
+    border: none;
+    border-radius: 8%;
+    background: #f0e9e9;
+    opacity: 0.7;
+    color: rgb(3, 0, 0);
+    div {
+      position: relative;
+      top: 9px;
+      margin-top: 4px;
+      text-align: center;
+      letter-spacing: -0.1em;
+      &:hover {
+        background: rgb(128, 126, 126);
+      }
     }
-    .nav_bar{
-        position:relative;
-        bottom:8px;
-        width:510px;
-        border-bottom: 1px solid #c7c6c6;
-    }
-    .nav_bottom{
-        display:flex;
-        justify-content:space-between;
-        margin:0px 20px 0px 20px;
-        div{
-            font-size:19px;
-            color:#757272;
-            font-weight:500;
-            letter-spacing: -0.10em;
-            &:hover{
-                cursor: pointer;;
-            }
-        }
-    }
-    .datePickerList{
-        display:block;
-        position:absolute;
-        z-index:10;
-        left:63%;
-        top:70px;
-        width:120px;
-        height:160px;
-        border:none;
-        border-radius: 8%;
-        background:#f0e9e9;
-        opacity: 0.7;
-        color:rgb(3, 0, 0);
-        div{
-            position:relative;
-            top:9px;
-            margin-top:4px;
-            text-align:center;
-            letter-spacing: -0.1em;
-            &:hover{
-                background:rgb(128, 126, 126);
-            }
-            
-        }
-    }
-    .navsidebarDiv{
-        position:absolute;
-        z-index:100;
-    }
+  }
+  .navsidebarDiv {
+    position: absolute;
+    z-index: 100;
+  }
 }

@@ -17,7 +17,7 @@ class Layout extends Component {
         <SectionLeft />
         <section className="section-right">
           <section className="section-right__main">
-            <Header />
+            {/* <Header /> */}
             <main>{children}</main>
             {/* <Footer /> */}
           </section>

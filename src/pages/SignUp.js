@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './signup.scss'
 import Kakao from 'kakaojs'
+import { SERVER_URL, AWS_URL } from 'config'
 import DaumPostcode from 'react-daum-postcode'
 import fish from '../images/animal.svg'
 import Layout from '../component/Layout'
@@ -48,7 +49,7 @@ class SignUp extends Component {
         localStorage.setItem('kakao_keep', this.state.kakaotoken)
       },
     })
-    fetch('http://52.79.185.94:8000/user/kakao', {
+    fetch(`${AWS_URL}/user/sign-in/user/kakao`, {
       method: 'POST',
       headers: {
         Authorization: this.state.kakaotoken,
@@ -143,7 +144,7 @@ class SignUp extends Component {
   }
 
   authenFetcher = () => {
-    fetch('http://52.79.185.94:8000/user/verify', {
+    fetch(`${AWS_URL}/user/verify`, {
       method: 'POST',
       body: JSON.stringify({
         mobile: this.state.mobile,
@@ -163,7 +164,7 @@ class SignUp extends Component {
   }
 
   authenPoster = () => {
-    fetch('http://52.79.185.94:8000/user/confirm', {
+    fetch(`${AWS_URL}/user/confirm`, {
       method: 'POST',
       body: JSON.stringify({
         mobile: this.state.mobile,
@@ -315,7 +316,6 @@ class SignUp extends Component {
   render() {
     return (
       <Layout>
-        <>
           <div className="signupdiv">
             <section className="signupsection">
               <header className="texttop">
@@ -833,7 +833,6 @@ class SignUp extends Component {
               </form>
             </section>
           </div>
-        </>
       </Layout>
     )
   }

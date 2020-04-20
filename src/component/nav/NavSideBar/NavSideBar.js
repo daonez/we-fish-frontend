@@ -8,26 +8,25 @@ class NavSideBar extends Component {
   state = {
     search: '',
     search_results: [],
-  }
+  };
 
   handleSearch = e => {
     this.setState({
       [e.target.name]: e.target.value,
-    })
-    console.log('etargetvalue:', e.target.value)
-  }
+    });
+  };
 
   saveSearch = e => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   saveSearch1 = e => {
-    this.state.base.push(this.state.search)
-  }
+    this.state.base.push(this.state.search);
+  };
 
   goToSave = () => {
-    const queryId = this.state.search
-    this.props.history.push(`/searchresult?keyword=${queryId}`)
+    const queryId = this.state.search;
+    this.props.history.push(`/searchresult?keyword=${queryId}`);
 
     // fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`,{
     //           method:'GET',
@@ -39,23 +38,35 @@ class NavSideBar extends Component {
     //           console.log(response)
 
     //       })
+  };
+
+  toLogin = () => {
+    this.props.history.push('/Login');
+  };
+
+  toSignUp = () => {
+    this.props.history.push('/SignUp')
   }
 
   render() {
-    console.log('state.search:', this.state.search)
-    console.log('database:', this.state.search_results)
+    console.log('state.search:', this.state.search);
+    console.log('database:', this.state.search_results);
     return (
       <div className="navSideBar">
         <div className="profileLoggedOut">
-          <div className="profileLoggedOut02">
-            <p className="loginButton">
-              <span href="/">로그인 해주세요</span>
-            </p>
-            <p className="lineBar">|</p>
-            <p className="registerButton">
-              <span href="/">회원가입</span>
-            </p>
-          </div>
+          {/* <div className="profileLoggedOut02"> */}
+            {/* <div className="loginButton"> */}
+              <span className="toLogin" onClick={this.toLogin}>
+                로그인 해주세요
+              </span>
+              <span className="lineBar">|</span>
+              <span className="toSignUp" onClick={this.toSignUp}>
+                회원가입
+              </span>
+            {/* </div> */}
+
+            <p className="registerButton"></p>
+          {/* </div> */}
         </div>
         <div className="search">
           <form onSubmit={this.saveSearch}>
@@ -86,7 +97,7 @@ class NavSideBar extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
