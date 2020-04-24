@@ -2,7 +2,7 @@
   "data": [
     {
       "id": 18,
-      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/291/6d4de2_200131094407.png?w=525&q=80",
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/291/bf8d92_200407092155.jpg?w=525&q=80",
       "name": "[제주] 자연산 딱새우회 20미/30미",
       "price": "22900.00"
     },
@@ -43,14 +43,8 @@
       "price": "12900.00"
     },
     {
-      "id": 41,
-      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/336/7481e7_200322095632.jpg?w=525&q=80",
-      "name": "[오늘회] 참치6종 모듬회",
-      "price": "49900.00"
-    },
-    {
       "id": 42,
-      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/337/5fc794_200227101130.jpg?w=525&q=80",
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/337/aa4283_200403003412.jpg?w=525&q=80",
       "name": " [오늘회] 생연어",
       "price": "18900.00"
     },
@@ -80,15 +74,9 @@
     },
     {
       "id": 60,
-      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/363/5a26af_200322095233.jpg?w=525&q=80",
+      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/363/378f66_200327100514.jpg?w=525&q=80",
       "name": "[남해] 자연산 키조개관자",
       "price": "16500.00"
-    },
-    {
-      "id": 65,
-      "image": "https://cdn.onul-hoi.com/uploads/store_package/image/368/4ec461_200221100747.jpg?w=525&q=80",
-      "name": "[오늘회] 자연산 농어회",
-      "price": "41900.00"
     },
     {
       "id": 76,

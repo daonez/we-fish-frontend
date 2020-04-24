@@ -1,36 +1,36 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React from 'react'
-import ThreeImageSlider from './ThreeImageSlider'
-import ButtonSlider from './ButtonSlider'
-import firstTimeBanner from './mainImage/first-time-wefish.jpeg'
-import todayOrderBanner from './mainImage/today-can-order-fish.jpg'
-import plusFriend from './mainImage/plusfriendKakao.jpeg'
-import deliver from './mainImage/처움추천이벤트-배송지역확인.jpg'
-import GuestOrderSlider from './GuestOrderSlider'
-import Layout from '../../component/Layout'
-import './main.scss'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import ReactSlick from 'react-slick'
-import queryString from 'query-string'
-import { SERVER_URL, AWS_URL } from 'config'
+import React from 'react';
+import ThreeImageSlider from './ThreeImageSlider';
+import ButtonSlider from './ButtonSlider';
+import firstTimeBanner from './mainImage/first-time-wefish.jpeg';
+import todayOrderBanner from './mainImage/today-can-order-fish.jpg';
+import plusFriend from './mainImage/plusfriendKakao.jpeg';
+import deliver from './mainImage/처움추천이벤트-배송지역확인.jpg';
+import GuestOrderSlider from './GuestOrderSlider';
+import Layout from '../../component/Layout';
+import './main.scss';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import ReactSlick from 'react-slick';
+import queryString from 'query-string';
+import { SERVER_URL, AWS_URL } from 'config';
 
 export default class Main extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       product: [],
-    }
+    };
   }
 
   componentDidMount() {
-    this.fetchProduct()
+    this.fetchProduct();
   }
 
   fetchProduct() {
-    const min = 3
-    const max = 14
-    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+    const min = 3;
+    const max = 14;
+    const randomNumber = Math.floor(Math.random() * (max - min) + min);
 
     //* requests
     fetch(`${AWS_URL}/product?category=${randomNumber}`)
@@ -38,8 +38,8 @@ export default class Main extends React.Component {
       .then(response => {
         this.setState({
           product: response.data,
-        })
-      })
+        });
+      });
   }
 
   // productMap = item => {
@@ -82,7 +82,7 @@ export default class Main extends React.Component {
                   <div className="main-content_contents">
                     <strong>지금 어떤 수산물이 가장 맛있을까요?</strong>
                     <p className="main-content-p text">
-                      4월 오늘회에서만 만나볼 수 있는 메뉴
+                      2월 오늘회에서만 만나볼 수 있는 메뉴
                     </p>
                   </div>
                 </div>
@@ -193,6 +193,6 @@ export default class Main extends React.Component {
           <ThreeImageSlider />
         </div>
       </div>
-    )
+    );
   }
 }

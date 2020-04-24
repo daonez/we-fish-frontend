@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import './NavSideBar.scss'
-import { withRouter } from 'react-router-dom'
-import ProductNav from 'component/nav/NavSideBar/ProductNav'
-import search from '../../../img/search.png'
+import React, { Component } from 'react';
+import './NavSideBar.scss';
+import { withRouter } from 'react-router-dom';
+import ProductNav from 'component/nav/NavSideBar/ProductNav';
+import { SERVER_URL, AWS_URL } from 'config';
+import search from '../../../img/search.png';
 
 class NavSideBar extends Component {
   state = {
@@ -26,18 +27,19 @@ class NavSideBar extends Component {
 
   goToSave = () => {
     const queryId = this.state.search;
-    this.props.history.push(`/searchresult?keyword=${queryId}`);
+    this.props.history.push(`product/searchresult?keyword=${queryId}`);
 
-    // fetch(`http://10.58.1.185:8000/product/search?keyword=${queryId}`,{
-    //           method:'GET',
-    //       })
-    //       .then(response => { return response.json() })
-    //       .then(response => {
-    //           this.setState({ search_results: response.search_results})
-    //           this.props.history.push(`/searchresult?keyword=${queryId}`)
-    //           console.log(response)
-
-    //       })
+    fetch(`http://${AWS_URL}/product/search?keyword=${queryId}`, {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ search_results: response.search_results });
+        this.props.history.push(`/searchresult?keyword=${queryId}`);
+        console.log(response);
+      });
   };
 
   toLogin = () => {
@@ -45,8 +47,8 @@ class NavSideBar extends Component {
   };
 
   toSignUp = () => {
-    this.props.history.push('/SignUp')
-  }
+    this.props.history.push('/SignUp');
+  };
 
   render() {
     console.log('state.search:', this.state.search);
@@ -55,17 +57,17 @@ class NavSideBar extends Component {
       <div className="navSideBar">
         <div className="profileLoggedOut">
           {/* <div className="profileLoggedOut02"> */}
-            {/* <div className="loginButton"> */}
-              <span className="toLogin" onClick={this.toLogin}>
-                로그인 해주세요
-              </span>
-              <span className="lineBar">|</span>
-              <span className="toSignUp" onClick={this.toSignUp}>
-                회원가입
-              </span>
-            {/* </div> */}
+          {/* <div className="loginButton"> */}
+          <span className="toLogin" onClick={this.toLogin}>
+            로그인 해주세요
+          </span>
+          <span className="lineBar">|</span>
+          <span className="toSignUp" onClick={this.toSignUp}>
+            회원가입
+          </span>
+          {/* </div> */}
 
-            <p className="registerButton"></p>
+          <p className="registerButton" />
           {/* </div> */}
         </div>
         <div className="search">
@@ -101,4 +103,4 @@ class NavSideBar extends Component {
   }
 }
 
-export default withRouter(NavSideBar)
+export default withRouter(NavSideBar);
