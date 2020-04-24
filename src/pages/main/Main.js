@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react'
 import ThreeImageSlider from './ThreeImageSlider'
 import ButtonSlider from './ButtonSlider'
@@ -12,7 +13,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import ReactSlick from 'react-slick'
 import queryString from 'query-string'
-import { SERVER_URL, AWS_URL } from 'config';
+import { SERVER_URL, AWS_URL } from 'config'
 
 export default class Main extends React.Component {
   constructor() {
@@ -37,40 +38,38 @@ export default class Main extends React.Component {
       .then(response => {
         this.setState({
           product: response.data,
-        });
-      });
-    }
-    
-  productMap = (item) => {
-    return (
-      item &&
-      item.map((ele, idx) => (
-        <li className="recommend-product-item">
-          <Link to={`/product/detail/${ele.id}`}>
-            <div className="productCard">
-              <div className="parent">
-                <img src={ele.image} alt="" />
-              </div>
-            </div>
-            <div className="productCardContent">
-              <h1>{ele.name}</h1>
-              <p>
-                <span>{ele.price}</span>원
-              </p>
-              <p>
-                {/* <span>{ele.rating}</span> */}
-                <span className="review">· 후기</span>
-              </p>
-            </div>
-          </Link>
-        </li>
-      ))
-    );
-  };
+        })
+      })
+  }
 
+  // productMap = item => {
+  //   return (
+  //     item &&
+  //     item.map((ele, idx) => (
+  //       <li className="recommend-product-item">
+  //         <Link to={`/product/detail/${ele.id}`}>
+  //           <div className="productCard">
+  //             <div className="parent">
+  //               <img src={ele.image} alt="" />
+  //             </div>
+  //           </div>
+  //           <div className="productCardContent">
+  //             <h1>{ele.name}</h1>
+  //             <p>
+  //               <span>{ele.price}</span>원
+  //             </p>
+  //             <p>
+  //               {/* <span>{ele.rating}</span> */}
+  //               <span className="review">· 후기</span>
+  //             </p>
+  //           </div>
+  //         </Link>
+  //       </li>
+  //     ))
+  //   )
+  // }
 
   render() {
-
     return (
       <div className="main-content">
         <section>
@@ -91,10 +90,10 @@ export default class Main extends React.Component {
             </div>
           </div>
         </section>
-        {/* <div className="productslider">
+        <div className="productslider">
           <ThreeImageSlider />
-        </div> */}
-        {/* <div className="main-content_second-productslider">
+        </div>
+        <div className="main-content_second-productslider">
           <div className="main-content_second-productslider_content">
             <h2>오늘회 베스트</h2>
             <span className="main-content-span">
@@ -104,7 +103,7 @@ export default class Main extends React.Component {
           <div>
             <ThreeImageSlider />
           </div>
-        </div> */}
+        </div>
         {/* <div className="main-content-recommend-title">
           <p>후기로 검증된 추천 상차림</p>
           <strong>오늘회 고객님은 이렇게 드셨어요.</strong>
@@ -123,11 +122,9 @@ export default class Main extends React.Component {
             <img src={firstTimeBanner} alt="" />
             <img src={todayOrderBanner} alt="" />
           </div> */}
-            <div className="recommend">
+          <div className="recommend">
             {/* <h1>알아서 추천드립니다 ></h1> */}
-            <ul className="productList">
-              {this.productMap(this.state.product)}
-            </ul>
+            <ul className="productList" />
             {/* <div>
               <button>성게알 상품 전체보기 ></button>
             </div> */}
@@ -196,6 +193,6 @@ export default class Main extends React.Component {
           <ThreeImageSlider />
         </div>
       </div>
-    );
+    )
   }
 }
