@@ -93,7 +93,7 @@ class Products extends React.Component {
                         <h1 key={item.id}>{item.name}</h1>
                         <p>
                           <span key={item.id}>
-                            {Number(item.price).toLocaleString('kr')}
+                            ` {Number(item.price).toLocaleString('kr')}`
                           </span>
                           원
                         </p>
