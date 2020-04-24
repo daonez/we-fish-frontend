@@ -46,7 +46,7 @@
 - 해당 ZIP CODE 에 맞춰 배송가능/불가 지역 기능 구현
 - match params을 사용하여 제품 상세페이지의 유동적 Router 구현
 
-#### ** Nav/Search기능 **:
+#### **Nav/Search 기능**:
 
 - Navbar / Sidebar/ footer layout구성
 - GET,POST 사용하여 제품의 검색기능, 고객의 1:1 문의 기능 구현
