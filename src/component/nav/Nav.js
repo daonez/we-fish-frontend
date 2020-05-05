@@ -112,7 +112,7 @@ class Nav extends Component {
                 src={Cart}
                 onClick={this.goToWhere.bind(this)}
               />
-              <strong className="picker">1</strong>
+              <strong className="picker">0</strong>
             </div>
           </div>
         </div>

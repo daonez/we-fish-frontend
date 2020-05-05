@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 프로젝트 소개
 
-## Available Scripts
+당일 배송 수산마켓 서비스 [오늘회](https://www.onul-hoi.com/) 웹사이트 클론 프로젝트
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+### **개발 인원 및 기간**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 기간 : 20.02.24 - 20.03.06
+- 팀 구성 : 프론트엔드 4명, 백엔드 2명 (총 6명)
+- Backend-Repo: [we-fish-Backend GitHub Repository 📍](https://github.com/wecode-bootcamp-korea/we-fish-backend)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+### Demo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![wefish_오늘회_clone](http://img.youtube.com/vi/OVIeK7Ey2wM/0.jpg)](http://www.youtube.com/watch?v=OVIeK7Ey2wM 'wefish_오늘회_clone')
 
-### `yarn build`
+### **사용된 기술**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **FrontEnd**:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  - JavaScript
+  - React
+  - Sass(Scss)
+  - KaKao API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **BackEnd**:
+  - Python
+  - Django Web Framework
+  - MySQL
+- **Deployment**:
+  - AWS EC2, RDS
+  - CORS headers
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **구현 기능:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### **Main Page / Products**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React의 params를 사용하여 해당 이미지 클릭시 상세페이지 이동경로 구현
+- React Slick, React Carousel 사용하여 Slider 기능 구현
+- Backend API 를 Fetch 및 Axios를 사용하여 데이터를 GET한 후 .Map 함수를 사용하여 화면에 구현 하였습니다
+- 유동적 Router를 사용하여 params 적용
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### **Detail/Layout**:
 
-## Learn More
+- React fragment 및 child 를 사용하여 layout 구현
+- 해당 ZIP CODE 에 맞춰 배송가능/불가 지역 기능 구현
+- match params을 사용하여 제품 상세페이지의 유동적 Router 구현
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### **Nav/Search 기능**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Navbar / Sidebar/ footer layout구성
+- GET,POST 사용하여 제품의 검색기능, 고객의 1:1 문의 기능 구현
 
-### Code Splitting
+#### **로그인/회원가입 기능**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- **회원가입**:
 
-### Analyzing the Bundle Size
+  - 이메일 및 패스워드 양식 확인 기능 구현
+  - Daum 주소 API 연동
+  - 핸드폰 문자 인증 기능 구현
+  - 가입약관 전체동의/부분 동의 기능 구현
+  - 카카오 소셜 회원가입 기능 구현
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- **로그인**:
+  - 로그인 상태 유지 기능 구현 (활성화시 토큰 localStorage에 저장, 비활성화시 토큰 sessionStorage에 저장)
+  - 카카오 소셜 로그인 API 기능 구현 (카카오 소셜로그인 선택시 간편 회원가입 가능)
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---

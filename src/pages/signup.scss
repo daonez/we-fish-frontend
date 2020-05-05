@@ -1,5 +1,6 @@
 .signupdiv {
   margin: 0 auto;
+  margin-top: 80px;
 }
 .signupsection {
   width: 380px;
@@ -100,52 +101,12 @@
   font-size: 14px;
 }
 
-// .inputemail {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
-
-// .inputemailwrap {
-//   width: 380px;
-// }
-
 .emailformfalse {
   font-size: 12px;
   color: #ff731d;
   letter-spacing: -0.06rem;
   padding-bottom: 10px;
 }
-
-// .inputname {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
-
-// .inputpw {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
 
 .passwordformfalse {
   font-size: 12px;
@@ -154,49 +115,12 @@
   padding-bottom: 10px;
 }
 
-// .inputpwcheck {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
-
 .inputpwcheckfalse {
   font-size: 12px;
   color: #ff731d;
   letter-spacing: -0.06rem;
   padding-bottom: 10px;
 }
-
-// .inputpost {
-//   width: 50px;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
-
-// .inputaddress {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-//   background-color: white;
-// }
 
 .authenbtn {
   color: white;
@@ -231,35 +155,12 @@
   text-align: center;
 }
 
-// .inputdetailadd {
-//   width: 100%;
-//   height: 36px;
-//   margin-bottom: 8px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
-
 .phoneauthenwrap {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
-
-// .phonenum {
-//   width: 250px;
-//   height: 36px;
-//   padding: 0px 8px;
-//   border-top: none;
-//   border-right: none;
-//   border-left: none;
-//   border-bottom: 1px solid #ebebeb;
-//   letter-spacing: -0.06rem;
-// }
 
 .phonenumfalse {
   font-size: 12px;
@@ -287,6 +188,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  letter-spacing: -0.06rem;
   align-items: center;
 }
 
@@ -322,6 +224,7 @@
 .h1font1 {
   font-size: 14px;
   padding: 8px 0px 8px 8px;
+  letter-spacing: -0.06rem;
 }
 
 .sectionbottom {

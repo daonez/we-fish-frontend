@@ -1,28 +1,28 @@
-import React from 'react'
-import './product.scss'
-import Layout from 'component/Layout'
-import axios from 'axios'
+import React from 'react';
+import './product.scss';
+import Layout from 'component/Layout';
+import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
   Link,
   withRouter,
-} from 'react-router-dom'
-import { SERVER_URL, AWS_URL } from 'config'
-import Selector from './Selector_button'
+} from 'react-router-dom';
+import { SERVER_URL, AWS_URL } from 'config';
+import Selector from './Selector_button';
 
 class Products extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       title: [],
       product: [],
       id: [],
-    }
+    };
   }
 
   componentDidMount() {
-    this.fetchProduct()
+    this.fetchProduct();
     // this.FetchProduct()
   }
 
@@ -60,18 +60,18 @@ class Products extends React.Component {
 
   // Fetch 함수로 data.json
   fetchProduct() {
-    const values = this.props.match.params.category
-    fetch(`${AWS_URL}/product?category_id=${values}&query=-updated_at`)
+    const values = this.props.match.params.category;
+    fetch(`${AWS_URL}/product?category=${values}&query=-updated_at`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ product: res.data, title: res.category_list })
-      })
+        this.setState({ product: res.data, title: res.category_list });
+      });
   }
 
   render() {
-    const { title, product } = this.state
-    console.log('this.props: ', this.props)
-    console.log(title, product)
+    const { title, product } = this.state;
+    console.log('this.props: ', this.props);
+    console.log(title, product);
     return (
       <Layout>
         <div className="content-wrapper">
@@ -93,7 +93,7 @@ class Products extends React.Component {
                         <h1 key={item.id}>{item.name}</h1>
                         <p>
                           <span key={item.id}>
-                            {Number(item.price).toLocaleString('kr')}
+                            ` {Number(item.price).toLocaleString('kr')}`
                           </span>
                           원
                         </p>
@@ -110,8 +110,8 @@ class Products extends React.Component {
           </section>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default withRouter(Products)
+export default withRouter(Products);

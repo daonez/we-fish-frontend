@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { Component } from 'react'
-import Slider from 'react-slick'
-import { Link, withRouter } from 'react-router-dom'
-import axios from 'axios'
-import queryString from 'query-string'
-import { SERVER_URL } from 'config'
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import { Link, withRouter } from 'react-router-dom';
+import axios from 'axios';
+import queryString from 'query-string';
+import { SERVER_URL, AWS_URL } from 'config';
 
 const settings = {
   infinite: true,
@@ -12,47 +12,47 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 2,
   arrows: true,
-}
+};
 class ThreeImageSlider extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       data: [],
-    }
+    };
   }
 
   componentDidMount() {
-    this.fetchProduct()
+    this.fetchProduct();
   }
 
   fetchProduct() {
-    const min = 3
-    const max = 14
-    const randomNumber = Math.floor(Math.random() * (max - min) + min)
+    const min = 3;
+    const max = 14;
+    const randomNumber = Math.floor(Math.random() * (max - min) + min);
 
     const values = queryString.stringify({
-      category_id: randomNumber,
-    })
-    console.log(values)
+      category: randomNumber,
+    });
+    console.log(values);
 
     // const values = this.props.match.params.category
 
     // //* requests
-    fetch(`${SERVER_URL}/product?${values}&query=-price`)
+    fetch(`${AWS_URL}/product?${values}&query=-price`)
       .then(request => request.json())
       .then(response => {
         this.setState({
           data: response.data,
-        })
-        console.log(this.state.data)
-      })
+        });
+        console.log(this.state.data);
+      });
 
-    console.log(this.state.data)
+    console.log(this.state.data);
   }
 
   render() {
-    const { data } = this.state
-    console.log(data)
+    const { data } = this.state;
+    console.log(data);
     return (
       <div>
         <Slider {...settings}>
@@ -69,17 +69,17 @@ class ThreeImageSlider extends Component {
                   <p>
                     <span>{Number(item.price).toLocaleString('kr')}</span>원
                   </p>
-                  <p>
+                  {/* <p>
                     <span>{item.rating}</span>
                     <span className="review">· 후기</span>
-                  </p>
+                  </p> */}
                 </div>
               </Link>
             </li>
           ))}
         </Slider>
       </div>
-    )
+    );
   }
 }
-export default withRouter(ThreeImageSlider)
+export default withRouter(ThreeImageSlider);

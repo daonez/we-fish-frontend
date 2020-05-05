@@ -1,191 +1,192 @@
-.navSideBar{
-    position: absolute;
-    top:-80px;
-    right:100%;
-    background-color:white;
-    z-index:20;
+.navSideBar {
+  position: absolute;
+  top: -90px;
+  right: 100%;
+  background-color: white;
+  z-index: 20;
 
-    width:410px;
-    height:920px;
-    .profileLoggedOut{
-        position:relative;
-        left:10px;
-        border-bottom: 1px solid #eeeeee;
-        width:397px;
-        height:45px;
-        .profileLoggedOut02{
-            position:relative;
-            left:10px;
-            display:flex;
-            .loginButton{
-                span{
-                    letter-spacing: -0.05em;
-                    text-decoration:none;
-                    font-size:20px;
-                    color:black;
-                }
+  width: 420px;
+  height: 950px;
+  .profileLoggedOut {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 10px;
+    border-bottom: 1px solid #eeeeee;
+    width: 397px;
+    height: 45px;
+    margin-left: 20px;
+    // .loginButton {
+    //   display: flex;
+    //   flex-direction: row;
+    //   height: 100px;
+    // }
+    .toLogin {
+      letter-spacing: -0.05em;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+      cursor: pointer;
+    }
 
-            }
-            .lineBar{
-                margin:0px 2px 0px 2px;
-                position:relative;
-                padding: 5px;
-                font-size: 13px;
-                color: rgba(153,153,153,0.5);
-                top:3px;
-    
-            }
-            .registerButton{
-                span{
-                    letter-spacing: -0.1em;
-                    text-decoration:none;
-                    font-size:16px;
-                    color: #666666;
-                    position: relative;
-                    top:3px;
-                }
-            }
-        }
+    .toSignUp {
+      cursor: pointer;
+      font-size: 15px;
+      padding-top: 7px;
     }
-    .search{
-        width:340px;
-        height:56px;
-        form{
-            margin-top:10px;
-            position:relative;
-            left:20px;
-            border-bottom: 1px solid #DCDCDC;
-            width:350px;
-            height:40px;
-            button{
-               border:none;
-                width:20px;
-                height:20px;
-                i{
-                    display: block;
-                    left:5px;
-                    width: 25px;
-                    height: 20px;
-                    font-size: 0;
-                    background: url('../../../img/search.png') no-repeat left;
-                    background-size: 25px;
-                    position: relative;
-                    right:10px;
-                    top:8px;
-                }
-            }
-            input{
-                font-size:18px;
-                position: relative;
-                top:7px;
-                left:23px;
-                border:none;
-                width:242px;
-                height:20px;
-            }
-            input::placeholder{
-                color:#FF6602
-            }
-        }
+
+    .lineBar {
+      margin: 0px 5px 0px 5px;
+      position: relative;
+      padding: 5px;
+      font-size: 13px;
+      color: rgba(153, 153, 153, 0.5);
+      top: 3px;
     }
-    .category-header{
-        width:340px;
-        height:36px;
-        p{
-            font-family: 'Spoqa Han Sans Bold';
-            display:block;
-            position: relative;
-            font-size:20px;
-            left:20px;
-            margin:0px;
-            top:1px;
-        }
+  }
+  .registerButton {
+    span {
+      letter-spacing: -0.1em;
+      text-decoration: none;
+      font-size: 16px;
+      color: #666666;
+      position: relative;
+      top: 3px;
+      cursor: pointer;
     }
-    .categories{
-        display:flex;
-        justify-content: space-between;
+  }
+
+  .search {
+    width: 340px;
+    height: 56px;
+    form {
+      margin-top: 12px;
+      position: relative;
+      left: 20px;
+      border-bottom: 1px solid #dcdcdc;
+      width: 350px;
+      height: 40px;
+      button {
+        border: none;
+        width: 20px;
+        height: 20px;
+        i {
+          display: block;
+          left: 5px;
+          width: 25px;
+          height: 20px;
+          font-size: 0;
+          background: url('../../../img/search.png') no-repeat left;
+          background-size: 25px;
+          position: relative;
+          right: 10px;
+          top: 8px;
+        }
+      }
+      input {
+        font-size: 18px;
         position: relative;
-        top:2px;
-        right:-20px;
-        ul {
-            list-style: none;
-        }
-        .rightUl{
-            position: relative;
-            right:30px;
-        }
-        .category{
-            width:150px;
-            height:25px;
-            span{
-                letter-spacing: -0.1em;
-                display:flex;
-                justify-content: space-between;
-                color:#aa8e8e;
-                text-decoration: none;
-                margin-top:10px;
-                div{
-                    font-size:18px;
-                    letter-spacing: -2.5px;
-                    font-weight:400px;
-                    
-                }
-                
-            }
-        }
-
+        top: 7px;
+        left: 23px;
+        border: none;
+        width: 242px;
+        height: 20px;
+      }
+      input::placeholder {
+        color: #ff6602;
+      }
     }
-    .otherContents{
-        position:absolute;
-        margin-top:10px;
-        a{
-            font-family: 'Spoqa Han Sans Bold';
-            font-size:20px;
-            text-decoration: none;
-            color:black;
-            display:flex;
-            margin-top:12px;
-            margin-left:18px;
-
-        }
+  }
+  .category-header {
+    width: 340px;
+    height: 30px;
+    p {
+      font-family: 'Spoqa Han Sans Bold';
+      display: block;
+      position: relative;
+      font-size: 20px;
+      left: 20px;
+      margin: 0px;
+      top: 1px;
     }
-    .sideBarFooter{
-        display:flex;
+  }
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 2px;
+    right: -20px;
+    ul {
+      list-style: none;
+    }
+    .rightUl {
+      position: relative;
+      right: 30px;
+    }
+    .category {
+      width: 150px;
+      height: 25px;
+      span {
+        letter-spacing: -0.1em;
+        display: flex;
         justify-content: space-between;
-        width:340px;
-        height:66px;
-        position:absolute;
-        bottom:10px;
-        border-top: 1px solid #eee;
-        .fl{
-            position: relative;
-            left:15px;
-            top:10px;
-            .phone{
-                position: relative;
-                bottom:0px;
-                font-size: 28px;
-                font-family: Montserrat;
-                color: #000000;
-                font-weight: bold;
-            }
-
+        color: #aa8e8e;
+        text-decoration: none;
+        margin-top: 10px;
+        div {
+          font-size: 18px;
+          letter-spacing: -2.5px;
+          font-weight: 400px;
         }
-
-        .fr{
-            a{
-                position: relative;
-                top:15px;
-                background-image: url('../../../img/kakaoplus.png');
-                width: 48px;
-                height: 48px;
-                margin-top: 3px;
-                background-size: 48px;
-                display: block;
-            }
-        }
+      }
     }
+  }
+  .otherContents {
+    position: absolute;
+    margin-top: 10px;
+    a {
+      font-family: 'Spoqa Han Sans Bold';
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+      display: flex;
+      margin-top: 12px;
+      margin-left: 18px;
+    }
+  }
+  .sideBarFooter {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    height: 66px;
+    position: absolute;
+    bottom: 10px;
+    border-top: 1px solid #eee;
+    .fl {
+      position: relative;
+      left: 15px;
+      top: 10px;
+      .phone {
+        position: relative;
+        bottom: 0px;
+        font-size: 28px;
+        font-family: Montserrat;
+        color: #000000;
+        font-weight: bold;
+      }
+    }
+
+    .fr {
+      a {
+        position: relative;
+        top: 15px;
+        background-image: url('../../../img/kakaoplus.png');
+        width: 48px;
+        height: 48px;
+        margin-top: 3px;
+        background-size: 48px;
+        display: block;
+      }
+    }
+  }
 }
-
-
-

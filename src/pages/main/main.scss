@@ -3,38 +3,42 @@
 
 .main-content {
   position: relative;
-  top: -57px;
+  top: -120px;
   background: white;
-  border-radius: 17px;
-  margin-left: 11px;
+  border-top-left-radius: 20px;
+  margin-left: 15px;
   a {
     text-decoration: none;
     color: black;
   }
   &-header {
-    margin: 10px;
+    margin: 15px;
   }
   &-p {
     font-size: 12px;
     color: #929292;
-    padding: 6px 0 0 11px;
+    padding: 18px 0 0 11px;
   }
   &_contents {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     font-weight: bold;
     padding-bottom: 8px;
     & strong {
       font-weight: bold;
       padding: 2px 7px;
       font-size: 20px;
-      width: 230px;
+      width: 180px;
       p {
         font-weight: bold;
       }
     }
   }
   .text {
-    margin: 29px 0px 1px 4px;
+    margin: 18px 0px 1px 4px;
+    letter-spacing: -0.06em;
+    font-weight: 500;
   }
   &_second-productslider {
     &_content {
@@ -49,6 +53,8 @@
     color: #929292;
     padding: 3px;
     margin-left: 8px;
+    line-height: 16px;
+    font-weight: 300;
   }
   &-review-title {
     & h4 {
@@ -118,13 +124,20 @@
       -moz-osx-font-smoothing: grayscale;
     }
   }
-  .recomend {
+  .recommend {
     margin: 10px;
+    // list-style-type: none;
+    .recommend-product-item {
+      flex: 1 29%;
+    }
+    h1 {
+      font-size: 14px;
+      letter-spacing: -0.06em;
+      font-weight: 400;
+      line-height: 1.4;
+      cursor: pointer;
+    }
   }
-  .recommend-product-item {
-    flex: 1 29%;
-  }
-
   .today {
     display: flex;
     & img {

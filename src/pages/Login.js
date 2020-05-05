@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import './login.scss'
 import { withRouter } from 'react-router'
 import Kakao from 'kakaojs'
-import CryptoJS from 'crypto-js'
-import Axios from 'axios'
+import { SERVER_URL, AWS_URL } from 'config'
 import fish from '../images/animal.svg'
 import Layout from '../component/Layout'
 
@@ -39,7 +38,7 @@ class Login extends Component {
   }
 
   fetcherwokeep = () => {
-    fetch('http://52.79.185.94:8000/user/sign-in', {
+    fetch(`${AWS_URL}/user/sign-in`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -58,7 +57,7 @@ class Login extends Component {
   }
 
   fetcherwkeep = () => {
-    fetch('http://52.79.185.94:8000/user/sign-in', {
+    fetch(`${AWS_URL}/user/sign-in`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -111,7 +110,6 @@ class Login extends Component {
   render() {
     return (
       <Layout>
-        <>
           <div className="loginContainer">
             <div className="loginInput">
               <section className="userauthen">
@@ -197,7 +195,6 @@ class Login extends Component {
               </section>
             </div>
           </div>
-        </>
       </Layout>
     )
   }

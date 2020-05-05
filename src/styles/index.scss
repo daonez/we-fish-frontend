@@ -1,6 +1,7 @@
 @import 'reset.scss';
 @import 'layout.scss';
-$mobile: 'only screen and (max-width: 420px)';
+@import 'fonts.scss';
+$mobile: 'only screen and (max-width: 420px) ';
 
 html {
   scroll-behavior: smooth;
@@ -9,11 +10,9 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Spoqa Han Sans Regular', 'Spoqa Han Sans Bold',
-    'Spoqa Han Sans Light', 'Spoqa Han Sans Thin', 'sans-serif';
+  font-family: 'Spoqa Han Sans', 'sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
